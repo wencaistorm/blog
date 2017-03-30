@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>使用hexo搭建github博客 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="准备工作
+nodejs下载安装
+github账号
+git下载安装">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用hexo搭建github博客">
+<meta property="og:url" content="http://yoursite.com/2016/06/15/使用hexo搭建github博客/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="准备工作
+nodejs下载安装
+github账号
+git下载安装">
+<meta property="og:updated_time" content="2017-03-30T07:07:11.310Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="使用hexo搭建github博客">
+<meta name="twitter:description" content="准备工作
+nodejs下载安装
+github账号
+git下载安装">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="http://cdn.bootcss.com/highlight.js/8.0/styles/monokai_sublime.min.css" rel="stylesheet">  
+  <script src="http://cdn.bootcss.com/highlight.js/8.0/highlight.min.js"></script>  
+  <script >hljs.initHighlightingOnLoad();</script>  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+
+  
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?64010e2abc3c843ed1e5d70772dca4fe";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div id="drager" class="">
+    <div class="inner"></div>
+    <div class="content">
+	    <span class="dark">夜间模式</span>
+    </div>
+</div>
+      <header id="header">
+    <div class="inner">
+        <div class="site-meta">
+            <a href="/" class="mobile-nav-link">
+                <span class="site-title">Hexo</span>
+            </a>
+        </div>
+        <nav class="site-nav">
+            <ul>
+                
+                <li>
+                    <a href="/" class="mobile-nav-link">
+                        
+                        <i class="menu-item-icon fa fa-fw fa-home"></i>
+                        
+                        home
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="/categories" class="mobile-nav-link">
+                        
+                        <i class="menu-item-icon fa fa-fw fa-th"></i>
+                        
+                        categories
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="/about" class="mobile-nav-link">
+                        
+                        <i class="menu-item-icon fa fa-fw fa-user"></i>
+                        
+                        about
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="/archives" class="mobile-nav-link">
+                        
+                        <i class="menu-item-icon fa fa-fw fa-archive"></i>
+                        
+                        archives
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="/tags" class="mobile-nav-link">
+                        
+                        <i class="menu-item-icon fa fa-fw fa-tags"></i>
+                        
+                        tags
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="/404.html" class="mobile-nav-link">
+                        
+                        <i class="menu-item-icon fa fa-fw fa-heartbeat"></i>
+                        
+                        commonweal
+                    </a>
+                </li>
+                
+            </ul>
+        </nav>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-使用hexo搭建github博客" class="markdown-body article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header ">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      使用hexo搭建github博客
+    </h1>
+  
+
+        <div class="article-meta">
+          <span>发表于 <a href="/2016/06/15/使用hexo搭建github博客/" class="article-date">
+  <time datetime="2016-06-15T15:25:15.000Z" itemprop="datePublished">2016-06-15</time>
+</a></span>
+          <span>&nbsp;|&nbsp;分类于 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/hexo搭建博客/">hexo搭建博客</a>
+  </div>
+</span>
+        </div>
+      </header>
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ol>
+<li><a href="https://nodejs.org/en/" target="_blank" rel="external">nodejs下载安装</a></li>
+<li><a href="https://github.com" target="_blank" rel="external">github账号</a></li>
+<li><a href="https://git-scm.com/download" target="_blank" rel="external">git下载安装</a></li>
+</ol>
+<a id="more"></a>
+<h2 id="创建本地博客"><a href="#创建本地博客" class="headerlink" title="创建本地博客"></a>创建本地博客</h2><h3 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h3><p> windows下，打开cmd，执行命令：<code>npm install -g hexo</code> 。</p>
+<h3 id="hexo初始化"><a href="#hexo初始化" class="headerlink" title="hexo初始化"></a>hexo初始化</h3><p>进行初始化：首先创建一个文件夹，这是你存放配置文件以及文章的地方，例如我是在D盘下创建的hexo_blog文件夹，而且，<strong>以后所有的命令都是在这个目录下进行的</strong>。打开cmd进入创建的文件夹目录（可以按住shift，然后右键选择在此处打开命令窗口），执行命令 <code>hexo init</code>，这个操作会在这个目录下创建一些配置文件。初始化成功会提示 <code>INFO  Start blogging with Hexo!</code>。</p>
+<h3 id="创建文章"><a href="#创建文章" class="headerlink" title="创建文章"></a>创建文章</h3><p>在cmd中输入<code>hexo n &quot;name&quot;</code>，就会在source文件夹下的posts文件夹中创建一个name.md文件，我们就可以愉快的使用markdown语法书写博客了。</p>
+<h3 id="创建静态页面进行预览"><a href="#创建静态页面进行预览" class="headerlink" title="创建静态页面进行预览"></a>创建静态页面进行预览</h3><p>执行命令，创建静态页面</p>
+<blockquote>
+<p><code>hexo g</code> </p>
+</blockquote>
+<p>执行命令，启动本地服务器 </p>
+<blockquote>
+<p><code>hexo s</code></p>
+</blockquote>
+<p>此时在浏览器中输入地址<code>localhost:4000</code> ，回车会看到一个默认的博客页面。</p>
+<h2 id="配置github"><a href="#配置github" class="headerlink" title="配置github"></a>配置github</h2><h3 id="注册GitHub账号"><a href="#注册GitHub账号" class="headerlink" title="注册GitHub账号"></a>注册GitHub账号</h3><p>这个操作应该每个人都会就不多说了</p>
+<h3 id="创建仓库repository"><a href="#创建仓库repository" class="headerlink" title="创建仓库repository"></a>创建仓库repository</h3><p>在github创建一个与用户名对应的仓库，假设用户名为<code>username</code>，那么仓库的名字必须为<code>username.github.io</code>。</p>
+<h3 id="建立关联"><a href="#建立关联" class="headerlink" title="建立关联"></a>建立关联</h3><p>hexo初始化的时候创建了一个配置文件<code>_config.yml</code>，打开配置文件，在末尾将信息补全如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  repo: https://github.com/username/username.github.io.git</div><div class="line">  branch: master</div></pre></td></tr></table></figure>
+<p>（注意冒号后面空一格，使用的是https协议，而不是http协议）</p>
+<h3 id="安装部署插件"><a href="#安装部署插件" class="headerlink" title="安装部署插件"></a>安装部署插件</h3><p>打开cmd，执行命令<code>npm install hexo-deployer-git --save</code>。</p>
+<h3 id="部署到GitHub"><a href="#部署到GitHub" class="headerlink" title="部署到GitHub"></a>部署到GitHub</h3><p>执行命令</p>
+<blockquote>
+<p>hexo g<br>hexo d</p>
+</blockquote>
+<p>在部署的过程中，会弹出窗口，把你的GitHub账号和email账号输入即可。</p>
+<p>部署成功之后，等待几分钟，打开username.github.io，就可以看到你的博客了。</p>
+<p>enjoy！</p>
+
+      
+    </div>
+    <!-- <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/06/15/使用hexo搭建github博客/" data-id="cj0wagmzb0009boq6sx6aduvb" class="article-share-link">Delen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
+
+    </footer> -->
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/06/15/模拟Array-sort-compareFunc-方法的内部实现/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Nieuwer</strong>
+      <div class="article-nav-title">
+        
+          模拟Array.sort(compareFunc)方法的内部实现
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/04/15/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ouder</strong>
+      <div class="article-nav-title">Hello World</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          
+        
+      </div>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">home</a>
+  
+    <a href="/categories" class="mobile-nav-link">categories</a>
+  
+    <a href="/about" class="mobile-nav-link">about</a>
+  
+    <a href="/archives" class="mobile-nav-link">archives</a>
+  
+    <a href="/tags" class="mobile-nav-link">tags</a>
+  
+    <a href="/404.html" class="mobile-nav-link">commonweal</a>
+  
+</nav>
+    
+
+<script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+  <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      <p>
+        &copy; 2015 - 2017
+        <span class="with-love">
+          <i class="fa fa-heart-o"></i>
+        </span>
+        John Doe
+      </p>
+      <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

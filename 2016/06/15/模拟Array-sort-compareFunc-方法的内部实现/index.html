@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>模拟Array.sort(compareFunc)方法的内部实现 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="首先，我们写出冒泡排序对数组进行从小到大排序的函数">
+<meta property="og:type" content="article">
+<meta property="og:title" content="模拟Array.sort(compareFunc)方法的内部实现">
+<meta property="og:url" content="http://yoursite.com/2016/06/15/模拟Array-sort-compareFunc-方法的内部实现/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="首先，我们写出冒泡排序对数组进行从小到大排序的函数">
+<meta property="og:updated_time" content="2017-03-30T07:07:39.438Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="模拟Array.sort(compareFunc)方法的内部实现">
+<meta name="twitter:description" content="首先，我们写出冒泡排序对数组进行从小到大排序的函数">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="http://cdn.bootcss.com/highlight.js/8.0/styles/monokai_sublime.min.css" rel="stylesheet">  
+  <script src="http://cdn.bootcss.com/highlight.js/8.0/highlight.min.js"></script>  
+  <script >hljs.initHighlightingOnLoad();</script>  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+
+  
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?64010e2abc3c843ed1e5d70772dca4fe";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div id="drager" class="">
+    <div class="inner"></div>
+    <div class="content">
+	    <span class="dark">夜间模式</span>
+    </div>
+</div>
+      <header id="header">
+    <div class="inner">
+        <div class="site-meta">
+            <a href="/" class="mobile-nav-link">
+                <span class="site-title">Hexo</span>
+            </a>
+        </div>
+        <nav class="site-nav">
+            <ul>
+                
+                <li>
+                    <a href="/" class="mobile-nav-link">
+                        
+                        <i class="menu-item-icon fa fa-fw fa-home"></i>
+                        
+                        home
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="/categories" class="mobile-nav-link">
+                        
+                        <i class="menu-item-icon fa fa-fw fa-th"></i>
+                        
+                        categories
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="/about" class="mobile-nav-link">
+                        
+                        <i class="menu-item-icon fa fa-fw fa-user"></i>
+                        
+                        about
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="/archives" class="mobile-nav-link">
+                        
+                        <i class="menu-item-icon fa fa-fw fa-archive"></i>
+                        
+                        archives
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="/tags" class="mobile-nav-link">
+                        
+                        <i class="menu-item-icon fa fa-fw fa-tags"></i>
+                        
+                        tags
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="/404.html" class="mobile-nav-link">
+                        
+                        <i class="menu-item-icon fa fa-fw fa-heartbeat"></i>
+                        
+                        commonweal
+                    </a>
+                </li>
+                
+            </ul>
+        </nav>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-模拟Array-sort-compareFunc-方法的内部实现" class="markdown-body article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header ">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      模拟Array.sort(compareFunc)方法的内部实现
+    </h1>
+  
+
+        <div class="article-meta">
+          <span>发表于 <a href="/2016/06/15/模拟Array-sort-compareFunc-方法的内部实现/" class="article-date">
+  <time datetime="2016-06-15T15:44:17.000Z" itemprop="datePublished">2016-06-15</time>
+</a></span>
+          <span>&nbsp;|&nbsp;分类于 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
+  </div>
+</span>
+        </div>
+      </header>
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>首先，我们写出冒泡排序对数组进行从小到大排序的函数<br><a id="more"></a><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 从小到大对数组排序</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sort</span>(<span class="params">array</span>) </span>&#123;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; array.length; i++) &#123;</div><div class="line">        <span class="comment">//判断是否已经排序完成，先假设已完成</span></div><div class="line">        <span class="keyword">var</span> isSort = <span class="literal">true</span>;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; array.length - i - <span class="number">1</span>; j++) &#123;</div><div class="line">            <span class="keyword">if</span> (array[j] &gt; array[j + <span class="number">1</span>]) &#123;</div><div class="line">                <span class="comment">// 没有排好顺序，即前一项比后一项大，执行下面代码</span></div><div class="line">                <span class="comment">// 没有排好，说明假设的不对</span></div><div class="line">                isSort = <span class="literal">false</span>;</div><div class="line">                <span class="keyword">var</span> temp = array[j];</div><div class="line">                array[j] = array[j + <span class="number">1</span>];</div><div class="line">                array[j + <span class="number">1</span>] = temp;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="comment">// isSort为true时证明已经排序完成，结束循环</span></div><div class="line">        <span class="keyword">if</span> (isSort) &#123;</div><div class="line">            <span class="keyword">break</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"> </div><div class="line"><span class="keyword">var</span> arr = [<span class="number">2</span>, <span class="number">51</span>, <span class="number">9</span>, <span class="number">3</span>, <span class="number">7</span>];</div><div class="line">sort(arr);</div><div class="line"><span class="built_in">console</span>.log(arr);</div></pre></td></tr></table></figure></p>
+<pre><code>输出   `[2, 3, 7, 9, 51]`
+</code></pre><hr>
+<p>现在，如果我想在保留从小到大排序函数的基础上，再写一个从大到小排序的函数，那么只需要在上面函数的基础上改动两个地方：</p>
+<ol>
+<li>将函数名改为sort2(或者其他)</li>
+<li>将内层循环的判断条件改为 array[j] &lt; array[j + 1]<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 从大到小对数组排序</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sort</span>(<span class="params">array</span>) </span>&#123;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; array.length; i++) &#123;</div><div class="line">        <span class="comment">//判断是否已经排序完成，先假设已完成</span></div><div class="line">        <span class="keyword">var</span> isSort = <span class="literal">true</span>;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; array.length - i - <span class="number">1</span>; j++) &#123;</div><div class="line">            <span class="keyword">if</span> (array[j] &lt; array[j + <span class="number">1</span>]) &#123;</div><div class="line">                <span class="comment">// 没有排好顺序，即前一项比后一项大，执行下面代码</span></div><div class="line">                <span class="comment">// 没有排好，说明假设的不对</span></div><div class="line">                isSort = <span class="literal">false</span>;</div><div class="line">                <span class="keyword">var</span> temp = array[j];</div><div class="line">                array[j] = array[j + <span class="number">1</span>];</div><div class="line">                array[j + <span class="number">1</span>] = temp;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="comment">// isSort为true时证明已经排序完成，结束循环</span></div><div class="line">        <span class="keyword">if</span> (isSort) &#123;</div><div class="line">            <span class="keyword">break</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"> </div><div class="line"><span class="keyword">var</span> arr = [<span class="number">2</span>, <span class="number">51</span>, <span class="number">9</span>, <span class="number">3</span>, <span class="number">7</span>];</div><div class="line">sort(arr);</div><div class="line"><span class="built_in">console</span>.log(arr);</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>输出 <code>[51, 9, 7, 3, 2]</code></p>
+<pre><code>-------------------------
+</code></pre><p>不难发现，从小到大排序和从大到小排序的函数有很多相同的代码，而且功能相似。那么可以把这两个函数封装起来吗？<br>答案是肯定的。</p>
+<p>两个函数唯一不同的是内层的判断语句，也就是说改变这个判断语句，就可以改变函数的功能，所以，我们可以把这个判断语句写成另一个函数作为排序函数的参数，这样一来，排序函数具体的排序方法就由这个参数决定。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">compareFunc</span>(<span class="params">a, b</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> a - b;</div><div class="line">&#125;</div><div class="line"> </div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sort</span>(<span class="params">array, fn</span>) </span>&#123;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; array.length; i++) &#123;</div><div class="line">        <span class="comment">//判断是否已经排序完成，先假设已完成</span></div><div class="line">        <span class="keyword">var</span> isSort = <span class="literal">true</span>;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; array.length - i - <span class="number">1</span>; j++) &#123;</div><div class="line">            <span class="keyword">if</span> (fn(array[j],array[j + <span class="number">1</span>])) &#123;</div><div class="line">                <span class="comment">// 没有排好顺序，即前一项比后一项大，执行下面代码</span></div><div class="line">                <span class="comment">// 没有排好，说明假设的不对</span></div><div class="line">                isSort = <span class="literal">false</span>;</div><div class="line">                <span class="keyword">var</span> temp = array[j];</div><div class="line">                array[j] = array[j + <span class="number">1</span>];</div><div class="line">                array[j + <span class="number">1</span>] = temp;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="comment">// isSort为true时证明已经排序完成，结束循环</span></div><div class="line">        <span class="keyword">if</span> (isSort) &#123;</div><div class="line">            <span class="keyword">break</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;   </div><div class="line">&#125;</div><div class="line"> </div><div class="line"><span class="keyword">var</span> arr = [<span class="number">2</span>, <span class="number">51</span>, <span class="number">9</span>, <span class="number">3</span>, <span class="number">7</span>];</div><div class="line">sort(arr, compareFunc)</div></pre></td></tr></table></figure>
+<p>输出 <code>[2, 3, 7, 9, 51]</code></p>
+<hr>
+<p>综上，如果排序的标准发生改变，只需改变比价函数compare()的返回值即可。</p>
+
+      
+    </div>
+    <!-- <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/06/15/模拟Array-sort-compareFunc-方法的内部实现/" data-id="cj0wagmzq000fboq673jtq0au" class="article-share-link">Delen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数组排序/">数组排序</a></li></ul>
+
+    </footer> -->
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/06/16/图片和文字的对齐/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Nieuwer</strong>
+      <div class="article-nav-title">
+        
+          图片和文字的对齐
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/06/15/使用hexo搭建github博客/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ouder</strong>
+      <div class="article-nav-title">使用hexo搭建github博客</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          
+        
+      </div>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">home</a>
+  
+    <a href="/categories" class="mobile-nav-link">categories</a>
+  
+    <a href="/about" class="mobile-nav-link">about</a>
+  
+    <a href="/archives" class="mobile-nav-link">archives</a>
+  
+    <a href="/tags" class="mobile-nav-link">tags</a>
+  
+    <a href="/404.html" class="mobile-nav-link">commonweal</a>
+  
+</nav>
+    
+
+<script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+  <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      <p>
+        &copy; 2015 - 2017
+        <span class="with-love">
+          <i class="fa fa-heart-o"></i>
+        </span>
+        John Doe
+      </p>
+      <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
