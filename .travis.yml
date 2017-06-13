@@ -29,9 +29,9 @@ install:
 script:
 - hexo clean
 - hexo g
+– hexo deploy
 
 after_success:
-– hexo deploy
 # E: Build LifeCycle
 
 
