@@ -23,5 +23,8 @@ script:
 - hexo clean
 - hexo g
 after_success:
+– git config –global user.name "wencaistorm"
+– git config –global user.email "1052642137@qq.com"
+
 – hexo deploy
 # E: Build LifeCycle
