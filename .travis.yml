@@ -15,8 +15,8 @@ install:
 script:
 - hexo clean
 - hexo generate
-after_success:
-- hexo deploy
+# after_success:
+# - hexo deploy
 # env: 
 #   global:
 #     secure: HcOWasnf/eGmNgt7ftGo1E6VMf2ZASVnEKAHIwpCT3nMxsawrib6BYazFSyK4fjD+vf6L30AXJqvWnqxJpNIuV3y8f789cA1gB41OnOGHiovUhUQFG6cHtm/E82VRjrG/logWWmDC9iIwJifVWYO6lxhOCwBz6ayaJYCYkf4Nb8r1rYK3fmO+NjyozLPFgokzaKOkzo87QlRqSLYNklAg2WwezHdyTe3Fjg8i64ubwtviK5uApVjAjMIfnXnYFxx0K5YFtvf4CTwBOvckvILWtlEqGLHLkgPMQuUgI/85ukwDeaKqObfPYVcQR97rVnmP1PTaiI8Fk2nf5niCVx76dlXAXHapkIIZ8d3aEmQImCe2ZlijU62RnBvvEd9VAExE3VdzzI36CBcMLqUlZQB8EfiA1s+/jIwLriTPwFbQqEbDnFwHlon8+6mk4WVwmKyIx/3Oyw0QMBtfnpx0PosPSZMqbSH8I8sAhVUmvb5x+N4EpYGZUq3RMkebccW7nIydSlbnHKEP192eHfGQaz+kcnvs0BeBV4M8vQHZKsNcQhb1d6XyV2cBRdZFpIna+dLCg/8Yva7ujU2gRtiJPT4307rddFluuFfvw4wy3xI2w2DOaLiD1/A4Ps4mwnonMhdv7JKOFUwzmBFYekYMe2I50pVH5qxFUWN/0G/CKuVl4g=
