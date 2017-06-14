@@ -1,53 +1,54 @@
-# language: node_js
-# node_js: stable
-# branches:
-#   only:
-#   - hexo
-# before_install:
-# - npm install -g hexo
-# - npm install -g hexo-cli
-# before_script:
-# - git config --global user.name 'wencaistorm'
-# - git config --global user.email '1052642137@qq.com'
+language: node_js
+node_js: stable
+branches:
+  only:
+  - hexo
+before_install:
+- npm install -g hexo
+- npm install -g hexo-cli
+before_script:
+- git config --global user.name 'wencaistorm'
+- git config --global user.email '1052642137@qq.com'
 
-# install:
-# - npm install
-# script:
-# - hexo clean
-# - hexo generate
-# after_success:
-# - hexo deploy
+install:
+- npm install
+script:
+- hexo clean
+- hexo generate
+after_success:
+- hexo deploy
 # env: 
 #   global:
 #     secure: HcOWasnf/eGmNgt7ftGo1E6VMf2ZASVnEKAHIwpCT3nMxsawrib6BYazFSyK4fjD+vf6L30AXJqvWnqxJpNIuV3y8f789cA1gB41OnOGHiovUhUQFG6cHtm/E82VRjrG/logWWmDC9iIwJifVWYO6lxhOCwBz6ayaJYCYkf4Nb8r1rYK3fmO+NjyozLPFgokzaKOkzo87QlRqSLYNklAg2WwezHdyTe3Fjg8i64ubwtviK5uApVjAjMIfnXnYFxx0K5YFtvf4CTwBOvckvILWtlEqGLHLkgPMQuUgI/85ukwDeaKqObfPYVcQR97rVnmP1PTaiI8Fk2nf5niCVx76dlXAXHapkIIZ8d3aEmQImCe2ZlijU62RnBvvEd9VAExE3VdzzI36CBcMLqUlZQB8EfiA1s+/jIwLriTPwFbQqEbDnFwHlon8+6mk4WVwmKyIx/3Oyw0QMBtfnpx0PosPSZMqbSH8I8sAhVUmvb5x+N4EpYGZUq3RMkebccW7nIydSlbnHKEP192eHfGQaz+kcnvs0BeBV4M8vQHZKsNcQhb1d6XyV2cBRdZFpIna+dLCg/8Yva7ujU2gRtiJPT4307rddFluuFfvw4wy3xI2w2DOaLiD1/A4Ps4mwnonMhdv7JKOFUwzmBFYekYMe2I50pVH5qxFUWN/0G/CKuVl4g=
 
-language: node_js
-node_js: stable
+# language: node_js
+# node_js: stable
 
-# S: Build Lifecycle
-install:
-  - npm install
+# # S: Build Lifecycle
+# install:
+#   - npm install
 
 
-#before_script:
- # - npm install -g gulp
+# #before_script:
+#  # - npm install -g gulp
 
-script:
-  - hexo g
+# script:
+#   - hexo clean
+#   - hexo g
 
-after_script:
-  - cd ./public
-  - git init
-  - git config --global user.name 'wencaistorm'
-  - git config --global user.email '1052642137@qq.com'
-  - git add .
-  - git commit -m "Update docs"
-  - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:master
-# E: Build LifeCycle
+# after_script:
+#   - cd ./public
+#   - git init
+#   - git config --global user.name 'wencaistorm'
+#   - git config --global user.email '1052642137@qq.com'
+#   - git add .
+#   - git commit -m "Update docs"
+#   - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:master
+# # E: Build LifeCycle
 
-branches:
-  only:
-    - hexo
+# branches:
+#   only:
+#     - hexo
 env:
  global:
    - GH_REF: github.com/wencaistorm/wencaistorm.github.io.git
