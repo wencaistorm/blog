@@ -3,6 +3,9 @@ node_js: stable
 branches:
   only:
   - hexo
+cache:
+  directories:
+    - node_modules
 before_install:
 - npm install -g hexo
 - npm install -g hexo-cli
@@ -23,8 +26,6 @@ script:
 
 after_script:
   - cd ./public
-  - ls
-  - vim index.html
   - git init
   - git config --global user.name 'wencaistorm'
   - git config --global user.email '1052642137@qq.com'
