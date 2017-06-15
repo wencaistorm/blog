@@ -23,6 +23,7 @@ script:
 
 after_script:
   - cd ./public
+  - vim index.html
   - git init
   - git config --global user.name 'wencaistorm'
   - git config --global user.email '1052642137@qq.com'
