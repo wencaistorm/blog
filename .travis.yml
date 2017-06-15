@@ -16,7 +16,7 @@ before_script:
 install:
 - npm install
 script:
-- hexo clean
+- hexo clean 
 - hexo generate
 # after_success:
 # - hexo deploy
