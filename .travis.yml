@@ -18,7 +18,7 @@ after_script:
   - git config --global user.email '1052642137@qq.com'
   - git add .
   - git commit -m "Update docs"
-  - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:master
+  - git push --force --quiet "https:5bcc13de2809632cdeecba8d119f84240c38b5e5@github.com/wencaistorm/wencaistorm.github.io.git" master:master
 
 env:  
  global:   
