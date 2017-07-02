@@ -3,13 +3,8 @@ node_js: stable
 branches:
   only:
   - hexo
-before_install:
-- npm install -g hexo
-- npm install -g hexo-cli
 before_script:
-    - git config --global user.name 'wencaizhang'
-    - git config --global user.email '1052642137@qq.com'
-
+  - npm install -g gulp
 install:
 - npm install
 script:
@@ -19,7 +14,7 @@ script:
 after_script:
   - cd ./public
   - git init
-  - git config --global user.name 'wencaistorm'
+  - git config --global user.name 'wencaizhang'
   - git config --global user.email '1052642137@qq.com'
   - git add .
   - git commit -m "Update docs"
