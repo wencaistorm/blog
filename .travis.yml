@@ -10,8 +10,8 @@ before_install:
 - npm install -g hexo
 - npm install -g hexo-cli
 before_script:
-    - git config --global user.name '18037143856'
-    - git config --global user.email 'zhang.wc@neusoft.com'
+    - git config --global user.name 'wencaizhang'
+    - git config --global user.email '1052642137@qq.com'
 
 install:
 - npm install
