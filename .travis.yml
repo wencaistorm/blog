@@ -4,21 +4,22 @@ branches:
   only:
   - hexo
 before_script:
-  - npm install -g gulp
+  - node -v
+  - npm -v
+  - npm install -g cnpm
+  - cnpm install -g gulp
 install:
-- npm install
+- cnpm install
 script:
-- hexo clean 
-- hexo g
+- hexo clean && hexo g
 
 after_script:
   - cd ./public
   - git init
-  - git config --global user.name 'wencaizhang'
-  - git config --global user.email '1052642137@qq.com'
-  - git add .
+  
+  - git add -A
   - git commit -m "Update docs"
-  - git push --force --quiet "https:5bcc13de2809632cdeecba8d119f84240c38b5e5@github.com/wencaistorm/wencaistorm.github.io.git" master:master
+  - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:master
 
 env:  
  global:   
