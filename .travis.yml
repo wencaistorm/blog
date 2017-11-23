@@ -3,13 +3,10 @@ node_js: stable
 branches:
   only:
   - hexo
-before_script:
-  - echo "hello wencai"
 install:
-- npm install -g gulp 
-- npm install
+  - npm install
 script:
-- hexo clean && hexo g
+  - hexo g
 
 after_script:
   - cd ./public
