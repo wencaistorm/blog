@@ -5,11 +5,10 @@ branches:
   - hexo
 before_script:
   - node -v
-  - npm -v
-  - npm install -g cnpm
-  - cnpm install -g gulp
+  - npm -
+  - echo "hello wencai"
 install:
-- cnpm install
+- npm install -g gulp && npm install
 script:
 - hexo clean && hexo g
 
