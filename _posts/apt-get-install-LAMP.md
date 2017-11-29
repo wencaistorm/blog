@@ -8,6 +8,8 @@ categories:
 ---
 [toc]
 
+安装开发环境亦或部署环境，向来不是一件容易的事情。
+<!--more-->
 ### 写在前面
 1. 安装顺序，一定是先安装 Apache，后安装 php，因为 php 安装完成之后，会自动修改 Apache 的配置文件
 2. 关于 Apache 配置文件，有的地方叫 `httpd.conf` ，其实就是 `apache2.conf`
