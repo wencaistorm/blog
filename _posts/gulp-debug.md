@@ -3,7 +3,8 @@ title: Gulp 调试小技巧
 date: 2017-11-28 21:30:53
 tags: 
 - Gulp
-categories: Gulp 
+categories: 
+- Gulp 
 ---
 
 编写 gulp 任务时，经常会遇到错误的情况，导致任务执行过程被中断，可以通过事件监听的方式打印错误，并让任务继续往下执行。
