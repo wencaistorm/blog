@@ -1,8 +1,4 @@
-
-[![Build Status](https://travis-ci.org/michaelliao/openweixin.svg?branch=master)](https://travis-ci.org/michaelliao/openweixin)
-
-`hexo` 分支保存源文件, 通过自动化构建，部署代码到 `master` 分支。
-
-[文章目录](https://github.com/wencaistorm/wencaistorm.github.io/tree/hexo/_posts)
-
-
+各分支作用如下：
++ master: 主分支，用来部署静态页面网站
++ source: 源文件分支，用以保存配置文件，npm 插件信息，和文章源文件
++ theme: 主题分支，可能会在别人基础上进行样式的改进，以及修改配置文件信息
