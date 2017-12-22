@@ -7,7 +7,8 @@ comments: false
 
 ## 关于我
 
-![此处应有自拍](/images/Ultraman.jpg)
+<p style="text-align: center;">此处应有自拍：<br><img src="/images/Ultraman.jpg" style="width: 400px;" alt="此处应有自拍" /></p>
+
 
 ## 关于编程
 
