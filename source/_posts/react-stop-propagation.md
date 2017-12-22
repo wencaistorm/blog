@@ -5,7 +5,6 @@ tags:
 - React
 - JavaScript
 categories: 
-- JavaScript
 - React
 ---
 

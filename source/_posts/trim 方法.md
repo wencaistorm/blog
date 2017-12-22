@@ -1,6 +1,6 @@
 ---
 title: trim 方法
-date: 2017-12-25 21:31:23
+date: 2017-11-25 21:31:23
 tags: 
 - JavaScript
 categories: 

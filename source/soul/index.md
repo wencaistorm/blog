@@ -1,10 +1,13 @@
 ---
-title: 选择
-date: 2017-06-03 18:13:19
-type: "about"
-comments: false
+layout: page      # 必须
+title: 心灵鸡汤  # 必须，页面名称
+description: 毒鸡汤       # 页面二级标题，描述性文字
+comments: false     # 禁用评论，可选，默认开启
+reward: false       # 禁用打赏，可选，默认开启
 ---
 
+
+## 选择
 生存还是毁灭，这是一个永恒的选择题。
 
 以至于到最后，我们成为一个什么样的人，可能不在于我们的能力，而且在于我们的选择。
