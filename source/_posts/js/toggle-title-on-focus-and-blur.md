@@ -1,13 +1,11 @@
 ---
-title: 切换网页 title
+title: 切换浏览器 tab 标签时动态设置网页 title
 date: 2017-12-22 21:50:23
 tags: 
 - JavaScript
 categories: 
 - JavaScript
 ---
-
-# 切换浏览器 tab 标签时动态设置网页 title
 
 ## 效果
 在[饿了么官网](https://www.ele.me/home/)看到一个网页效果，在饿了么网页和其他标签页之间相互切换时，饿了么网页的 title，发生了变化。
@@ -60,8 +58,8 @@ document.addEventListener("visibilitychange", function () {
 
 ## 其他
 
-此 API 存在兼容性问题，支持 IE10+ 
+  此 API 存在兼容性问题，支持 IE10+ 
 
-推荐阅读： [Page Visibility(页面可见性) API介绍、微拓展 - 张鑫旭](http://www.zhangxinxu.com/wordpress/?p=2790)（PS：此处献上我的膝盖）
+  推荐阅读： [Page Visibility(页面可见性) API介绍、微拓展 - 张鑫旭](http://www.zhangxinxu.com/wordpress/?p=2790)（PS：此处献上我的膝盖）
 
-最后，细心的同学可能会发现，本站也是有此效果的哦~
+  最后，细心的同学可能会发现，本站也是有此效果的哦~
