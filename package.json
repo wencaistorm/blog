@@ -23,6 +23,7 @@
   },
   "scripts": {
     "dev": "hexo clean && hexo g && hexo s",
-    "push": "hexo clean && hexo g && hexo d"
+    "push": "hexo clean && hexo g && hexo d",
+    "postpush": "git add -A && git commit -m update && git push origin source"
   }
 }
