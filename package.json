@@ -24,6 +24,8 @@
   "scripts": {
     "dev": "hexo clean && hexo g && hexo s",
     "push": "hexo clean && hexo g && hexo d",
-    "postpush": "git add -A && git commit -m update && git push origin source"
+    "postpush": "git add -A && git commit -m update && git push origin source",
+    "push:source": "git add -A && git commit -m update && git push origin source",
+    "push:theme": "cd theme/indigo && git add -A && git commit -m update && git push origin theme"
   }
 }
