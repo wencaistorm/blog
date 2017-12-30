@@ -1,6 +1,7 @@
 ---
 title: 好用工具集合
 date: 2017-11-24 20:20:53
+updated: 2017-12-30 10:20:33
 tags: 
 - tool
 categories: tool
@@ -44,7 +45,7 @@ categories: tool
   - preview：
   ![](https://images.sftcdn.net/images/t_optimized,f_auto/p/2d6fec86-9a63-11e6-9800-00163ec9f5fa/3887784174/faststone-capture-screenshot.jpg)
 
-#### autohotkey
+#### autohotkey - win 下效率神器
   - 地址：https://autohotkey.com/
   - 简介：Powerful. Easy to learn. The ultimate automation scripting language for Windows.
 
@@ -57,6 +58,8 @@ categories: tool
 #### TeamViewer - 远程支持、远程访问、在线协作和会议
   - 地址：https://www.teamviewer.com/zhCN/
   - 简介：远程桌面控制，个人免费。 如果您回到家后想连接控制在学校或公司里自己的电脑，TeamViewer无疑就是最佳的解决方案
+  - preview：
+  ![](http://src.onlinedown.net/d/file/p/2016-09-26/900188817cb50d4f2633d3215a50da21.jpg)
   
 #### Snipaste - 开发了三年的截图工具，但不只是截图
   - 地址: https://zh.snipaste.com/download.html
