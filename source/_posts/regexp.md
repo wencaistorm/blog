@@ -62,7 +62,7 @@ categories:
 
 ## 正则对象属性
 
-> 属性均为只读，无法设置其值
+ > 属性均为只读，无法设置其值
 
 | 属性        |  含义                 | 默认值 |
 | ---         | ---                  | --- |
@@ -72,48 +72,48 @@ categories:
 | `lastIndex` | 是当前表达式匹配内容的最后一个字符的下一个位置| 无 |
 | `source`    | 正则表达式的文本字符串  | 无 |
 
-```js
-var reg1 = /\w/;
-var reg2 = /\w/gim;
+  如下：
 
-console.log(reg1.global);        // false
-console.log(reg1.ignoreCase);    // false
-console.log(reg1.multiline);     // false
-console.log(reg1.source);        // "\w"
+    ```js
+    var reg1 = /\w/;
+    var reg2 = /\w/gim;
 
-console.log(reg2.global);        // true
-console.log(reg2.ignoreCase);    // true
-console.log(reg2.multiline);     // true
-console.log(reg2.source);        // "\w"
-```
+    console.log(reg1.global);        // false
+    console.log(reg1.ignoreCase);    // false
+    console.log(reg1.multiline);     // false
+    console.log(reg1.source);        // "\w"
 
-
+    console.log(reg2.global);        // true
+    console.log(reg2.ignoreCase);    // true
+    console.log(reg2.multiline);     // true
+    console.log(reg2.source);        // "\w"
+    ```
 ## 正则对象方法
 ### `RegExp.prototype.test(str)`
 
 + 用于测试字符串参数中是否存在匹配正则表达式模式的字符串
 + 如果存在则返回 `true`，否则返回 `false`
 
-牛刀小试：
-```js
-var reg = /\w/;
+    牛刀小试：
+    ```js
+    var reg = /\w/;
 
-reg.test('a');    // true
-reg.test('ab');   // true
-reg.test('$');    // true
-```
+    reg.test('a');    // true
+    reg.test('ab');   // true
+    reg.test('$');    // true
+    ```
 
-加上 `g` 标志后，结果有了一丝不同~~
-```js
-var reg = /\w/g;
-reg.test('ab');    // true
-reg.test('ab');    // true
-reg.test('ab');    // false
-reg.test('ab');    // true
-reg.test('ab');    // true
-reg.test('ab');    // true
-reg.test('ab');    // false
-```
+    加上 `g` 标志后，结果有了一丝不同~~
+    ```js
+    var reg = /\w/g;
+    reg.test('ab');    // true
+    reg.test('ab');    // true
+    reg.test('ab');    // false
+    reg.test('ab');    // true
+    reg.test('ab');    // true
+    reg.test('ab');    // true
+    reg.test('ab');    // false
+    ```
 
 这是因为在匹配的时候并不是每次都是从头开始的，而是每次匹配都会从上次匹配结果的下一个位置开始匹配，也就是 `lastIndex` 属性
 
@@ -122,13 +122,13 @@ reg.test('ab');    // false
 + 第三次从 `b` 开始，没有匹配结果
 + 因此出现上面的现象
 
-```js
-var reg = /\w/g;
-while(reg.test('ab')) {
-    console.log(reg.lastIndex);
-}
-// 打印结果为 1，2
-```
+    ```js
+    var reg = /\w/g;
+    while(reg.test('ab')) {
+        console.log(reg.lastIndex);
+    }
+    // 打印结果为 1，2
+    ```
 
 ** `test()` 本意测试字符串和正则能否匹配上，而不关心是在哪个位置匹配到，所以就没必要加上 `g` 标志。**
 
@@ -145,19 +145,23 @@ while(reg.test('ab')) {
 
 #### 非全局调用 `exec()` ，返回数组
 
-```js
-var reg = /\d(\w)\d/;
-var str = '1a2b3c4d5e';
-var ret = reg.exec(str);
+    ```js
+    var reg = /\d(\w)\d/;
+    var str = '1a2b3c4d5e';
+    var ret = reg.exec(str);
 
-console.log(reg.lastIndex);  // 0  非全局下，lastIndex 不生效，在此处无意义
+    console.log(reg.lastIndex);  
+    // 0  非全局下，lastIndex 不生效，在此处无意义
 
-console.log(ret.index);      // 0  匹配结果（1a2）的第一个字符在被检索的字符串(1a2b3c4d5e)中的位置
+    console.log(ret.index);      
+    // 0  匹配结果（1a2）的第一个字符在被检索的字符串(1a2b3c4d5e)中的位置
 
-console.log(ret.input);      // 1a2b3c4d5e
+    console.log(ret.input);      
+    // 1a2b3c4d5e
 
-console.log(ret.toString()); // 1a2,a
-```
+    console.log(ret.toString()); 
+    // 1a2,a
+    ```
 
 
 #### 全局调用 `exec()` 时，可以通过循环可以把每次匹配到的结果都拿到
@@ -184,18 +188,18 @@ while(ret = reg.exec(str)) {
 
 #### 1. `replace( str, str )`
 
-```js
-'a1b'.replace('1', '2');    // "a2b"
+    ```js
+    'a1b'.replace('1', '2');    // "a2b"
 
-'a1b1c1'.replace('1', '2');    // "a2b1c1"
-```
+    'a1b1c1'.replace('1', '2');    // "a2b1c1"
+    ```
 
 
 #### 2. `replace( str, reg )`
 
-```js
-'a1b1c1'.replace(/1/g, '2');    // "a2b2c2"
-```
+    ```js
+    'a1b1c1'.replace(/1/g, '2');    // "a2b2c2"
+    ```
 
 
 #### 3. `replace( str, function )`
@@ -203,37 +207,37 @@ while(ret = reg.exec(str)) {
 
 
 ##### 示例：字符串中每个数字都加 1
-```js
-'a1b2c3d4e5'.replace(/\d/g, function ( match, index, origin ) {
-    // 正则表达式没有分组内容
-    console.log(index);  // 1 3 5 7 9
-    return parseInt(match) + 1;
-});
-// "a2b3c4d5e6"
-```
+    ```js
+    'a1b2c3d4e5'.replace(/\d/g, function ( match, index, origin ) {
+        // 正则表达式没有分组内容
+        console.log(index);  // 1 3 5 7 9
+        return parseInt(match) + 1;
+    });
+    // "a2b3c4d5e6"
+    ```
 
 
 ##### 示例：获取 `url` 中的查询参数
-```js
-// 1. 准备工作：取得查询字符串
-// 假设当前 URL 为 'http://www.baidu.com?ie=UTF-8&wd=regexp'
-// 可用如下方法获取查询字符串
-// var searchStr = location.search.slice(1);  // 'ie=UTF-8&wd=regexp'
+    ```js
+    // 1. 准备工作：取得查询字符串
+    // 假设当前 URL 为 'http://www.baidu.com?ie=UTF-8&wd=regexp'
+    // 可用如下方法获取查询字符串
+    // var searchStr = location.search.slice(1);  // 'ie=UTF-8&wd=regexp'
 
-// 2. 利用正则获取查询参数
-var searchStr = 'ie=UTF-8&wd=regexp';
-var paraObj = {};
+    // 2. 利用正则获取查询参数
+    var searchStr = 'ie=UTF-8&wd=regexp';
+    var paraObj = {};
 
-searchStr.replace(/([^=&]+)=([^=&]*)/ig, function ( match, group1, group2, index, origin) {
+    searchStr.replace(/([^=&]+)=([^=&]*)/ig, function ( match, group1, group2, index, origin) {
 
-    console.log(match + '\t' + group1 + '\t' + group2 + '\t' + index + '\t' + origin);
-    // ie=UTF-8    ie  UTF-8   0   ie=UTF-8&wd=regexp
-    // wd=regexp    wd  regexp  9   ie=UTF-8&wd=regexp
-    paraObj[group1] = group2
+        console.log(match + '\t' + group1 + '\t' + group2 + '\t' + index + '\t' + origin);
+        // ie=UTF-8    ie  UTF-8   0   ie=UTF-8&wd=regexp
+        // wd=regexp    wd  regexp  9   ie=UTF-8&wd=regexp
+        paraObj[group1] = group2
 
-})
-console.log(paraObj);
-```
+    })
+    console.log(paraObj);
+    ```
 **function 参数含义：**
 
 1. 匹配字符串
@@ -252,10 +256,10 @@ console.log(paraObj);
 + 方法返回第一个匹配结果 `index` ，差找不到返回 `-1`
 + `search()` 不执行全局匹配，他将会略全局标志 `g` ，并且总是从字符串的开始进行检索
 
-```js
-'a1b2c3d4'.search('1');
-'a1b2c3d4'.search(/1/);
-```
+    ```js
+    'a1b2c3d4'.search('1');
+    'a1b2c3d4'.search(/1/);
+    ```
 
 传入的参数不是正则的时候会尝试将其转换为正则
 
@@ -266,8 +270,8 @@ console.log(paraObj);
 
 ### `String.prototype.split(reg)`
 
-```js
-'a,b,c,d'.split(',');    // ["a", "b", "c", "d"]
+    ```js
+    'a,b,c,d'.split(',');    // ["a", "b", "c", "d"]
 
-'a1b2c3d'.split(/\d/);   // ["a", "b", "c", "d"]
-```
+    'a1b2c3d'.split(/\d/);   // ["a", "b", "c", "d"]
+    ```
