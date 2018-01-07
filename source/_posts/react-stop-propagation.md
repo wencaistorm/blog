@@ -1,11 +1,12 @@
 ---
 title: React 中阻止事件冒泡
+tags:
+  - React
+  - JavaScript
+categories:
+  - React
+abbrlink: 9bcb3406
 date: 2017-11-19 20:20:53
-tags: 
-- React
-- JavaScript
-categories: 
-- React
 ---
 
 react 和原生 JavaScript 阻止事件冒泡的方式是否相同？

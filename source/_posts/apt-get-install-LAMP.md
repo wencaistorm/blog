@@ -1,10 +1,11 @@
 ---
 title: Ubuntu 安装 LAMP 环境
+tags:
+  - 部署环境
+  - Linux
+abbrlink: 5ba4e681
 date: 2017-11-27 21:22:53
-tags: 
-- 部署环境
-- Linux
-categories: 
+categories:
 ---
 [toc]
 

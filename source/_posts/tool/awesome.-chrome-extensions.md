@@ -1,9 +1,10 @@
 ---
 title: chrome 插件集
-date: 2017-12-30 00:20:53
-tags: 
-- tool
+tags:
+  - tool
 categories: tool
+abbrlink: d2c230b5
+date: 2017-12-30 00:20:53
 ---
 ### 写在前面
 

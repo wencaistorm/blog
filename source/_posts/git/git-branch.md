@@ -1,10 +1,11 @@
 ---
 title: Git 分支
-date: 2018-1-6 15:43:23
-tags: 
-- Git
-categories: 
-- Git
+tags:
+  - Git
+categories:
+  - Git
+abbrlink: 798d2056
+date: 2018-01-06 15:43:23
 ---
 
 ### 前言

@@ -1,10 +1,11 @@
 ---
 title: Git 基本概念
+tags:
+  - Git
+categories:
+  - Git
+abbrlink: f69de184
 date: 2017-12-21 13:08:23
-tags: 
-- Git
-categories: 
-- Git
 ---
 # git-basic-usege
 

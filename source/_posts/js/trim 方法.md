@@ -1,10 +1,11 @@
 ---
 title: trim 方法
+tags:
+  - JavaScript
+categories:
+  - JavaScript
+abbrlink: bf9063ac
 date: 2017-11-25 21:31:23
-tags: 
-- JavaScript
-categories: 
-- JavaScript
 ---
 
 ## 前言

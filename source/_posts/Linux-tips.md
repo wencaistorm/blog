@@ -1,9 +1,10 @@
 ---
 title: Linux Tips
+tags:
+  - Linux
+categories: Linux
+abbrlink: 2f176420
 date: 2017-11-26 21:20:53
-tags: 
-- Linux
-categories: Linux 
 ---
 
 ### 修改普通用户对目录的读写权限

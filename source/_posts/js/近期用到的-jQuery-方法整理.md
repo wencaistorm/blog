@@ -1,10 +1,11 @@
 ---
 title: 近期用到的 jQuery 方法整理
-date: 2017-05-27 22:22:53
-tags: 
-- js
-- jQuery
+tags:
+  - js
+  - jQuery
 categories: JavaScript
+abbrlink: 347a9caf
+date: 2017-05-27 22:22:53
 ---
 
 好久不用 jQuery，已经快忘得差不多了。最近用 jQuery 写了不少页面，趁机总结一下。毕竟，好记性不如烂笔头。

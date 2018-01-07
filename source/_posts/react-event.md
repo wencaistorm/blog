@@ -1,11 +1,12 @@
 ---
 title: React 点击事件为什么没有被触发？
+tags:
+  - React
+  - JavaScript
+categories:
+  - React
+abbrlink: c48ecca5
 date: 2017-11-19 20:20:53
-tags: 
-- React
-- JavaScript
-categories: 
-- React
 ---
 
 点击事件可以说是最常用的事件了，但在 `React` 中有时候事件却没有触发。Why?

@@ -1,9 +1,10 @@
 ---
 title: 微代码
-date: 2017-11-19 20:20:53
-tags: 
-- code
+tags:
+  - code
 categories: code
+abbrlink: 6f49a3ac
+date: 2017-11-19 20:20:53
 ---
 
 常用代码段，样式代码为主。

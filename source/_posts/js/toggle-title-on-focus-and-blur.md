@@ -1,10 +1,11 @@
 ---
 title: 切换浏览器 tab 标签时动态设置网页 title
+tags:
+  - JavaScript
+categories:
+  - JavaScript
+abbrlink: 4e4f3b4e
 date: 2017-12-22 21:50:23
-tags: 
-- JavaScript
-categories: 
-- JavaScript
 ---
 
 ## 效果

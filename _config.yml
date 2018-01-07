@@ -14,9 +14,12 @@ timezone:
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: http://wencaizhang.com
 root: /
-permalink: :year/:month/:day/:title/
-permalink_defaults:
-
+# permalink: :year/:month/:day/:title/
+# permalink_defaults:
+permalink: archives/:abbrlink.html
+abbrlink:
+  alg: crc32  # 算法：crc16(default) and crc32
+  rep: hex    # 进制：dec(default) and hex
 menu:
   home:
     text: 主页
@@ -29,7 +32,7 @@ menu:
     url: https://github.com/wencaistorm
     target: _blank
 
-email: 634206017@qq.com
+email: 1052642137@qq.com
 share: true
 avatar: /img/logo.jpg
 reward:
@@ -110,3 +113,6 @@ deploy:
   type: git
   repo: https://github.com/wencaistorm/wencaistorm.github.io.git
   branch: master
+
+admin:
+  deployCommand: 'npm run push'

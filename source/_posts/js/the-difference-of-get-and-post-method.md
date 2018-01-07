@@ -1,10 +1,11 @@
 ---
 title: GET 和 POST 的区别
+tags:
+  - JavaScript
+categories:
+  - JavaScript
+abbrlink: d4ca5e4c
 date: 2017-11-25 23:31:23
-tags: 
-- JavaScript
-categories: 
-- JavaScript
 ---
 
 ## 从表象上看：

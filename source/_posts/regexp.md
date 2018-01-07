@@ -1,10 +1,11 @@
 ---
 title: 正则表达式
-date: 2018-1-2 16:27:53
-tags: 
-- regexp
-categories: 
-- JavaScript
+tags:
+  - regexp
+categories:
+  - JavaScript
+abbrlink: 2f57a694
+date: 2018-01-02 16:27:53
 ---
 
 ## 元字符
