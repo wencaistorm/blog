@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>trim 方法 | 前端码农的自留地 | 一起学习弯道超车的技术！</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="JavaScript">
+    <meta name="description" content="前言 trim() 方法会从一个字符串的两端删除空白字符。在这个上下文中的空白字符是所有的空白字符 (space, tab, no-break space 等) 以及所有行终止符字符（如 LF，CR）。  删除字符串两端的空白字符可以说是非常常见的需求">
+<meta name="keywords" content="JavaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="trim 方法">
+<meta property="og:url" content="http://wencaizhang.com/archives/bf9063ac.html">
+<meta property="og:site_name" content="前端码农的自留地">
+<meta property="og:description" content="前言 trim() 方法会从一个字符串的两端删除空白字符。在这个上下文中的空白字符是所有的空白字符 (space, tab, no-break space 等) 以及所有行终止符字符（如 LF，CR）。  删除字符串两端的空白字符可以说是非常常见的需求">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-01-07T14:44:29.261Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="trim 方法">
+<meta name="twitter:description" content="前言 trim() 方法会从一个字符串的两端删除空白字符。在这个上下文中的空白字符是所有的空白字符 (space, tab, no-break space 等) 以及所有行终止符字符（如 LF，CR）。  删除字符串两端的空白字符可以说是非常常见的需求">
+    
+        <link rel="alternate" type="application/atom+xml" title="前端码农的自留地" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+        
+            <link href='/css/custom.css' rel='stylesheet' type='text/css' />
+        
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/logo.png">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">wencaizhang</h5>
+          <a href="mailto:1052642137@qq.com" title="1052642137@qq.com" class="mail">1052642137@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect active">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                存档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                目录
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/wencaistorm" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://wencaizhang.com/code-analysis/" target="_blank" >
+                <i class="icon icon-lg icon-code"></i>
+                Code
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about" target="_blank" >
+                <i class="icon icon-lg icon-user-circle"></i>
+                About
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/soul" target="_blank" >
+                <i class="icon icon-lg icon-heart"></i>
+                心灵鸡汤
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">trim 方法</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+<div id="imag1s"><img id="imag1"></div>
+<div id="imag2s"><img id="imag2"></div>
+    <div class="container fade-scale">
+        <h1 class="title">trim 方法</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2017-11-25T13:31:23.000Z" itemprop="datePublished" class="page-time">
+  2017-11-25
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/JavaScript/">JavaScript</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#前言"><span class="post-toc-number">1.</span> <span class="post-toc-text">前言</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#通过正则简单实现："><span class="post-toc-number">2.</span> <span class="post-toc-text">通过正则简单实现：</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#more："><span class="post-toc-number">3.</span> <span class="post-toc-text">more：</span></a></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-js/trim 方法"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">trim 方法</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2017-11-25 21:31:23" datetime="2017-11-25T13:31:23.000Z"  itemprop="datePublished">2017-11-25</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/JavaScript/">JavaScript</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
+<p><code>trim()</code> 方法会从一个字符串的两端删除空白字符。在这个上下文中的空白字符是所有的空白字符 (space, tab, no-break space 等) 以及所有行终止符字符（如 LF，CR）。</p>
+</blockquote>
+<p>删除字符串两端的空白字符可以说是非常常见的需求<br><a id="more"></a><br>我通常用的是 jQuery 提供的 <code>$.trim()</code> 方法，但其实原生 JavaScript 已经提供了 <code>trim()</code> 方法，IE9 以上浏览器已经支持此方法，而且 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/Trim" target="_blank" rel="noopener">MDN 文档</a> 也已经提供了兼容旧环境的方法。</p>
+<p>so，以后并不一定非要依赖第三方库，完全可以使用原生 tirm() 方法，或者自定义此方法的兼容写法。</p>
+<h2 id="通过正则简单实现："><a href="#通过正则简单实现：" class="headerlink" title="通过正则简单实现："></a>通过正则简单实现：</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(!<span class="built_in">String</span>.prototype.trim) &#123;</span><br><span class="line">  <span class="built_in">String</span>.prototype.trim = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.replace(<span class="regexp">/^\s+|\s+$/g</span>,<span class="string">''</span>);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span>(!<span class="built_in">String</span>.prototype.trimLeft) &#123;</span><br><span class="line">  <span class="built_in">String</span>.prototype.trimLeft = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.replace(<span class="regexp">/^\s+/</span>,<span class="string">''</span>);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span>(!<span class="built_in">String</span>.prototype.trimRight) &#123;</span><br><span class="line">  <span class="built_in">String</span>.prototype.trimRight = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.replace(<span class="regexp">/\s+$/</span>,<span class="string">''</span>);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>用到的正则：</p>
+<ol>
+<li><code>\s</code> 匹配任何空白字符</li>
+<li><code>+</code> 匹配至少 1 个元字符</li>
+<li><code>^</code> 字符串必须以指定的字符开始</li>
+<li><code>$</code> 字符串必须以指定的字符结束</li>
+<li><code>|</code> 或者</li>
+<li><code>g</code> 全局匹配</li>
+</ol>
+<h2 id="more："><a href="#more：" class="headerlink" title="more："></a>more：</h2><ul>
+<li>更多的实现方式参考：<a href="http://www.cnblogs.com/rubylouvre/archive/2009/09/18/1568794.html" target="_blank" rel="noopener">JavaScript trim函数大赏 - 司徒正美</a></li>
+<li>MDN 文档：<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/Trim" target="_blank" rel="noopener">String.prototype.trim() - MDN</a></li>
+</ul>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2018-01-07T14:44:29.261Z" itemprop="dateUpdated">2018-01-07 22:44:29</time>
+</span><br>
+
+
+        
+        原始链接：<a href="/archives/bf9063ac.html" target="_blank" rel="external">http://wencaizhang.com/archives/bf9063ac.html</a>
+        
+    </div>
+    <footer>
+        <a href="http://wencaizhang.com">
+            <img src="/img/logo.png" alt="wencaizhang">
+            wencaizhang
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://wencaizhang.com/archives/bf9063ac.html&title=《trim 方法》 — 前端码农的自留地&pic=http://wencaizhang.com/img/logo.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wencaizhang.com/archives/bf9063ac.html&title=《trim 方法》 — 前端码农的自留地&source=前言
+trim() 方法会从一个字符串的两端删除空白字符。在这个上下文中的空白字符是所有的空白字符 (space, tab, no-break space..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://wencaizhang.com/archives/bf9063ac.html" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《trim 方法》 — 前端码农的自留地&url=http://wencaizhang.com/archives/bf9063ac.html&via=http://wencaizhang.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://wencaizhang.com/archives/bf9063ac.html" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/archives/d4ca5e4c.html" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">GET 和 POST 的区别</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/archives/2956e245.html" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">好用工具集合</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitment_thread"></div>
+    <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
+    <script>
+        var gitment = new Gitment({
+            owner: 'wencaistorm',
+            repo: 'wencaistorm.github.io',
+            oauth: {
+                client_id: '09a59bcc9b9f4c9c8d08',
+                client_secret: 'e9b6c841fda1b24e9bad7ac6af9b23af4419067f',
+            },
+        })
+        console.log(gitment)
+        gitment.render('comments')
+    </script>
+</section>
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        请我吃辣条~~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>wencaizhang &copy; 2015 - 2018</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://wencaizhang.com/archives/bf9063ac.html&title=《trim 方法》 — 前端码农的自留地&pic=http://wencaizhang.com/img/logo.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wencaizhang.com/archives/bf9063ac.html&title=《trim 方法》 — 前端码农的自留地&source=前言
+trim() 方法会从一个字符串的两端删除空白字符。在这个上下文中的空白字符是所有的空白字符 (space, tab, no-break space..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://wencaizhang.com/archives/bf9063ac.html" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《trim 方法》 — 前端码农的自留地&url=http://wencaizhang.com/archives/bf9063ac.html&via=http://wencaizhang.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://wencaizhang.com/archives/bf9063ac.html" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACIElEQVR42u3ay3KDMAwF0Pz/T9OZrgPoSkk72MerDinGh4VGD16v8jp+19mV42Sd3Xu959n/f2BhYGA8lnFcrutD965cH7dy15t7MTAwNmCk29V3uH4d1/vXgzUGBgZGmhpep3rpzhgYGBhpwO1h0iQSAwMDo1fEBpuOX8cXa3EMDIwHMtLBwF/+/cX5BgYGxkMYR7jqu6XPHZ0KAwNjaUal4VU56H+VuMH3IBgYGI9l9DZNm/v1AN17QRgYGGsz6ildCqi/mknzDgMDYzdGvcist+/nhWvQjMPAwFiUESRe5aPUy9d5If2ma4iBgbEooxd80+ZavVV3feXNGTAwMDZgzAeWaXhNk8ubKxgYGBsweo37XrDusTEwMHZmpJ9ETFLDXtM/GDBgYGAsypgHwfrnYikpaMNhYGBsz0gfM2+lxQ0+DAyMpRnpAGDS7u/x6kU1BgbGqozJSKD3+MlA9DTUYmBgLM2oB8Fe+7431EyLYQwMjLUZaflaTwrrQbM3bMgnnBgYGM9mxLe1PhFLS+Ig7GJgYCzNqIfIyuixB3iF6ya3xcDAWI5xhKvCCFpj5fbcza8YGBhLMyZh7lMhNS2DKy8UAwNjPcZkxFgpSudjgNK7x8DA2IDRK0or934qsbshYWBgYISBtffpWG9ggIGBgVFvmaUlayXdDMI9BgbGBoxKEZuOB+bJZZ2KgYGxNqNXQM4bbZ8NwRgYGIsyfgDmM6h2Kxg2DQAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '莫非是去跳广场舞了？';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '欢迎回来';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
