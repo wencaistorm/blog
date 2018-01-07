@@ -9,7 +9,13 @@ reward: false       # 禁用打赏，可选，默认开启
 <style>
 body {  }
 .page-content { border-bottom: none; }
+#main { background-image: url(http://www.syg315.com/images/dbg.jpg) }
 </style>
+
+>终于明白，有些路，只能一个人走。那些邀约好同行的人，一起相伴雨季，走过年华，但有一天终究会在某个渡口离散。红尘陌上，独自行走，绿萝拂过衣襟，青云打湿诺言。山和水可以两两相忘，日与月可以毫无瓜葛。那时候，只一个人的浮世清欢，一个人的细水长流。
+><p style="text-align: right;">——林徽因</p>
+
+---
 
 >于千万人之中遇见你所要遇见的人，于千万年之中，时间的无涯的荒野里，没有早一步，也没有晚一步，刚巧赶上了，那也没有别的话可说，惟有轻轻地问一声：“噢，你也在这里吗？”
 ><p style="text-align: right;">——张爱玲</p>
