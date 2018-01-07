@@ -1,0 +1,71 @@
+.article-card {
+  background-color: rgba(165,208,243,0.7);
+}
+.article-card:hover {
+  box-shadow: 0 5px 18px rgba(165,208,243,0.7);
+}
+#menu {
+  /* background-color: rgba(165,208,243,0.7); */
+  opacity: .7;
+}
+#menu .brand-wrap {
+  opacity: 1;
+}
+#menu .avatar {
+  border: none;
+  box-shadow: none;
+}
+#main {
+  /* background-image: url(https://cn.bing.com/az/hprichbg/rb/PWSeaOtterPup_ZH-CN12769031922_1920x1080.jpg); */
+  background-image: url(https://cn.bing.com/az/hprichbg/rb/StelvioPass_ZH-CN13895715460_1920x1080.jpg);
+  background-size: cover;
+  background-repeat:no-repeat;
+  background-attachment: fixed;
+}
+::selection {
+  background-color: #6FBCF6;
+  color: #fff;
+}
+
+#imag1s, #imag2s {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  animation-timing-function: ease-in;
+  z-index: -99999;
+}
+#imag1, #imag2 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+}
+/* 
+@keyframes enter {
+	from {transform:perspective(1000px) rotateY(-90deg);}
+	to {transform:perspective(1000px) rotateY(0deg);}
+}
+@keyframes gone {
+	from {transform:perspective(1000px) rotateY(0deg);}
+	to {transform:perspective(1000px) rotateY(90deg);}
+} */
+
+.post-toc-wrap {
+  background-color: rgba(238,238,238,0.8);
+}
+.post-toc-wrap.fixed {
+  top: 76px;
+  bottom: 164px;
+}
+#comments {
+  padding: 10px;
+  margin-top: 40px;
+  background-color: rgba(238,238,238,0.8);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #3f51b5;
+  border: none;
+  border-radius: 10px;
+}

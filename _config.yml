@@ -13,10 +13,12 @@ menu:
     url: /
   archives:
     url: /archives
+    text: 存档
   tags:
     url: /tags
+    text: 标签
   th-list:
-    text: Categories
+    text: 目录
     url: /categories
   github:
     url: https://github.com/wencaistorm
@@ -37,7 +39,7 @@ menu:
   #   url: /custom
 
 # 你的头像url
-avatar: /img/logo.jpg
+avatar: /img/logo.png
 # avatar link
 avatar_link: /
 # 头像背景图
@@ -114,12 +116,12 @@ disqus_shortname: false
 # 是否开启友言评论, 填写友言用户id
 uyan_uid: false
 # 是否使用 gitment，https://github.com/imsun/gitment
-gitment: false
-# gitment:
-#   owner:
-#   repo:
-#   client_id:
-#   client_secret:
+# gitment: false
+gitment: true
+owner: wencaistorm
+repo: wencaistorm.github.io 
+client_id: 09a59bcc9b9f4c9c8d08
+client_secret: e9b6c841fda1b24e9bad7ac6af9b23af4419067f
 
 # Valine Comment system. https://valine.js.org
 valine:
@@ -154,8 +156,10 @@ visit_counter:
 
 # 动态定义title
 title_change:
-  normal: (つェ⊂)咦!又好了!
-  leave: 死鬼去哪里了！
+  # normal: (つェ⊂)咦!又好了!
+  # leave: 死鬼去哪里了！
+  normal: 欢迎回来
+  leave: 莫非是去跳广场舞了？
 
 # 设置为 true 发布后将使用 unpkg cdn 最新的主题样式
 # 如果想让你的自定义样式生效，把此项设为 false
