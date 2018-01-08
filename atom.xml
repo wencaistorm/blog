@@ -3,11 +3,11 @@
   <title>前端码农的自留地</title>
   <icon>https://www.gravatar.com/avatar/bd8f361dfea9efb061093ab44d5fbaef</icon>
   <subtitle>一起学习弯道超车的技术！</subtitle>
-  <link href="/atom.xml" rel="self"/>
+  <link href="/blog/atom.xml" rel="self"/>
   
-  <link href="http://wencaizhang.com/"/>
+  <link href="http://wencaizhang.com/blog/"/>
   <updated>2018-01-07T15:48:50.928Z</updated>
-  <id>http://wencaizhang.com/</id>
+  <id>http://wencaizhang.com/blog/</id>
   
   <author>
     <name>wencaizhang</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>hexo 备份</title>
-    <link href="http://wencaizhang.com/archives/0.html"/>
-    <id>http://wencaizhang.com/archives/0.html</id>
+    <link href="http://wencaizhang.com/blog/archives/0.html"/>
+    <id>http://wencaizhang.com/blog/archives/0.html</id>
     <published>2018-01-07T15:01:00.000Z</published>
     <updated>2018-01-07T15:48:50.928Z</updated>
     
@@ -34,17 +34,17 @@
     
     </summary>
     
-      <category term="Hexo" scheme="http://wencaizhang.com/categories/Hexo/"/>
+      <category term="Hexo" scheme="http://wencaizhang.com/blog/categories/Hexo/"/>
     
     
-      <category term="hexo" scheme="http://wencaizhang.com/tags/hexo/"/>
+      <category term="hexo" scheme="http://wencaizhang.com/blog/tags/hexo/"/>
     
   </entry>
   
   <entry>
     <title>Git 分支</title>
-    <link href="http://wencaizhang.com/archives/798d2056.html"/>
-    <id>http://wencaizhang.com/archives/798d2056.html</id>
+    <link href="http://wencaizhang.com/blog/archives/798d2056.html"/>
+    <id>http://wencaizhang.com/blog/archives/798d2056.html</id>
     <published>2018-01-06T07:43:23.000Z</published>
     <updated>2018-01-07T14:44:29.213Z</updated>
     
@@ -59,17 +59,17 @@
     
     </summary>
     
-      <category term="Git" scheme="http://wencaizhang.com/categories/Git/"/>
+      <category term="Git" scheme="http://wencaizhang.com/blog/categories/Git/"/>
     
     
-      <category term="Git" scheme="http://wencaizhang.com/tags/Git/"/>
+      <category term="Git" scheme="http://wencaizhang.com/blog/tags/Git/"/>
     
   </entry>
   
   <entry>
     <title>正则表达式</title>
-    <link href="http://wencaizhang.com/archives/2f57a694.html"/>
-    <id>http://wencaizhang.com/archives/2f57a694.html</id>
+    <link href="http://wencaizhang.com/blog/archives/2f57a694.html"/>
+    <id>http://wencaizhang.com/blog/archives/2f57a694.html</id>
     <published>2018-01-02T08:27:53.000Z</published>
     <updated>2018-01-07T14:44:29.202Z</updated>
     
@@ -84,17 +84,17 @@
     
     </summary>
     
-      <category term="JavaScript" scheme="http://wencaizhang.com/categories/JavaScript/"/>
+      <category term="JavaScript" scheme="http://wencaizhang.com/blog/categories/JavaScript/"/>
     
     
-      <category term="regexp" scheme="http://wencaizhang.com/tags/regexp/"/>
+      <category term="regexp" scheme="http://wencaizhang.com/blog/tags/regexp/"/>
     
   </entry>
   
   <entry>
     <title>chrome 插件集</title>
-    <link href="http://wencaizhang.com/archives/d2c230b5.html"/>
-    <id>http://wencaizhang.com/archives/d2c230b5.html</id>
+    <link href="http://wencaizhang.com/blog/archives/d2c230b5.html"/>
+    <id>http://wencaizhang.com/blog/archives/d2c230b5.html</id>
     <published>2017-12-29T16:20:53.000Z</published>
     <updated>2018-01-07T14:44:29.268Z</updated>
     
@@ -111,17 +111,17 @@
     
     </summary>
     
-      <category term="tool" scheme="http://wencaizhang.com/categories/tool/"/>
+      <category term="tool" scheme="http://wencaizhang.com/blog/categories/tool/"/>
     
     
-      <category term="tool" scheme="http://wencaizhang.com/tags/tool/"/>
+      <category term="tool" scheme="http://wencaizhang.com/blog/tags/tool/"/>
     
   </entry>
   
   <entry>
     <title>Win下必备神器之Cmder</title>
-    <link href="http://wencaizhang.com/archives/42235af.html"/>
-    <id>http://wencaizhang.com/archives/42235af.html</id>
+    <link href="http://wencaizhang.com/blog/archives/42235af.html"/>
+    <id>http://wencaizhang.com/blog/archives/42235af.html</id>
     <published>2017-12-23T05:07:23.000Z</published>
     <updated>2018-01-07T14:44:29.279Z</updated>
     
@@ -136,17 +136,17 @@
     
     </summary>
     
-      <category term="tool" scheme="http://wencaizhang.com/categories/tool/"/>
+      <category term="tool" scheme="http://wencaizhang.com/blog/categories/tool/"/>
     
     
-      <category term="tool" scheme="http://wencaizhang.com/tags/tool/"/>
+      <category term="tool" scheme="http://wencaizhang.com/blog/tags/tool/"/>
     
   </entry>
   
   <entry>
     <title>切换浏览器 tab 标签时动态设置网页 title</title>
-    <link href="http://wencaizhang.com/archives/4e4f3b4e.html"/>
-    <id>http://wencaizhang.com/archives/4e4f3b4e.html</id>
+    <link href="http://wencaizhang.com/blog/archives/4e4f3b4e.html"/>
+    <id>http://wencaizhang.com/blog/archives/4e4f3b4e.html</id>
     <published>2017-12-22T13:50:23.000Z</published>
     <updated>2018-01-07T14:44:29.216Z</updated>
     
@@ -161,17 +161,17 @@
     
     </summary>
     
-      <category term="JavaScript" scheme="http://wencaizhang.com/categories/JavaScript/"/>
+      <category term="JavaScript" scheme="http://wencaizhang.com/blog/categories/JavaScript/"/>
     
     
-      <category term="JavaScript" scheme="http://wencaizhang.com/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="http://wencaizhang.com/blog/tags/JavaScript/"/>
     
   </entry>
   
   <entry>
     <title>Git 基本概念</title>
-    <link href="http://wencaizhang.com/archives/f69de184.html"/>
-    <id>http://wencaizhang.com/archives/f69de184.html</id>
+    <link href="http://wencaizhang.com/blog/archives/f69de184.html"/>
+    <id>http://wencaizhang.com/blog/archives/f69de184.html</id>
     <published>2017-12-21T05:08:23.000Z</published>
     <updated>2018-01-07T14:44:29.241Z</updated>
     
@@ -186,17 +186,17 @@
     
     </summary>
     
-      <category term="Git" scheme="http://wencaizhang.com/categories/Git/"/>
+      <category term="Git" scheme="http://wencaizhang.com/blog/categories/Git/"/>
     
     
-      <category term="Git" scheme="http://wencaizhang.com/tags/Git/"/>
+      <category term="Git" scheme="http://wencaizhang.com/blog/tags/Git/"/>
     
   </entry>
   
   <entry>
     <title>Gulp 调试小技巧</title>
-    <link href="http://wencaizhang.com/archives/aa3b2445.html"/>
-    <id>http://wencaizhang.com/archives/aa3b2445.html</id>
+    <link href="http://wencaizhang.com/blog/archives/aa3b2445.html"/>
+    <id>http://wencaizhang.com/blog/archives/aa3b2445.html</id>
     <published>2017-11-28T13:30:53.000Z</published>
     <updated>2018-01-07T14:44:29.110Z</updated>
     
@@ -208,17 +208,17 @@
     
     </summary>
     
-      <category term="Gulp" scheme="http://wencaizhang.com/categories/Gulp/"/>
+      <category term="Gulp" scheme="http://wencaizhang.com/blog/categories/Gulp/"/>
     
     
-      <category term="Gulp" scheme="http://wencaizhang.com/tags/Gulp/"/>
+      <category term="Gulp" scheme="http://wencaizhang.com/blog/tags/Gulp/"/>
     
   </entry>
   
   <entry>
     <title>Ubuntu 安装 LAMP 环境</title>
-    <link href="http://wencaizhang.com/archives/5ba4e681.html"/>
-    <id>http://wencaizhang.com/archives/5ba4e681.html</id>
+    <link href="http://wencaizhang.com/blog/archives/5ba4e681.html"/>
+    <id>http://wencaizhang.com/blog/archives/5ba4e681.html</id>
     <published>2017-11-27T13:22:53.000Z</published>
     <updated>2018-01-07T14:44:29.069Z</updated>
     
@@ -232,16 +232,16 @@
     </summary>
     
     
-      <category term="Linux" scheme="http://wencaizhang.com/tags/Linux/"/>
+      <category term="Linux" scheme="http://wencaizhang.com/blog/tags/Linux/"/>
     
-      <category term="部署环境" scheme="http://wencaizhang.com/tags/%E9%83%A8%E7%BD%B2%E7%8E%AF%E5%A2%83/"/>
+      <category term="部署环境" scheme="http://wencaizhang.com/blog/tags/%E9%83%A8%E7%BD%B2%E7%8E%AF%E5%A2%83/"/>
     
   </entry>
   
   <entry>
     <title>Linux Tips</title>
-    <link href="http://wencaizhang.com/archives/2f176420.html"/>
-    <id>http://wencaizhang.com/archives/2f176420.html</id>
+    <link href="http://wencaizhang.com/blog/archives/2f176420.html"/>
+    <id>http://wencaizhang.com/blog/archives/2f176420.html</id>
     <published>2017-11-26T13:20:53.000Z</published>
     <updated>2018-01-07T14:44:29.062Z</updated>
     
@@ -256,17 +256,17 @@
     
     </summary>
     
-      <category term="Linux" scheme="http://wencaizhang.com/categories/Linux/"/>
+      <category term="Linux" scheme="http://wencaizhang.com/blog/categories/Linux/"/>
     
     
-      <category term="Linux" scheme="http://wencaizhang.com/tags/Linux/"/>
+      <category term="Linux" scheme="http://wencaizhang.com/blog/tags/Linux/"/>
     
   </entry>
   
   <entry>
     <title>GET 和 POST 的区别</title>
-    <link href="http://wencaizhang.com/archives/d4ca5e4c.html"/>
-    <id>http://wencaizhang.com/archives/d4ca5e4c.html</id>
+    <link href="http://wencaizhang.com/blog/archives/d4ca5e4c.html"/>
+    <id>http://wencaizhang.com/blog/archives/d4ca5e4c.html</id>
     <published>2017-11-25T15:31:23.000Z</published>
     <updated>2018-01-07T14:44:29.276Z</updated>
     
@@ -282,17 +282,17 @@
     
     </summary>
     
-      <category term="JavaScript" scheme="http://wencaizhang.com/categories/JavaScript/"/>
+      <category term="JavaScript" scheme="http://wencaizhang.com/blog/categories/JavaScript/"/>
     
     
-      <category term="JavaScript" scheme="http://wencaizhang.com/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="http://wencaizhang.com/blog/tags/JavaScript/"/>
     
   </entry>
   
   <entry>
     <title>trim 方法</title>
-    <link href="http://wencaizhang.com/archives/bf9063ac.html"/>
-    <id>http://wencaizhang.com/archives/bf9063ac.html</id>
+    <link href="http://wencaizhang.com/blog/archives/bf9063ac.html"/>
+    <id>http://wencaizhang.com/blog/archives/bf9063ac.html</id>
     <published>2017-11-25T13:31:23.000Z</published>
     <updated>2018-01-07T14:44:29.261Z</updated>
     
@@ -307,17 +307,17 @@
     
     </summary>
     
-      <category term="JavaScript" scheme="http://wencaizhang.com/categories/JavaScript/"/>
+      <category term="JavaScript" scheme="http://wencaizhang.com/blog/categories/JavaScript/"/>
     
     
-      <category term="JavaScript" scheme="http://wencaizhang.com/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="http://wencaizhang.com/blog/tags/JavaScript/"/>
     
   </entry>
   
   <entry>
     <title>好用工具集合</title>
-    <link href="http://wencaizhang.com/archives/2956e245.html"/>
-    <id>http://wencaizhang.com/archives/2956e245.html</id>
+    <link href="http://wencaizhang.com/blog/archives/2956e245.html"/>
+    <id>http://wencaizhang.com/blog/archives/2956e245.html</id>
     <published>2017-11-24T12:20:53.000Z</published>
     <updated>2017-12-30T02:20:33.000Z</updated>
     
@@ -330,63 +330,17 @@
     
     </summary>
     
-      <category term="tool" scheme="http://wencaizhang.com/categories/tool/"/>
+      <category term="tool" scheme="http://wencaizhang.com/blog/categories/tool/"/>
     
     
-      <category term="tool" scheme="http://wencaizhang.com/tags/tool/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>微代码</title>
-    <link href="http://wencaizhang.com/archives/6f49a3ac.html"/>
-    <id>http://wencaizhang.com/archives/6f49a3ac.html</id>
-    <published>2017-11-19T12:20:53.000Z</published>
-    <updated>2018-01-07T14:44:29.129Z</updated>
-    
-    <content type="html"><![CDATA[<p>常用代码段，样式代码为主。<br><a id="more"></a></p><h3 id="光标形状"><a href="#光标形状" class="headerlink" title="光标形状"></a>光标形状</h3><ol><li>小手  <code>cursor: pointer;</code></li><li>等待  <code>cursor: wait;</code></li></ol><h3 id="C3属性-禁用-onclick-事件"><a href="#C3属性-禁用-onclick-事件" class="headerlink" title="C3属性 禁用 onclick 事件"></a>C3属性 禁用 <code>onclick</code> 事件</h3><p><a href="http://www.zhangxinxu.com/wordpress/2011/12/css3-pointer-events-none-javascript/" target="_blank" rel="noopener">CSS3 pointer-events:none应用举例及扩展</a></p><p><code>point-events: auto;</code></p><h3 id="网页被选中文字的背景颜色"><a href="#网页被选中文字的背景颜色" class="headerlink" title="网页被选中文字的背景颜色"></a>网页被选中文字的背景颜色</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-pseudo">::selection</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: green;</span><br><span class="line">    <span class="attribute">color</span>: pink;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="修改placeholder文本的样式"><a href="#修改placeholder文本的样式" class="headerlink" title="修改placeholder文本的样式"></a>修改<code>placeholder</code>文本的样式</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">input</span><span class="selector-pseudo">::-webkit-input-placeholder</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#ccc</span>;</span><br><span class="line">    <span class="attribute">letter-spacing</span>: <span class="number">2px</span>;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">20px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="文本间距"><a href="#文本间距" class="headerlink" title="文本间距"></a>文本间距</h3><p><code>letter-spacing: 2px;</code></p><h3 id="去掉-input-的外边线"><a href="#去掉-input-的外边线" class="headerlink" title="去掉 input 的外边线"></a>去掉 input 的外边线</h3><p><code>outline: none;</code></p><h3 id="select-的-option-选项文本默认左对齐，通过以下是属性设置居中"><a href="#select-的-option-选项文本默认左对齐，通过以下是属性设置居中" class="headerlink" title="select 的 option 选项文本默认左对齐，通过以下是属性设置居中"></a>select 的 option 选项文本默认左对齐，通过以下是属性设置居中</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">select</span> &#123;</span><br><span class="line">    <span class="attribute">text-align</span>: center;</span><br><span class="line">    <span class="comment">/* 单独一个 text-align 没有效果 */</span></span><br><span class="line">    <span class="attribute">text-align-last</span>: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="点击自身以外的地方，关闭弹出层-待定"><a href="#点击自身以外的地方，关闭弹出层-待定" class="headerlink" title="点击自身以外的地方，关闭弹出层(待定)"></a>点击自身以外的地方，关闭弹出层(待定)</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"body"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>($(<span class="string">".ele"</span>))&#123;</span><br><span class="line">        $(<span class="string">".ele"</span>).hide();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure><h3 id="移动端的问题"><a href="#移动端的问题" class="headerlink" title="移动端的问题"></a>移动端的问题</h3><ol><li>iOS/安卓默认样式的不同，如select、a链接</li><li>font-size 小于 10px 时候，height 等于 line-height 无法将单行文本居中</li><li>input 和 fixed定位的冲突 <a href="http://efe.baidu.com/blog/mobile-fixed-layout/" target="_blank" rel="noopener">Web移动端Fixed布局的解决方案</a></li><li>图片</li><li>长度单位(px/em/rem)</li></ol><h3 id="原生组件样式设置问题，如-input"><a href="#原生组件样式设置问题，如-input" class="headerlink" title="原生组件样式设置问题，如 input"></a>原生组件样式设置问题，如 <code>input</code></h3><p>主要思路为隐藏原生组件的样式，设置 <code>label</code> 标签的样式</p><p>或者是通过定位、不透明度和层级等属性将原生组件和自定义样式的 <code>div</code> 位置重合，做一个样式的障眼法</p><h3 id="禁止用户选中文本"><a href="#禁止用户选中文本" class="headerlink" title="禁止用户选中文本"></a>禁止用户选中文本</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">    <span class="attribute">-webkit-touch-callout</span>: none;</span><br><span class="line">    <span class="attribute">-webkit-user-select</span>: none;</span><br><span class="line">    <span class="attribute">-khtml-user-select</span>: none;</span><br><span class="line">    <span class="attribute">-moz-user-select</span>: none;</span><br><span class="line">    <span class="attribute">-ms-user-select</span>: none;</span><br><span class="line">    <span class="attribute">user-select</span>: none;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="多余文本显示省略号"><a href="#多余文本显示省略号" class="headerlink" title="多余文本显示省略号"></a>多余文本显示省略号</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">width</span>: 100<span class="selector-tag">px</span>; <span class="comment">/* 固定宽度 */</span></span><br><span class="line"><span class="selector-tag">overflow</span>: <span class="selector-tag">hidden</span>;</span><br><span class="line"><span class="selector-tag">white-space</span>: <span class="selector-tag">nowrap</span>;</span><br><span class="line"><span class="selector-tag">text-overflow</span>: <span class="selector-tag">ellipsis</span>;</span><br></pre></td></tr></table></figure><h3 id="双伪元素清除浮动"><a href="#双伪元素清除浮动" class="headerlink" title="双伪元素清除浮动"></a>双伪元素清除浮动</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">:after</span>, <span class="selector-class">.clearfix</span><span class="selector-pseudo">:before</span> &#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">""</span>;</span><br><span class="line">    <span class="attribute">display</span>: table;</span><br><span class="line">    <span class="attribute">clear</span>: both;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.clearfix</span> &#123;</span><br><span class="line">    <span class="attribute">zoom</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="伪元素清除浮动"><a href="#伪元素清除浮动" class="headerlink" title="伪元素清除浮动"></a>伪元素清除浮动</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">:after</span> &#123;</span><br><span class="line">    <span class="attribute">content</span>:<span class="string">""</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">line-height</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">display</span>: block;</span><br><span class="line">    <span class="attribute">visibility</span>:hidden;</span><br><span class="line">    <span class="attribute">clear</span>:both;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.clearfix</span> &#123;</span><br><span class="line">    <span class="attribute">zoom</span>: <span class="number">1</span>;<span class="comment">/*用来兼容ie浏览器*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;常用代码段，样式代码为主。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="code" scheme="http://wencaizhang.com/categories/code/"/>
-    
-    
-      <category term="code" scheme="http://wencaizhang.com/tags/code/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>React 点击事件为什么没有被触发？</title>
-    <link href="http://wencaizhang.com/archives/c48ecca5.html"/>
-    <id>http://wencaizhang.com/archives/c48ecca5.html</id>
-    <published>2017-11-19T12:20:53.000Z</published>
-    <updated>2018-01-07T14:44:29.141Z</updated>
-    
-    <content type="html"><![CDATA[<p>点击事件可以说是最常用的事件了，但在 <code>React</code> 中有时候事件却没有触发。Why?<br><a id="more"></a></p><h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>关键代码如下所示，<code>Title</code> 是一个标题组件，我希望在点击此组件时，执行 <code>handleClick</code> 方法。</p><p>但实际上，点击标题时 <code>handleClick</code> 方法并没有被执行。Why?<br><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Container</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">  handleClick() &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'click on container'</span>)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;div className=<span class="string">"container"</span>&gt;</span><br><span class="line">        &lt;Title onClick=&#123; <span class="keyword">this</span>.handleClick.bind(<span class="keyword">this</span>) &#125;/&gt;</span><br><span class="line">      &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">    );</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure></p><h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><p><code>Title</code> 是 <code>react</code> 组件，并不是一个真实的DOM元素，它不存在点击事件，因为它不是最终渲染的页面的元素。</p><p>所有的事件处理函数都必须要绑定到真实的 <code>DOM</code> 上。传给组件，组件只会认为它是个 <code>props</code>。</p><h2 id="解决办法有两种"><a href="#解决办法有两种" class="headerlink" title="解决办法有两种"></a>解决办法有两种</h2><ol><li><p>如果 <code>Title</code> 是自定义组件，可以修改组件内部，监听点击事件，通过 <code>props</code> 执行 <code>handleClick</code> 方法，代码如下：</p><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Title</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;div onClick=&#123; <span class="keyword">this</span>.props.onClick &#125; className=<span class="string">"title"</span>&gt;</span><br><span class="line">        &lt;h1&gt;React&lt;<span class="regexp">/h1&gt;</span></span><br><span class="line"><span class="regexp">      &lt;/</span>div&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li><p>如果 <code>Title</code> 是第三方组件，可以在 <code>Title</code> 组件外部包裹一层 <code>DOM</code> 元素，在 <code>DOM</code> 元素上监听点击事件。</p><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Container</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">  handleClick() &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'click on container'</span>)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;div className=<span class="string">"container"</span>&gt;</span><br><span class="line">        &lt;div onClick=&#123; <span class="keyword">this</span>.handleClick.bind(<span class="keyword">this</span>) &#125;&gt;&lt;/div&gt;&lt;Title/&gt;&lt;/div&gt;</span><br><span class="line">      &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">    );</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure></li></ol><p>最后，文档是个好东西，<a href="https://reactjs.org/docs/handling-events.html" target="_blank" rel="noopener">文档地址</a></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;点击事件可以说是最常用的事件了，但在 &lt;code&gt;React&lt;/code&gt; 中有时候事件却没有触发。Why?&lt;br&gt;
-    
-    </summary>
-    
-      <category term="React" scheme="http://wencaizhang.com/categories/React/"/>
-    
-    
-      <category term="React" scheme="http://wencaizhang.com/tags/React/"/>
-    
-      <category term="JavaScript" scheme="http://wencaizhang.com/tags/JavaScript/"/>
+      <category term="tool" scheme="http://wencaizhang.com/blog/tags/tool/"/>
     
   </entry>
   
   <entry>
     <title>React 中阻止事件冒泡</title>
-    <link href="http://wencaizhang.com/archives/9bcb3406.html"/>
-    <id>http://wencaizhang.com/archives/9bcb3406.html</id>
+    <link href="http://wencaizhang.com/blog/archives/9bcb3406.html"/>
+    <id>http://wencaizhang.com/blog/archives/9bcb3406.html</id>
     <published>2017-11-19T12:20:53.000Z</published>
     <updated>2018-01-07T14:44:29.186Z</updated>
     
@@ -398,19 +352,65 @@
     
     </summary>
     
-      <category term="React" scheme="http://wencaizhang.com/categories/React/"/>
+      <category term="React" scheme="http://wencaizhang.com/blog/categories/React/"/>
     
     
-      <category term="React" scheme="http://wencaizhang.com/tags/React/"/>
+      <category term="React" scheme="http://wencaizhang.com/blog/tags/React/"/>
     
-      <category term="JavaScript" scheme="http://wencaizhang.com/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="http://wencaizhang.com/blog/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>React 点击事件为什么没有被触发？</title>
+    <link href="http://wencaizhang.com/blog/archives/c48ecca5.html"/>
+    <id>http://wencaizhang.com/blog/archives/c48ecca5.html</id>
+    <published>2017-11-19T12:20:53.000Z</published>
+    <updated>2018-01-07T14:44:29.141Z</updated>
+    
+    <content type="html"><![CDATA[<p>点击事件可以说是最常用的事件了，但在 <code>React</code> 中有时候事件却没有触发。Why?<br><a id="more"></a></p><h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>关键代码如下所示，<code>Title</code> 是一个标题组件，我希望在点击此组件时，执行 <code>handleClick</code> 方法。</p><p>但实际上，点击标题时 <code>handleClick</code> 方法并没有被执行。Why?<br><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Container</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">  handleClick() &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'click on container'</span>)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;div className=<span class="string">"container"</span>&gt;</span><br><span class="line">        &lt;Title onClick=&#123; <span class="keyword">this</span>.handleClick.bind(<span class="keyword">this</span>) &#125;/&gt;</span><br><span class="line">      &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">    );</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure></p><h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><p><code>Title</code> 是 <code>react</code> 组件，并不是一个真实的DOM元素，它不存在点击事件，因为它不是最终渲染的页面的元素。</p><p>所有的事件处理函数都必须要绑定到真实的 <code>DOM</code> 上。传给组件，组件只会认为它是个 <code>props</code>。</p><h2 id="解决办法有两种"><a href="#解决办法有两种" class="headerlink" title="解决办法有两种"></a>解决办法有两种</h2><ol><li><p>如果 <code>Title</code> 是自定义组件，可以修改组件内部，监听点击事件，通过 <code>props</code> 执行 <code>handleClick</code> 方法，代码如下：</p><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Title</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;div onClick=&#123; <span class="keyword">this</span>.props.onClick &#125; className=<span class="string">"title"</span>&gt;</span><br><span class="line">        &lt;h1&gt;React&lt;<span class="regexp">/h1&gt;</span></span><br><span class="line"><span class="regexp">      &lt;/</span>div&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li><p>如果 <code>Title</code> 是第三方组件，可以在 <code>Title</code> 组件外部包裹一层 <code>DOM</code> 元素，在 <code>DOM</code> 元素上监听点击事件。</p><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Container</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">  handleClick() &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'click on container'</span>)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;div className=<span class="string">"container"</span>&gt;</span><br><span class="line">        &lt;div onClick=&#123; <span class="keyword">this</span>.handleClick.bind(<span class="keyword">this</span>) &#125;&gt;&lt;/div&gt;&lt;Title/&gt;&lt;/div&gt;</span><br><span class="line">      &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">    );</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure></li></ol><p>最后，文档是个好东西，<a href="https://reactjs.org/docs/handling-events.html" target="_blank" rel="noopener">文档地址</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;点击事件可以说是最常用的事件了，但在 &lt;code&gt;React&lt;/code&gt; 中有时候事件却没有触发。Why?&lt;br&gt;
+    
+    </summary>
+    
+      <category term="React" scheme="http://wencaizhang.com/blog/categories/React/"/>
+    
+    
+      <category term="React" scheme="http://wencaizhang.com/blog/tags/React/"/>
+    
+      <category term="JavaScript" scheme="http://wencaizhang.com/blog/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>微代码</title>
+    <link href="http://wencaizhang.com/blog/archives/6f49a3ac.html"/>
+    <id>http://wencaizhang.com/blog/archives/6f49a3ac.html</id>
+    <published>2017-11-19T12:20:53.000Z</published>
+    <updated>2018-01-07T14:44:29.129Z</updated>
+    
+    <content type="html"><![CDATA[<p>常用代码段，样式代码为主。<br><a id="more"></a></p><h3 id="光标形状"><a href="#光标形状" class="headerlink" title="光标形状"></a>光标形状</h3><ol><li>小手  <code>cursor: pointer;</code></li><li>等待  <code>cursor: wait;</code></li></ol><h3 id="C3属性-禁用-onclick-事件"><a href="#C3属性-禁用-onclick-事件" class="headerlink" title="C3属性 禁用 onclick 事件"></a>C3属性 禁用 <code>onclick</code> 事件</h3><p><a href="http://www.zhangxinxu.com/wordpress/2011/12/css3-pointer-events-none-javascript/" target="_blank" rel="noopener">CSS3 pointer-events:none应用举例及扩展</a></p><p><code>point-events: auto;</code></p><h3 id="网页被选中文字的背景颜色"><a href="#网页被选中文字的背景颜色" class="headerlink" title="网页被选中文字的背景颜色"></a>网页被选中文字的背景颜色</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-pseudo">::selection</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: green;</span><br><span class="line">    <span class="attribute">color</span>: pink;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="修改placeholder文本的样式"><a href="#修改placeholder文本的样式" class="headerlink" title="修改placeholder文本的样式"></a>修改<code>placeholder</code>文本的样式</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">input</span><span class="selector-pseudo">::-webkit-input-placeholder</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#ccc</span>;</span><br><span class="line">    <span class="attribute">letter-spacing</span>: <span class="number">2px</span>;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">20px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="文本间距"><a href="#文本间距" class="headerlink" title="文本间距"></a>文本间距</h3><p><code>letter-spacing: 2px;</code></p><h3 id="去掉-input-的外边线"><a href="#去掉-input-的外边线" class="headerlink" title="去掉 input 的外边线"></a>去掉 input 的外边线</h3><p><code>outline: none;</code></p><h3 id="select-的-option-选项文本默认左对齐，通过以下是属性设置居中"><a href="#select-的-option-选项文本默认左对齐，通过以下是属性设置居中" class="headerlink" title="select 的 option 选项文本默认左对齐，通过以下是属性设置居中"></a>select 的 option 选项文本默认左对齐，通过以下是属性设置居中</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">select</span> &#123;</span><br><span class="line">    <span class="attribute">text-align</span>: center;</span><br><span class="line">    <span class="comment">/* 单独一个 text-align 没有效果 */</span></span><br><span class="line">    <span class="attribute">text-align-last</span>: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="点击自身以外的地方，关闭弹出层-待定"><a href="#点击自身以外的地方，关闭弹出层-待定" class="headerlink" title="点击自身以外的地方，关闭弹出层(待定)"></a>点击自身以外的地方，关闭弹出层(待定)</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"body"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>($(<span class="string">".ele"</span>))&#123;</span><br><span class="line">        $(<span class="string">".ele"</span>).hide();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure><h3 id="移动端的问题"><a href="#移动端的问题" class="headerlink" title="移动端的问题"></a>移动端的问题</h3><ol><li>iOS/安卓默认样式的不同，如select、a链接</li><li>font-size 小于 10px 时候，height 等于 line-height 无法将单行文本居中</li><li>input 和 fixed定位的冲突 <a href="http://efe.baidu.com/blog/mobile-fixed-layout/" target="_blank" rel="noopener">Web移动端Fixed布局的解决方案</a></li><li>图片</li><li>长度单位(px/em/rem)</li></ol><h3 id="原生组件样式设置问题，如-input"><a href="#原生组件样式设置问题，如-input" class="headerlink" title="原生组件样式设置问题，如 input"></a>原生组件样式设置问题，如 <code>input</code></h3><p>主要思路为隐藏原生组件的样式，设置 <code>label</code> 标签的样式</p><p>或者是通过定位、不透明度和层级等属性将原生组件和自定义样式的 <code>div</code> 位置重合，做一个样式的障眼法</p><h3 id="禁止用户选中文本"><a href="#禁止用户选中文本" class="headerlink" title="禁止用户选中文本"></a>禁止用户选中文本</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">    <span class="attribute">-webkit-touch-callout</span>: none;</span><br><span class="line">    <span class="attribute">-webkit-user-select</span>: none;</span><br><span class="line">    <span class="attribute">-khtml-user-select</span>: none;</span><br><span class="line">    <span class="attribute">-moz-user-select</span>: none;</span><br><span class="line">    <span class="attribute">-ms-user-select</span>: none;</span><br><span class="line">    <span class="attribute">user-select</span>: none;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="多余文本显示省略号"><a href="#多余文本显示省略号" class="headerlink" title="多余文本显示省略号"></a>多余文本显示省略号</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">width</span>: 100<span class="selector-tag">px</span>; <span class="comment">/* 固定宽度 */</span></span><br><span class="line"><span class="selector-tag">overflow</span>: <span class="selector-tag">hidden</span>;</span><br><span class="line"><span class="selector-tag">white-space</span>: <span class="selector-tag">nowrap</span>;</span><br><span class="line"><span class="selector-tag">text-overflow</span>: <span class="selector-tag">ellipsis</span>;</span><br></pre></td></tr></table></figure><h3 id="双伪元素清除浮动"><a href="#双伪元素清除浮动" class="headerlink" title="双伪元素清除浮动"></a>双伪元素清除浮动</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">:after</span>, <span class="selector-class">.clearfix</span><span class="selector-pseudo">:before</span> &#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">""</span>;</span><br><span class="line">    <span class="attribute">display</span>: table;</span><br><span class="line">    <span class="attribute">clear</span>: both;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.clearfix</span> &#123;</span><br><span class="line">    <span class="attribute">zoom</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="伪元素清除浮动"><a href="#伪元素清除浮动" class="headerlink" title="伪元素清除浮动"></a>伪元素清除浮动</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">:after</span> &#123;</span><br><span class="line">    <span class="attribute">content</span>:<span class="string">""</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">line-height</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">display</span>: block;</span><br><span class="line">    <span class="attribute">visibility</span>:hidden;</span><br><span class="line">    <span class="attribute">clear</span>:both;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.clearfix</span> &#123;</span><br><span class="line">    <span class="attribute">zoom</span>: <span class="number">1</span>;<span class="comment">/*用来兼容ie浏览器*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;常用代码段，样式代码为主。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="code" scheme="http://wencaizhang.com/blog/categories/code/"/>
+    
+    
+      <category term="code" scheme="http://wencaizhang.com/blog/tags/code/"/>
     
   </entry>
   
   <entry>
     <title>近期用到的 jQuery 方法整理</title>
-    <link href="http://wencaizhang.com/archives/347a9caf.html"/>
-    <id>http://wencaizhang.com/archives/347a9caf.html</id>
+    <link href="http://wencaizhang.com/blog/archives/347a9caf.html"/>
+    <id>http://wencaizhang.com/blog/archives/347a9caf.html</id>
     <published>2017-05-27T14:22:53.000Z</published>
     <updated>2018-01-07T14:44:29.263Z</updated>
     
@@ -422,12 +422,12 @@
     
     </summary>
     
-      <category term="JavaScript" scheme="http://wencaizhang.com/categories/JavaScript/"/>
+      <category term="JavaScript" scheme="http://wencaizhang.com/blog/categories/JavaScript/"/>
     
     
-      <category term="js" scheme="http://wencaizhang.com/tags/js/"/>
+      <category term="js" scheme="http://wencaizhang.com/blog/tags/js/"/>
     
-      <category term="jQuery" scheme="http://wencaizhang.com/tags/jQuery/"/>
+      <category term="jQuery" scheme="http://wencaizhang.com/blog/tags/jQuery/"/>
     
   </entry>
   
