@@ -4,10 +4,7 @@
 .article-card:hover {
   box-shadow: 0 5px 18px rgba(165,208,243,0.7);
 }
-#menu {
-  /* background-color: rgba(165,208,243,0.7); */
-  opacity: .7;
-}
+
 #menu .brand-wrap {
   opacity: 1;
 }
@@ -68,4 +65,9 @@
   background-color: #3f51b5;
   border: none;
   border-radius: 10px;
+}
+
+.page-content {
+  background-color: #fff;
+  padding: 0 20px;
 }
