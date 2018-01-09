@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>Git 基本概念 | 前端码农的自留地 | 一起学习弯道超车的技术！</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Git">
+    <meta name="description" content="git-basic-usege基本概念4 个区使用 Git 进行版本管理，不免会遇到几个概念：工作区、暂存区、本地仓库以及远程仓库。  工作目录：很好理解，就是需要对其进行版本管理的文件目录，也就是日常写代码的目录。  远程仓库：如果想要分享你的代码或者与其他开发人员合作，那么就需要将数据放到一台其他开发人员能够连接的服务器上。这台服务器充当代码中转站的角色，这台服务器也有一个和你本地相同的代码库">
+<meta name="keywords" content="Git">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git 基本概念">
+<meta property="og:url" content="http://wencaizhang.com/blog/2017/12/21/git/git-basic-usege/index.html">
+<meta property="og:site_name" content="前端码农的自留地">
+<meta property="og:description" content="git-basic-usege基本概念4 个区使用 Git 进行版本管理，不免会遇到几个概念：工作区、暂存区、本地仓库以及远程仓库。  工作目录：很好理解，就是需要对其进行版本管理的文件目录，也就是日常写代码的目录。  远程仓库：如果想要分享你的代码或者与其他开发人员合作，那么就需要将数据放到一台其他开发人员能够连接的服务器上。这台服务器充当代码中转站的角色，这台服务器也有一个和你本地相同的代码库">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://wencaizhang.com/images/git-clone.png">
+<meta property="og:image" content="http://wencaizhang.com/images/git-modify.png">
+<meta property="og:image" content="http://wencaizhang.com/images/git-diff.png">
+<meta property="og:image" content="http://wencaizhang.com/images/git-checkout.png">
+<meta property="og:image" content="http://wencaizhang.com/images/git-add.png">
+<meta property="og:image" content="http://wencaizhang.com/images/git-diff-staged.png">
+<meta property="og:image" content="http://wencaizhang.com/images/git-reset.png">
+<meta property="og:image" content="http://wencaizhang.com/images/git-checkout.png">
+<meta property="og:image" content="http://wencaizhang.com/images/git-commit-0.png">
+<meta property="og:image" content="http://wencaizhang.com/images/git-commit.png">
+<meta property="og:image" content="http://wencaizhang.com/images/git-log.png">
+<meta property="og:updated_time" content="2018-01-07T14:44:29.241Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Git 基本概念">
+<meta name="twitter:description" content="git-basic-usege基本概念4 个区使用 Git 进行版本管理，不免会遇到几个概念：工作区、暂存区、本地仓库以及远程仓库。  工作目录：很好理解，就是需要对其进行版本管理的文件目录，也就是日常写代码的目录。  远程仓库：如果想要分享你的代码或者与其他开发人员合作，那么就需要将数据放到一台其他开发人员能够连接的服务器上。这台服务器充当代码中转站的角色，这台服务器也有一个和你本地相同的代码库">
+<meta name="twitter:image" content="http://wencaizhang.com/images/git-clone.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="前端码农的自留地" href="/blog/atom.xml">
+    
+    <link rel="shortcut icon" href="/blog/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+        
+            <link href='/css/custom.css' rel='stylesheet' type='text/css' />
+        
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/blog/img/brand.jpg)">
+      <div class="brand">
+        <a href="/blog/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/blog/img/logo.png">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">wencaizhang</h5>
+          <a href="mailto:1052642137@qq.com" title="1052642137@qq.com" class="mail">1052642137@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                存档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                目录
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/wencaistorm" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://wencaizhang.com/code-analysis/" target="_blank" >
+                <i class="icon icon-lg icon-code"></i>
+                Code
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/about" target="_blank" >
+                <i class="icon icon-lg icon-user-circle"></i>
+                About
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/soul" target="_blank" >
+                <i class="icon icon-lg icon-heart"></i>
+                心灵鸡汤
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Git 基本概念</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+<div id="imag1s"><img id="imag1"></div>
+<div id="imag2s"><img id="imag2"></div>
+    <div class="container fade-scale">
+        <h1 class="title">Git 基本概念</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2017-12-21T05:08:23.000Z" itemprop="datePublished" class="page-time">
+  2017-12-21
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/Git/">Git</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#git-basic-usege"><span class="post-toc-number">1.</span> <span class="post-toc-text">git-basic-usege</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#基本概念"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">基本概念</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-个区"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">4 个区</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#工作流程"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">工作流程</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#文件状态"><span class="post-toc-number">1.1.3.</span> <span class="post-toc-text">文件状态</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#基本使用"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">基本使用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-获取代码"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">1. 获取代码</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-修改-README-md-文件，查看仓库状态"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">2. 修改 README.md 文件，查看仓库状态</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-查看修改内容"><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text">3. 查看修改内容</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-撤销修改"><span class="post-toc-number">1.2.4.</span> <span class="post-toc-text">4. 撤销修改</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-保存到暂存区域"><span class="post-toc-number">1.2.5.</span> <span class="post-toc-text">5. 保存到暂存区域</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#6-查看暂存区内容"><span class="post-toc-number">1.2.6.</span> <span class="post-toc-text">6. 查看暂存区内容</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#7-撤销暂存"><span class="post-toc-number">1.2.7.</span> <span class="post-toc-text">7. 撤销暂存</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#8-提交到本地仓库"><span class="post-toc-number">1.2.8.</span> <span class="post-toc-text">8. 提交到本地仓库</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#9-提交到本地仓库后查看提交记录"><span class="post-toc-number">1.2.9.</span> <span class="post-toc-text">9. 提交到本地仓库后查看提交记录</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-git/git-basic-usege"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Git 基本概念</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2017-12-21 13:08:23" datetime="2017-12-21T05:08:23.000Z"  itemprop="datePublished">2017-12-21</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/Git/">Git</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="git-basic-usege"><a href="#git-basic-usege" class="headerlink" title="git-basic-usege"></a>git-basic-usege</h1><h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><h3 id="4-个区"><a href="#4-个区" class="headerlink" title="4 个区"></a>4 个区</h3><p>使用 Git 进行版本管理，不免会遇到几个概念：工作区、暂存区、本地仓库以及远程仓库。</p>
+<ul>
+<li><p>工作目录：很好理解，就是需要对其进行版本管理的文件目录，也就是日常写代码的目录。</p>
+</li>
+<li><p>远程仓库：如果想要分享你的代码或者与其他开发人员合作，那么就需要将数据放到一台其他开发人员能够连接的服务器上。这台服务器充当代码中转站的角色，这台服务器也有一个和你本地相同的代码库。每当完成一个功能，把最新的代码推送到这个服务器的代码库，别人就通过这台服务器的代码库获取最新的代码。那么这台服务器的代码库就叫做远程仓库。</p>
+</li>
+<li><p>本地仓库：Git 是分布式版本控制系统，每个人电脑上都有一个完整的代码仓库。相对于远程仓库来说，自己工作用的电脑上面的代码仓库就是本地仓库。为了让远程仓库和本地仓库保持同步，就需要在本地仓库中更新和推送代码。</p>
+</li>
+<li><p>暂存区：工作的时候，代码进行了修改，文件发生变动，工作结束的时候，把修改的文件提交到版本库中。这时候就需要先把需要提交的文件保存到暂存区，最后把暂存区的文件提交到代码库中。</p>
+<ol>
+<li>希望只提交其中的部分文件</li>
+<li>代码提交应该是一项需要慎重的工作，在提交代码之前</li>
+</ol>
+</li>
+</ul>
+<h3 id="工作流程"><a href="#工作流程" class="headerlink" title="工作流程"></a>工作流程</h3><p>于是，基本的 Git 工作流程如下：</p>
+<ol>
+<li>在工作目录中修改某些文件</li>
+<li>把修改的文件保存到暂存区域。</li>
+<li>将保存在暂存区域的文件提交到本地仓库</li>
+<li>把本地仓库更新到远程仓库</li>
+</ol>
+<h3 id="文件状态"><a href="#文件状态" class="headerlink" title="文件状态"></a>文件状态</h3><p>相应的，在每个步骤中的文件也就处于不同的状态：</p>
+<ol>
+<li>未修改的文件的状态为 “未修改”</li>
+<li>在工作目录中，已修改的文件状态为 “已修改”</li>
+<li>把修改的文件保存到暂存区，此时文件状态由 “已修改” 变为 “已暂存”</li>
+<li>将保存在暂存区域的文件提交到本地仓库，此时文件状态由 “已暂存” 变为 “已提交”</li>
+<li>把本地仓库更新到远程仓库，此时文件状态由 “已提交” 变为 “已推送”</li>
+</ol>
+<h2 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h2><p>假设现在有一个 git 仓库 git-learn，git 地址是：<code>https://github.com/wencaizhang/git-learn.git</code>，现在需要在这个仓库中工作。</p>
+<h3 id="1-获取代码"><a href="#1-获取代码" class="headerlink" title="1. 获取代码"></a>1. 获取代码</h3>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/wencaizhang/git-learn.git</span><br></pre></td></tr></table></figure>
+<p>  <img src="/images/git-clone.png" alt=""></p>
+<p>  如图所示，仓库中目前只有一个 README.md 文件。</p>
+<h3 id="2-修改-README-md-文件，查看仓库状态"><a href="#2-修改-README-md-文件，查看仓库状态" class="headerlink" title="2. 修改 README.md 文件，查看仓库状态"></a>2. 修改 README.md 文件，查看仓库状态</h3><p>  使用 <code>git status</code> 可以查看仓库状态</p>
+<p>  <img src="/images/git-modify.png" alt=""></p>
+<h3 id="3-查看修改内容"><a href="#3-查看修改内容" class="headerlink" title="3. 查看修改内容"></a>3. 查看修改内容</h3><p>  提交代码应该是一个严谨的工作，因此提交之前最好能确认本次提交的内容。使用 <code>git diff &lt;filename&gt;</code> 可以查看文件的改动情况</p>
+<p>  <img src="/images/git-diff.png" alt=""></p>
+<p>  <code>-</code> 表示删除，<code>+</code> 表示增加，因此，此文件删除了一行，同时增加了一行</p>
+<h3 id="4-撤销修改"><a href="#4-撤销修改" class="headerlink" title="4. 撤销修改"></a>4. 撤销修改</h3><p>  此时，如果因为某种原因，希望此文件还原到一开始的状态（即撤销修改的内容），可以使用 <code>git checkout &lt;filename&gt;</code> 命令</p>
+<p>  <img src="/images/git-checkout.png" alt=""></p>
+<h3 id="5-保存到暂存区域"><a href="#5-保存到暂存区域" class="headerlink" title="5. 保存到暂存区域"></a>5. 保存到暂存区域</h3><p>  如果不打算撤销，而是接着往下进行提交工作，那么就可以使用 <code>git add &lt;filename&gt;</code> 命令可以把修改的文件保存到暂存区</p>
+<p>  <img src="/images/git-add.png" alt=""></p>
+<h3 id="6-查看暂存区内容"><a href="#6-查看暂存区内容" class="headerlink" title="6. 查看暂存区内容"></a>6. 查看暂存区内容</h3><p>  在整个工作流程中，是随时都可查看修改内容的，当文件保存到暂存区之后，可以使用 <code>git diff --staged &lt;filename&gt;</code> 命令查看（和修改区查看相比，多一个参数 <code>--staged</code>）</p>
+<p>  <img src="/images/git-diff-staged.png" alt=""></p>
+<h3 id="7-撤销暂存"><a href="#7-撤销暂存" class="headerlink" title="7. 撤销暂存"></a>7. 撤销暂存</h3><p>  不巧的是，在上一步查看修改内容之后，发现之前的修改有所不妥，不想继续往下提交了，希望将此文件还原到一开始的状态（即撤销修改的内容）。</p>
+<p>  这时候可以使用 <code>git reset &lt;filename&gt;</code> 命令将其从暂存区撤回，然后再使用 <code>git checkout &lt;filename&gt;</code> 命令撤销其内容修改</p>
+<p>  <img src="/images/git-reset.png" alt=""></p>
+<p>  <img src="/images/git-checkout.png" alt=""></p>
+<h3 id="8-提交到本地仓库"><a href="#8-提交到本地仓库" class="headerlink" title="8. 提交到本地仓库"></a>8. 提交到本地仓库</h3><p>  如果查看了暂存区的文件确认无误，就可以把文件提交到本地仓库了。此时会将暂存区的所有文件全部提交，命令是：<code>git commit -m &quot;提交的描述信息&quot;</code></p>
+<p>  <img src="/images/git-commit-0.png" alt=""></p>
+<p>  wait a moment，这里提示设置邮箱和用户名（如果安装 git 之后没有设置邮箱和用户名才会有这个提示）</p>
+<p>  按照提示进行设置邮箱和用户民，然后进行提交：<code>git commit -m &quot;add a line&quot;</code></p>
+<p>  <img src="/images/git-commit.png" alt=""></p>
+<h3 id="9-提交到本地仓库后查看提交记录"><a href="#9-提交到本地仓库后查看提交记录" class="headerlink" title="9. 提交到本地仓库后查看提交记录"></a>9. 提交到本地仓库后查看提交记录</h3><p>  通过命令 <code>git log</code> ，可以查看每次提交时，提交人的信息，提交时间，提交的描述信息和提交版本号</p>
+<p>  <img src="/images/git-log.png" alt=""></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2018-01-07T14:44:29.241Z" itemprop="dateUpdated">2018-01-07 22:44:29</time>
+</span><br>
+
+
+        
+        原始链接：<a href="/blog/2017/12/21/git/git-basic-usege/" target="_blank" rel="external">http://wencaizhang.com/blog/2017/12/21/git/git-basic-usege/</a>
+        
+    </div>
+    <footer>
+        <a href="http://wencaizhang.com/blog">
+            <img src="/blog/img/logo.png" alt="wencaizhang">
+            wencaizhang
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Git/">Git</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://wencaizhang.com/blog/2017/12/21/git/git-basic-usege/&title=《Git 基本概念》 — 前端码农的自留地&pic=http://wencaizhang.com/blog/img/logo.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wencaizhang.com/blog/2017/12/21/git/git-basic-usege/&title=《Git 基本概念》 — 前端码农的自留地&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://wencaizhang.com/blog/2017/12/21/git/git-basic-usege/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Git 基本概念》 — 前端码农的自留地&url=http://wencaizhang.com/blog/2017/12/21/git/git-basic-usege/&via=http://wencaizhang.com/blog" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://wencaizhang.com/blog/2017/12/21/git/git-basic-usege/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/blog/2017/12/22/js/toggle-title-on-focus-and-blur/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">切换浏览器 tab 标签时动态设置网页 title</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/blog/2017/11/28/gulp-debug/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Gulp 调试小技巧</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitment_thread"></div>
+    <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
+    <script>
+        var gitment = new Gitment({
+            owner: 'wencaistorm',
+            repo: 'blog',
+            oauth: {
+                client_id: '09a59bcc9b9f4c9c8d08',
+                client_secret: 'e9b6c841fda1b24e9bad7ac6af9b23af4419067f',
+            },
+        })
+        console.log(gitment)
+        gitment.render('comments')
+    </script>
+</section>
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        请我吃辣条~~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/blog/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/blog/img/wechat.jpg" data-alipay="/blog/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/blog/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>wencaizhang &copy; 2015 - 2018</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://wencaizhang.com/blog/2017/12/21/git/git-basic-usege/&title=《Git 基本概念》 — 前端码农的自留地&pic=http://wencaizhang.com/blog/img/logo.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wencaizhang.com/blog/2017/12/21/git/git-basic-usege/&title=《Git 基本概念》 — 前端码农的自留地&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://wencaizhang.com/blog/2017/12/21/git/git-basic-usege/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Git 基本概念》 — 前端码农的自留地&url=http://wencaizhang.com/blog/2017/12/21/git/git-basic-usege/&via=http://wencaizhang.com/blog" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://wencaizhang.com/blog/2017/12/21/git/git-basic-usege/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACLklEQVR42u3aW3aDMAwFwOx/03QBbZwrCXKKGb5yaAIef6h6+PWKr+PXld9fP/PdW15XXBgYGLdlHMtr/Z31Iqq/yp/wBxUDA+MBjHVAfPd5Aui96+19DAwMjPg7yYLWMAwMDIwrAu76fs5YbwQGBgZGUkzmzbJJYXx5LY6BgXFDRt51//7nS+YbGBgYt2IcxWseWPPitvAWDAyMrRl5gOuNLauHNkbrwcDAeABjHfjyUnb9hOoYoFCyYmBgbM2ovj5v30+eORmCYmBg7MTIm/t5ItgrYntj0fKMAgMD44aMPCFLitgck4wkyzAMDIytGXnaN2/6zzerXMRiYGBsyqhmX70NykP2Cf9DMDAwbstIWmbnpom94eWHNWBgYGzNyBv9+agyX241uH/4LQYGxtaM3hAxOTbRG4Umm4iBgfEcRt7eKh/MGpSy5cYfBgbG1oz8QdX0sZoI9jr8r2oUx8DAuCFjMizsFa7VsjnaLAwMjK0Z1eMUvdRtPhaNUlUMDIwHMHrHTyctuV6L7UPAxcDA2JrRS+ASxnyJUcKKgYHxAEYvQazy8uZdUjZjYGA8gXEUr+or8xFCXjaXO38YGBg3Z5w14EzCbu8Q2MljUQwMjNsyesPIyQGvvKAtlMcYGBgPYPTacNVWXW+cUChlMTAwMOIDZJODZfmqoj9gYGBgFMeT82d+KeBiYGD8S0YS/vIjX70DHHkQx8DAeBojLx0nd9bbdFamh4GBsR3jB8dBapjdln8rAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/blog/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '主人正在角落画圈圈(*@ο@*)';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '欢迎回来';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

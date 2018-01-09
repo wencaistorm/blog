@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>Git 分支 | 前端码农的自留地 | 一起学习弯道超车的技术！</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Git">
+    <meta name="description" content="前言查看分支 git branch 查看本地分支 12$ git branch* master  美元符号 $ 是命令提示符，即后面语句为执行的命令 星号 * 表示当前分支为 master   git branch -r 查看远程分支 123$ git branch -r  origin/HEAD -&amp;gt; origin/master  origin/master  origin 是默认的远程仓">
+<meta name="keywords" content="Git">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git 分支">
+<meta property="og:url" content="http://wencaizhang.com/blog/2018/01/06/git/git-branch/index.html">
+<meta property="og:site_name" content="前端码农的自留地">
+<meta property="og:description" content="前言查看分支 git branch 查看本地分支 12$ git branch* master  美元符号 $ 是命令提示符，即后面语句为执行的命令 星号 * 表示当前分支为 master   git branch -r 查看远程分支 123$ git branch -r  origin/HEAD -&amp;gt; origin/master  origin/master  origin 是默认的远程仓">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-01-07T14:44:29.213Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Git 分支">
+<meta name="twitter:description" content="前言查看分支 git branch 查看本地分支 12$ git branch* master  美元符号 $ 是命令提示符，即后面语句为执行的命令 星号 * 表示当前分支为 master   git branch -r 查看远程分支 123$ git branch -r  origin/HEAD -&amp;gt; origin/master  origin/master  origin 是默认的远程仓">
+    
+        <link rel="alternate" type="application/atom+xml" title="前端码农的自留地" href="/blog/atom.xml">
+    
+    <link rel="shortcut icon" href="/blog/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+        
+            <link href='/css/custom.css' rel='stylesheet' type='text/css' />
+        
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/blog/img/brand.jpg)">
+      <div class="brand">
+        <a href="/blog/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/blog/img/logo.png">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">wencaizhang</h5>
+          <a href="mailto:1052642137@qq.com" title="1052642137@qq.com" class="mail">1052642137@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                存档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                目录
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/wencaistorm" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://wencaizhang.com/code-analysis/" target="_blank" >
+                <i class="icon icon-lg icon-code"></i>
+                Code
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/about" target="_blank" >
+                <i class="icon icon-lg icon-user-circle"></i>
+                About
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/soul" target="_blank" >
+                <i class="icon icon-lg icon-heart"></i>
+                心灵鸡汤
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Git 分支</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+<div id="imag1s"><img id="imag1"></div>
+<div id="imag2s"><img id="imag2"></div>
+    <div class="container fade-scale">
+        <h1 class="title">Git 分支</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-01-06T07:43:23.000Z" itemprop="datePublished" class="page-time">
+  2018-01-06
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/Git/">Git</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#前言"><span class="post-toc-number">1.</span> <span class="post-toc-text">前言</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#查看分支"><span class="post-toc-number">2.</span> <span class="post-toc-text">查看分支</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#创建分支"><span class="post-toc-number">3.</span> <span class="post-toc-text">创建分支</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#切换分支"><span class="post-toc-number">4.</span> <span class="post-toc-text">切换分支</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#创建并自动切换到新分支"><span class="post-toc-number">5.</span> <span class="post-toc-text">创建并自动切换到新分支</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#将本地分支推送到远程"><span class="post-toc-number">6.</span> <span class="post-toc-text">将本地分支推送到远程</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#合并分支"><span class="post-toc-number">7.</span> <span class="post-toc-text">合并分支</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#删除本地分支"><span class="post-toc-number">8.</span> <span class="post-toc-text">删除本地分支</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#删除远程分支"><span class="post-toc-number">9.</span> <span class="post-toc-text">删除远程分支</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#重命名分支"><span class="post-toc-number">10.</span> <span class="post-toc-text">重命名分支</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#总结"><span class="post-toc-number">11.</span> <span class="post-toc-text">总结</span></a></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-git/git-branch"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Git 分支</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-01-06 15:43:23" datetime="2018-01-06T07:43:23.000Z"  itemprop="datePublished">2018-01-06</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/Git/">Git</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><h3 id="查看分支"><a href="#查看分支" class="headerlink" title="查看分支"></a>查看分支</h3><ol>
+<li><p><code>git branch</code> 查看本地分支</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git branch</span><br><span class="line">* master</span><br></pre></td></tr></table></figure>
+<ul>
+<li>美元符号 <code>$</code> 是命令提示符，即后面语句为执行的命令</li>
+<li>星号 <code>*</code> 表示当前分支为 <code>master</code></li>
+</ul>
+</li>
+<li><p><code>git branch -r</code> 查看远程分支</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git branch -r</span><br><span class="line">  origin/HEAD -&gt; origin/master</span><br><span class="line">  origin/master</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>origin</code> 是默认的远程仓库的名字，<code>origin/master</code> 表示远程仓库的 <code>master</code> 分支</li>
+<li><code>origin/HEAD</code> 就像一个指针，表示默认分支，此处指向 <code>origin/master</code>，即 <code>origin/master</code> 是默认分支。</li>
+</ul>
+</li>
+<li><p><code>git branch -a</code> 查看所有分支，包含本地分支和远程分支</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ git branch -a</span><br><span class="line">* master</span><br><span class="line">  remotes/origin/HEAD -&gt; origin/master</span><br><span class="line">  remotes/origin/master</span><br></pre></td></tr></table></figure>
+<ul>
+<li>当前分支为 <code>master</code></li>
+<li><code>remotes</code> 表示远程主机，远程主机可能不止一个，因此要指定远程主机的名字，<code>origin</code> 为远程主机的名字</li>
+</ul>
+</li>
+</ol>
+<h3 id="创建分支"><a href="#创建分支" class="headerlink" title="创建分支"></a>创建分支</h3><ol>
+<li><p><code>git branch &lt;分支名字&gt;</code> 用于创建分支，默认以 <code>HEAD</code>（通常是 <code>master</code> 分支）作为起点来创建分支</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ git branch dev</span><br><span class="line"></span><br><span class="line">$ git branch</span><br><span class="line">  dev</span><br><span class="line">* master</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>git branch</code> 命令仅仅建立了一个新分支，但不会自动切换到这个分支中去，因此当前分支仍是 <code>master</code></li>
+</ul>
+</li>
+</ol>
+<h3 id="切换分支"><a href="#切换分支" class="headerlink" title="切换分支"></a>切换分支</h3><ol>
+<li><p><code>git checkout &lt;分支名字&gt;</code> 用于切换分支</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout dev</span><br><span class="line">Switched to branch <span class="string">'dev'</span></span><br><span class="line"></span><br><span class="line">$ git branch</span><br><span class="line">* dev</span><br><span class="line">  master</span><br></pre></td></tr></table></figure>
+<ul>
+<li>切换分支之后，会有提示信息：<code>Switched to branch &#39;dev&#39;</code></li>
+<li>通过 <code>git branch</code> 命令查看，当前分支已经切换到 <code>dev</code></li>
+</ul>
+</li>
+</ol>
+<h3 id="创建并自动切换到新分支"><a href="#创建并自动切换到新分支" class="headerlink" title="创建并自动切换到新分支"></a>创建并自动切换到新分支</h3><ol>
+<li><p><code>git checkout -b &lt;分支名字&gt;</code> 通过增加 <code>-b</code> 参数会创建分支并且切换到此分支：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout -b feature</span><br><span class="line">Switched to a new branch <span class="string">'feature'</span></span><br><span class="line"></span><br><span class="line">$ git branch</span><br><span class="line">  dev</span><br><span class="line">* feature</span><br><span class="line">  master</span><br></pre></td></tr></table></figure>
+<ul>
+<li>切换分支之后，会有提示信息：<code>Switched to a new branch &#39;feature&#39;&#39;</code></li>
+<li>通过 <code>git branch</code> 命令查看，当前分支已经切换到 <code>feature</code></li>
+</ul>
+</li>
+</ol>
+<h3 id="将本地分支推送到远程"><a href="#将本地分支推送到远程" class="headerlink" title="将本地分支推送到远程"></a>将本地分支推送到远程</h3><ol>
+<li><p><code>git push &lt;远程主机名&gt; &lt;本地分支名&gt;:&lt;远程分支名&gt;</code> </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ git push origin feature:feature</span><br><span class="line">Total 0 (delta 0), reused 0 (delta 0)</span><br><span class="line">To https://github.com/wencaistorm/git-learn.git</span><br><span class="line"> * [new branch]      feature -&gt; feature</span><br></pre></td></tr></table></figure>
+<ul>
+<li>提示信息：<code>* [new branch]      feature -&gt; feature</code> ，说明 push 成功！</li>
+<li>通过 <code>git branch -a</code> 命令验证，发现远程分支 <code>origin/feature</code> 已经被创建成功<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ git branch -a</span><br><span class="line">  dev</span><br><span class="line">* feature</span><br><span class="line">  master</span><br><span class="line">  remotes/origin/HEAD -&gt; origin/master</span><br><span class="line">  remotes/origin/feature</span><br><span class="line">  remotes/origin/master</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p><code>git push &lt;远程主机名&gt; &lt;本地分支名&gt;</code> 如果忽略远程分支名，则表示将本地分支推送到与本地分支存在追踪关系的远程分支，如果该远程分支不存在，则会被新建。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ git push origin dev</span><br><span class="line">Total 0 (delta 0), reused 0 (delta 0)</span><br><span class="line">To https://github.com/wencaistorm/git-learn.git</span><br><span class="line"> * [new branch]      dev -&gt; dev</span><br></pre></td></tr></table></figure>
+<ul>
+<li>同样的提示：<code>* [new branch]      dev -&gt; dev</code></li>
+<li>同样再来次验证，发现远程分支 <code>origin/dev</code> 已经被创建成功！<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ git branch -a</span><br><span class="line">* dev</span><br><span class="line">  feature</span><br><span class="line">  master</span><br><span class="line">  remotes/origin/HEAD -&gt; origin/master</span><br><span class="line">  remotes/origin/dev</span><br><span class="line">  remotes/origin/feature</span><br><span class="line">  remotes/origin/master</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="合并分支"><a href="#合并分支" class="headerlink" title="合并分支"></a>合并分支</h3><ol>
+<li><p><code>git merge &lt;分支名字&gt;</code> 用于合并分支（将指定分支合并到当前分支）<br>例如在 <code>dev</code> 分支创建了一个 <code>test.md</code> 文件，就可以使用此命令把 <code>dev</code> 合并到 <code>master</code> 上（需提前切换到 <code>master</code> 分支）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ git merge dev</span><br><span class="line">Updating 75dd5ff..f21cc70</span><br><span class="line">Fast-forward</span><br><span class="line"> test.md | 1 +</span><br><span class="line"> 1 file changed, 1 insertion(+)</span><br><span class="line"> create mode 100644 test.md</span><br></pre></td></tr></table></figure>
+<p>最后别忘了，提交 <code>master</code> 分支</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ git push origin master</span><br><span class="line">Total 0 (delta 0), reused 0 (delta 0)</span><br><span class="line">To https://github.com/wencaistorm/git-learn.git</span><br><span class="line">   75dd5ff..f21cc70  master -&gt; master</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="删除本地分支"><a href="#删除本地分支" class="headerlink" title="删除本地分支"></a>删除本地分支</h3><ol>
+<li><p><code>git branch -d &lt;本地分支名&gt;</code> 删除本地分支，但只能删除已经被 merge 的分支。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git branch -d dev</span><br><span class="line">error: The branch <span class="string">'dev'</span> is not fully merged.</span><br><span class="line">If you are sure you want to delete it, run <span class="string">'git branch -D dev'</span>.</span><br></pre></td></tr></table></figure>
+<ul>
+<li>删除失败，git 提示：<code>dev</code> 分支没有被合并，如果要强行删除，需要使用命令 <code>git branch -D dev</code></li>
+<li>需要注意的是，这里的合并，并不一定是合并到 <code>master</code> 分支，合并到任何分支都可以</li>
+</ul>
+</li>
+<li><p><code>git branch -D &lt;本地分支名&gt;</code> 强行删除本地分支，即使此分支没有被 merge</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git branch -D dev</span><br><span class="line">Deleted branch dev (was 4a332d3).</span><br></pre></td></tr></table></figure>
+<ul>
+<li>删除成功！</li>
+</ul>
+</li>
+</ol>
+<h3 id="删除远程分支"><a href="#删除远程分支" class="headerlink" title="删除远程分支"></a>删除远程分支</h3><ol>
+<li><p><code>git push origin :&lt;远程分支名&gt;</code> 将一个空分支推送到远程分支，也就意味着将删除这个远程分支</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git push origin :dev</span><br><span class="line">To https://github.com/wencaistorm/git-learn.git</span><br><span class="line"> - [deleted]         dev</span><br></pre></td></tr></table></figure>
+<ul>
+<li>删除成功，并且给出提示信息：<code>- [deleted]         dev</code></li>
+<li>通过 <code>git branch -a</code> 命令验证，发现远程分支 <code>origin/dev</code> 已经被删除<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ git branch -a</span><br><span class="line">* dev</span><br><span class="line">  feature</span><br><span class="line">  master</span><br><span class="line">  remotes/origin/HEAD -&gt; origin/master</span><br><span class="line">  remotes/origin/feature</span><br><span class="line">  remotes/origin/master</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p><code>git push origin --delete &lt;远程分支名&gt;</code> 通过 <code>--delete</code> 或者 <code>-d</code> 参数删除远程分支</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git push origin --delete feature</span><br><span class="line">To https://github.com/wencaistorm/git-learn.git</span><br><span class="line"> - [deleted]         feature</span><br></pre></td></tr></table></figure>
+<ul>
+<li>删除成功，同样给出提示信息：<code>- [deleted]         feature</code></li>
+<li>通过 <code>git branch -a</code> 命令验证，发现远程分支 <code>origin/feature</code> 已经被删除<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ git branch -a</span><br><span class="line">* dev</span><br><span class="line">  feature</span><br><span class="line">  master</span><br><span class="line">  remotes/origin/HEAD -&gt; origin/master</span><br><span class="line">  remotes/origin/master</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="重命名分支"><a href="#重命名分支" class="headerlink" title="重命名分支"></a>重命名分支</h3><p>  分支情况如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git branch</span><br><span class="line">  master</span><br><span class="line">* new</span><br></pre></td></tr></table></figure></p>
+<p>  现在想把 <code>new</code> 分支重命名为 <code>newer</code> 分支，可以通过 <code>git branch -m &lt;重命名前分支名称&gt; &lt;重命名后分支名称&gt;</code><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git branch -m new newer</span><br></pre></td></tr></table></figure></p>
+<p>修改成功，重新查看分支<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git branch</span><br><span class="line">  master</span><br><span class="line">* newer</span><br></pre></td></tr></table></figure></p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>最后总结一下，因为 <code>&lt;远程主机名&gt;</code> 通常默认为 <code>origin</code> ，因此这里直接以 <code>origin</code> 表示 <code>&lt;远程主机名&gt;</code>：</p>
+<ul>
+<li>查看分支<ul>
+<li><code>git branch</code> 查看本地分支</li>
+<li><code>git branch -r</code> 查看远程分支</li>
+<li><code>git branch -a</code> 查看所有分支</li>
+</ul>
+</li>
+<li>创建和切换分支<ul>
+<li><code>git branch &lt;分支名字&gt;</code> 创建分支</li>
+<li><code>git checkout &lt;分支名字&gt;</code> 切换分支</li>
+<li><code>git checkout -b &lt;分支名字&gt;</code> 创建并自动切换到新分支</li>
+</ul>
+</li>
+<li>把本地分支推送到远程<ul>
+<li><code>git push origin &lt;本地分支名&gt;:&lt;远程分支名&gt;</code> （冒号两侧没有空格）</li>
+<li><code>git push origin &lt;本地分支名&gt;</code></li>
+</ul>
+</li>
+<li>合并分支 <code>git merge &lt;分支名字&gt;</code></li>
+<li>删除本地分支（注意<code>-d</code> 和 <code>-D</code> 的区别）<ul>
+<li><code>git branch -d &lt;本地分支名&gt;</code> 删除本地分支，但只能删除已经被 merge 的分支。</li>
+<li><code>git branch -D &lt;本地分支名&gt;</code> 强行删除本地分支，即使此分支没有被 merge</li>
+</ul>
+</li>
+<li>删除远程分支<ul>
+<li><code>git push origin :&lt;远程分支名&gt;</code> （冒号左侧有两个空格）</li>
+<li><code>git push origin --delete &lt;远程分支名&gt;</code> 或 <code>git push origin -D &lt;远程分支名&gt;</code> （<code>--delete</code> 和 <code>-D</code> 作用相同）</li>
+</ul>
+</li>
+<li>重命名分支 <code>git branch -m &lt;重命名前分支名称&gt; &lt;重命名后分支名称&gt;</code></li>
+</ul>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2018-01-07T14:44:29.213Z" itemprop="dateUpdated">2018-01-07 22:44:29</time>
+</span><br>
+
+
+        
+        原始链接：<a href="/blog/2018/01/06/git/git-branch/" target="_blank" rel="external">http://wencaizhang.com/blog/2018/01/06/git/git-branch/</a>
+        
+    </div>
+    <footer>
+        <a href="http://wencaizhang.com/blog">
+            <img src="/blog/img/logo.png" alt="wencaizhang">
+            wencaizhang
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Git/">Git</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://wencaizhang.com/blog/2018/01/06/git/git-branch/&title=《Git 分支》 — 前端码农的自留地&pic=http://wencaizhang.com/blog/img/logo.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wencaizhang.com/blog/2018/01/06/git/git-branch/&title=《Git 分支》 — 前端码农的自留地&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://wencaizhang.com/blog/2018/01/06/git/git-branch/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Git 分支》 — 前端码农的自留地&url=http://wencaizhang.com/blog/2018/01/06/git/git-branch/&via=http://wencaizhang.com/blog" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://wencaizhang.com/blog/2018/01/06/git/git-branch/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/blog/2018/01/07/hexo-admin/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">hexo 备份</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/blog/2018/01/02/regexp/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">正则表达式</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitment_thread"></div>
+    <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
+    <script>
+        var gitment = new Gitment({
+            owner: 'wencaistorm',
+            repo: 'blog',
+            oauth: {
+                client_id: '09a59bcc9b9f4c9c8d08',
+                client_secret: 'e9b6c841fda1b24e9bad7ac6af9b23af4419067f',
+            },
+        })
+        console.log(gitment)
+        gitment.render('comments')
+    </script>
+</section>
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        请我吃辣条~~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/blog/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/blog/img/wechat.jpg" data-alipay="/blog/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/blog/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>wencaizhang &copy; 2015 - 2018</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://wencaizhang.com/blog/2018/01/06/git/git-branch/&title=《Git 分支》 — 前端码农的自留地&pic=http://wencaizhang.com/blog/img/logo.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wencaizhang.com/blog/2018/01/06/git/git-branch/&title=《Git 分支》 — 前端码农的自留地&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://wencaizhang.com/blog/2018/01/06/git/git-branch/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Git 分支》 — 前端码农的自留地&url=http://wencaizhang.com/blog/2018/01/06/git/git-branch/&via=http://wencaizhang.com/blog" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://wencaizhang.com/blog/2018/01/06/git/git-branch/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACNElEQVR42u3aQZLkIAwEwP7/p3svc1x7qgS7EcbJyTFtAzkHhYT4fOLxvRjJ+/fvtF8tDQwMjMcyvrfjaoGr5/tt3W/9ft1f/okYGBgvYNwHxKvlr57z0JzMlgRrDAwMjPuN3s/TJo4YGBgYexltItgWsRgYGBhtEZsE3KRMnRXP22pxDAyMBzLyZO7/P/+T/gYGBsajGN9ytK3NPHzP9vPzLQYGxtGMPMC11yzaedqAi4GB8TbGrJSdFbSzRmmRLGJgYBzNyBdbaUy2v7bNCQwMjDcwdpWU90vmG9rWAMDAwHgsIwlzyaWHlpcc5w2vWWBgYBzHyC9JbMsxg/mHpSwGBsahjCQU5iEvSQdnbc5f/oKBgXE0oz3Yyg/FZmXqhsYDBgbGcYw2OWufV9LKooWAgYFxNGMlILYHbetF7PDsEAMD4+GMpHScLZy0ENqZ69QQAwPjCEZSpq60Mz/LY5jnYmBgHMfIN7HSSMiD6YZ2JgYGxqGMBNaGv9mxWnvtAwMD4w2MNvnLG5D5DLOZ/5LhYmBgHM1oS9P1y2F5SC0CLgYGxisZ+RHYrOXZBuvLrzAwMA5lfMuRby5vLdwH5YiKgYFxNKNtJa6UqdGFieD9YXsAAwPj4YxZkG3bk+0RXn3tAwMD4wWMthxtk8tdad9lSxUDAwNj+eBsVsoWh30YGBgYZR3cBuK2rN0ccDEwMB7CyFO6fLu7DuA2H7dhYGA8kDG7YDErU+8D7kqmh4GBcSjjD6fM2xkYn3c4AAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/blog/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '主人正在角落画圈圈(*@ο@*)';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '欢迎回来';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
