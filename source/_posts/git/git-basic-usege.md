@@ -72,7 +72,7 @@ date: 2017-12-21 13:08:23
 
   此时，如果因为某种原因，希望此文件还原到一开始的状态（即撤销修改的内容），可以使用 `git checkout <filename>` 命令
 
-  ![](http://p2btijoky.bkt.clouddn.com/18-1-10/29549343.jpg)
+  ![](http://p2btijoky.bkt.clouddn.com/18-1-10/41078767.jpg)
 
 
 ### 5. 保存到暂存区域
