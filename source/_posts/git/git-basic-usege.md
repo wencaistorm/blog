@@ -50,7 +50,7 @@ date: 2017-12-21 13:08:23
   ```bash
   git clone https://github.com/wencaizhang/git-learn.git
   ```
-  ![](/blog/images/git-clone.png)
+  ![](http://p2btijoky.bkt.clouddn.com/18-1-10/80220578.jpg)
 
   如图所示，仓库中目前只有一个 README.md 文件。
 
@@ -58,13 +58,13 @@ date: 2017-12-21 13:08:23
 
   使用 `git status` 可以查看仓库状态
 
-  ![](/blog/images/git-modify.png)
+  ![](http://p2btijoky.bkt.clouddn.com/18-1-10/47205121.jpg)
 
 ### 3. 查看修改内容
 
   提交代码应该是一个严谨的工作，因此提交之前最好能确认本次提交的内容。使用 `git diff <filename>` 可以查看文件的改动情况
 
-  ![](/blog/images/git-diff.png)
+  ![](http://p2btijoky.bkt.clouddn.com/18-1-10/16799331.jpg)
 
   `-` 表示删除，`+` 表示增加，因此，此文件删除了一行，同时增加了一行
 
@@ -72,20 +72,20 @@ date: 2017-12-21 13:08:23
 
   此时，如果因为某种原因，希望此文件还原到一开始的状态（即撤销修改的内容），可以使用 `git checkout <filename>` 命令
 
-  ![](/blog/images/git-checkout.png)
+  ![](http://p2btijoky.bkt.clouddn.com/18-1-10/29549343.jpg)
 
 
 ### 5. 保存到暂存区域
 
   如果不打算撤销，而是接着往下进行提交工作，那么就可以使用 `git add <filename>` 命令可以把修改的文件保存到暂存区
 
-  ![](/blog/images/git-add.png)
+  ![](http://p2btijoky.bkt.clouddn.com/18-1-10/13486792.jpg)
 
 ### 6. 查看暂存区内容
 
   在整个工作流程中，是随时都可查看修改内容的，当文件保存到暂存区之后，可以使用 `git diff --staged <filename>` 命令查看（和修改区查看相比，多一个参数 `--staged`）
 
-  ![](/blog/images/git-diff-staged.png)
+  ![](http://p2btijoky.bkt.clouddn.com/18-1-10/89132551.jpg)
 
 ### 7. 撤销暂存
 
@@ -93,24 +93,24 @@ date: 2017-12-21 13:08:23
 
   这时候可以使用 `git reset <filename>` 命令将其从暂存区撤回，然后再使用 `git checkout <filename>` 命令撤销其内容修改
 
-  ![](/blog/images/git-reset.png)
+  ![](http://p2btijoky.bkt.clouddn.com/18-1-10/36744410.jpg)
 
-  ![](/blog/images/git-checkout.png)
+  ![](http://p2btijoky.bkt.clouddn.com/18-1-10/80992114.jpg)
 
 ### 8. 提交到本地仓库
 
   如果查看了暂存区的文件确认无误，就可以把文件提交到本地仓库了。此时会将暂存区的所有文件全部提交，命令是：`git commit -m "提交的描述信息"`
 
-  ![](/blog/images/git-commit-0.png)
+  ![](http://p2btijoky.bkt.clouddn.com/18-1-10/84984444.jpg)
 
   wait a moment，这里提示设置邮箱和用户名（如果安装 git 之后没有设置邮箱和用户名才会有这个提示）
 
   按照提示进行设置邮箱和用户民，然后进行提交：`git commit -m "add a line"`
 
-  ![](/blog/images/git-commit.png)
+  ![](http://p2btijoky.bkt.clouddn.com/18-1-10/8464693.jpg)
 
 ### 9. 提交到本地仓库后查看提交记录
 
   通过命令 `git log` ，可以查看每次提交时，提交人的信息，提交时间，提交的描述信息和提交版本号
 
-  ![](/blog/images/git-log.png)
+  ![](http://p2btijoky.bkt.clouddn.com/18-1-10/36251546.jpg)
