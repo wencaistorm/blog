@@ -20,9 +20,9 @@ date: 2018-01-09 18:30:53
 1. 注册 GitHub 账户
 2. 创建一个仓库
 3. 打开此仓库的 `Settings` 页签
-![](/blog/images/github-repo-settings.jpg)
+![](http://p2btijoky.bkt.clouddn.com/18-1-10/90205274.jpg)
 4. 找到 `GitHub Pag` 部分
-![](/blog/images/github-repo-settings-pages.jpg)
+![](http://p2btijoky.bkt.clouddn.com/18-1-10/32249842.jpg)
 
 因为 GitHub Pages 会展示指定位置（分支）的 `index.html` 或者 `README.md`，因此 `Source` 用于指定分支。
 
