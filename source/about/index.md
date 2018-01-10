@@ -7,7 +7,7 @@ comments: false
 
 ## 关于我
 
-<p style="text-align: center;">此处应有自拍：<br><img src="/images/Ultraman.jpg" style="width: 400px;" alt="此处应有自拍" /></p>
+<p style="text-align: center;">此处应有自拍：<br><img src="http://p2btijoky.bkt.clouddn.com/18-1-10/27066054.jpg" style="width: 400px;" alt="此处应有自拍" /></p>
 
 
 ## 关于编程
