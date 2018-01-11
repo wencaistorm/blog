@@ -22,7 +22,7 @@ date: 2018-01-09 18:30:53
 3. 打开此仓库的 `Settings` 页签
 ![](http://p2btijoky.bkt.clouddn.com/18-1-11/57116092.jpg)
 4. 找到 `GitHub Pag` 部分
-![](http://p2btijoky.bkt.clouddn.com/18-1-11/561622.jpg)
+![](http://p2btijoky.bkt.clouddn.com/18-1-11/59480694.jpg)
 
 因为 GitHub Pages 会展示指定位置（分支）的 `index.html` 或者 `README.md`，因此 `Source` 用于指定分支。
 
