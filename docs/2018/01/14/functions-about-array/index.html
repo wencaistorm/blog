@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>数组方法小盘点 | 前端码农的自留地 | 一起学习弯道超车的技术！</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="-javascript -array">
+    <meta name="description" content="Array.prototype.slice()// slice 词典翻译为：切片。这里大致可以理解为从数组上“切下来”一部分，或”提取“一部分 描述： array.slice(start, end)   影响范围：不修改原数组，会返回一个新建的数组 返回值：返回一个浅复制了原数组中的元素的一个新数组，即如果元素为引用类型（对象），此对象发生改变，则新数组和原数组中的这个元素也会发生改变 第一个参数">
+<meta name="keywords" content="-javascript -array">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数组方法小盘点">
+<meta property="og:url" content="http://wencaizhang.com/blog/2018/01/14/functions-about-array/index.html">
+<meta property="og:site_name" content="前端码农的自留地">
+<meta property="og:description" content="Array.prototype.slice()// slice 词典翻译为：切片。这里大致可以理解为从数组上“切下来”一部分，或”提取“一部分 描述： array.slice(start, end)   影响范围：不修改原数组，会返回一个新建的数组 返回值：返回一个浅复制了原数组中的元素的一个新数组，即如果元素为引用类型（对象），此对象发生改变，则新数组和原数组中的这个元素也会发生改变 第一个参数">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-01-14T07:14:06.782Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="数组方法小盘点">
+<meta name="twitter:description" content="Array.prototype.slice()// slice 词典翻译为：切片。这里大致可以理解为从数组上“切下来”一部分，或”提取“一部分 描述： array.slice(start, end)   影响范围：不修改原数组，会返回一个新建的数组 返回值：返回一个浅复制了原数组中的元素的一个新数组，即如果元素为引用类型（对象），此对象发生改变，则新数组和原数组中的这个元素也会发生改变 第一个参数">
+    
+        <link rel="alternate" type="application/atom+xml" title="前端码农的自留地" href="/blog/atom.xml">
+    
+    <link rel="shortcut icon" href="/blog/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/blog/img/brand.jpg)">
+      <div class="brand">
+        <a href="/blog/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/blog/img/logo.png">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">wencaizhang</h5>
+          <a href="mailto:1052642137@qq.com" title="1052642137@qq.com" class="mail">1052642137@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                存档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                目录
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/wencaistorm" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://wencaizhang.com/code-analysis/" target="_blank" >
+                <i class="icon icon-lg icon-code"></i>
+                Code
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/about" target="_blank" >
+                <i class="icon icon-lg icon-user-circle"></i>
+                About
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/soul" target="_blank" >
+                <i class="icon icon-lg icon-heart"></i>
+                心灵鸡汤
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">数组方法小盘点</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+<div id="imag1s"><img id="imag1"></div>
+<div id="imag2s"><img id="imag2"></div>
+    <div class="container fade-scale">
+        <h1 class="title">数组方法小盘点</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-01-14T05:08:14.000Z" itemprop="datePublished" class="page-time">
+  2018-01-14
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Array-prototype-slice"><span class="post-toc-number">1.</span> <span class="post-toc-text">Array.prototype.slice()</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#描述："><span class="post-toc-number">1.1.</span> <span class="post-toc-text">描述：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#使用示例："><span class="post-toc-number">1.2.</span> <span class="post-toc-text">使用示例：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#demo1："><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">demo1：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#demo2："><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">demo2：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#demo3："><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text">demo3：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#demo4："><span class="post-toc-number">1.2.4.</span> <span class="post-toc-text">demo4：</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-functions-about-array"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">数组方法小盘点</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-01-14 13:08:14" datetime="2018-01-14T05:08:14.000Z"  itemprop="datePublished">2018-01-14</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="Array-prototype-slice"><a href="#Array-prototype-slice" class="headerlink" title="Array.prototype.slice()"></a><code>Array.prototype.slice()</code></h2><p><em>// <code>slice</code> 词典翻译为：切片。这里大致可以理解为从数组上“切下来”一部分，或”提取“一部分</em></p>
+<h3 id="描述："><a href="#描述：" class="headerlink" title="描述："></a>描述：</h3><blockquote>
+<p><code>array.slice(start, end)</code></p>
+</blockquote>
+<ol>
+<li>影响范围：<strong>不修改原数组，会返回一个新建的数组</strong></li>
+<li>返回值：返回一个<strong>浅复制</strong>了原数组中的元素的一个新数组，即如果元素为引用类型（对象），此对象发生改变，则新数组和原数组中的这个元素也会发生改变</li>
+<li>第一个参数（<code>start</code>）：<ul>
+<li>从 <code>start</code> 指定的索引处开始“切片”</li>
+<li>如果 <code>start</code> 为负数，表示从原数组倒数第几个元素开始</li>
+<li>如果 <code>start</code> 省略，则从索引 0 开始</li>
+</ul>
+</li>
+<li>第二个参数（<code>end</code>）：<ul>
+<li>在 <code>end</code> 指定的索引处结束“切片”（但<strong>不包含该元素</strong>）</li>
+<li>如果 <code>end</code> 为负数，表示从原数组倒数第几个元素结束</li>
+<li>如果 <code>end</code> 被省略，则 <code>slice</code> 会一直提取到原数组末尾</li>
+<li>如果 <code>end</code> 大于数组长度，<code>slice</code> 也会一直提取到原数组末尾</li>
+</ul>
+</li>
+<li>通过 <code>slice</code> 将类数组转化为数组</li>
+</ol>
+<h3 id="使用示例："><a href="#使用示例：" class="headerlink" title="使用示例："></a>使用示例：</h3><h4 id="demo1："><a href="#demo1：" class="headerlink" title="demo1："></a>demo1：</h4><p>提取原数组中第二个元素开始直到（<strong>不包含</strong>）第四个元素的所有元素（索引为 1，2 的元素）<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [ <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span> ];</span><br><span class="line"><span class="keyword">var</span> sliced = arr.slice(<span class="number">1</span>, <span class="number">3</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(arr);     <span class="comment">// [ 1, 2, 3, 4 ]</span></span><br><span class="line"><span class="built_in">console</span>.log(sliced);  <span class="comment">// [ 2, 3 ]</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="demo2："><a href="#demo2：" class="headerlink" title="demo2："></a>demo2：</h4><p>省略第二个参数 <code>end</code> ，提取原数组中第二个参数开始到（包含）末尾的所有元素（索引为 1，2，3 的元素）<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [ <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span> ];</span><br><span class="line"><span class="keyword">var</span> sliced = arr.slice(<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(arr);     <span class="comment">// [ 1, 2, 3, 4 ]</span></span><br><span class="line"><span class="built_in">console</span>.log(sliced);  <span class="comment">// [ 2, 3, 4 ]</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="demo3："><a href="#demo3：" class="headerlink" title="demo3："></a>demo3：</h4><p>两个参数都省略，提取原数组所有元素<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [ <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span> ];</span><br><span class="line"><span class="keyword">var</span> sliced = arr.slice();</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(arr);     <span class="comment">// [ 1, 2, 3, 4 ]</span></span><br><span class="line"><span class="built_in">console</span>.log(sliced);  <span class="comment">// [ 1, 2, 3, 4 ]</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="demo4："><a href="#demo4：" class="headerlink" title="demo4："></a>demo4：</h4><p>转为类数组(<code>arguments</code>)为数组<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">list</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> args = [].slice.call(<span class="built_in">arguments</span>)</span><br><span class="line">  <span class="built_in">console</span>.log(args);  <span class="comment">// [ 1, 2, 3]</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> list1 = list(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>);</span><br></pre></td></tr></table></figure></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2018-01-14T07:14:06.782Z" itemprop="dateUpdated">2018-01-14 15:14:06</time>
+</span><br>
+
+
+        
+        原始链接：<a href="/blog/2018/01/14/functions-about-array/" target="_blank" rel="external">http://wencaizhang.com/blog/2018/01/14/functions-about-array/</a>
+        
+    </div>
+    <footer>
+        <a href="http://wencaizhang.com/blog">
+            <img src="/blog/img/logo.png" alt="wencaizhang">
+            wencaizhang
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/javascript-array/">-javascript -array</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://wencaizhang.com/blog/2018/01/14/functions-about-array/&title=《数组方法小盘点》 — 前端码农的自留地&pic=http://wencaizhang.com/blog/img/logo.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wencaizhang.com/blog/2018/01/14/functions-about-array/&title=《数组方法小盘点》 — 前端码农的自留地&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://wencaizhang.com/blog/2018/01/14/functions-about-array/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《数组方法小盘点》 — 前端码农的自留地&url=http://wencaizhang.com/blog/2018/01/14/functions-about-array/&via=http://wencaizhang.com/blog" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://wencaizhang.com/blog/2018/01/14/functions-about-array/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/blog/2018/01/09/GitHub-Pages/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">GitHub Pages</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitment_thread"></div>
+    <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
+    <script>
+        var gitment = new Gitment({
+            owner: 'wencaistorm',
+            repo: 'blog',
+            oauth: {
+                client_id: '09a59bcc9b9f4c9c8d08',
+                client_secret: 'e9b6c841fda1b24e9bad7ac6af9b23af4419067f',
+            },
+        })
+        console.log(gitment)
+        gitment.render('comments')
+    </script>
+</section>
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        请我吃辣条~~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/blog/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/blog/img/wechat.jpg" data-alipay="/blog/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/blog/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>wencaizhang &copy; 2015 - 2018</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://wencaizhang.com/blog/2018/01/14/functions-about-array/&title=《数组方法小盘点》 — 前端码农的自留地&pic=http://wencaizhang.com/blog/img/logo.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wencaizhang.com/blog/2018/01/14/functions-about-array/&title=《数组方法小盘点》 — 前端码农的自留地&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://wencaizhang.com/blog/2018/01/14/functions-about-array/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《数组方法小盘点》 — 前端码农的自留地&url=http://wencaizhang.com/blog/2018/01/14/functions-about-array/&via=http://wencaizhang.com/blog" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://wencaizhang.com/blog/2018/01/14/functions-about-array/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACHklEQVR42u3aUY7CMAxF0e5/02UBqOg+O0WKc/OFoEN7+HiT2L4uvO6v9f0pv5781fXGkiFDxraM++fi1/Bv5tcE95UhQ8YBjN+B+PT6KShrYHKvx/dlyJAhA1+T4vv3lSFDhgzyuHyTx2NahgwZMmqH2FU88v6LZ3EZMmRsyOBV9/+/fqW/IUOGjK0Yd7jSBiRvZHaWDBkyZjN4wPHNWdrarAWuDBkyTmN0hrR4jKaY4qCYDBkyhjL4Zq4WkWlZrdickCFDxlAGaR+mjUYeo2kbNY5aGTJkjGDwsOs0D9J2ZhEmQ4aMoQx+gEwjslYyI+Ma8e8nQ4aMzRmdIlrn085wWPAvQYYMGSMYPBZ5Bb72iLVSnQwZMk5g8NJb7UtT8IKtpwwZMsYx0kEHXgLrDIfFjQQZMmQcwFgVnTymeWMgGLaQIUPGaAa/Jd/MoQNn+D2PYS1DhozRjE5jgJTP+qNjrXamDBkyBjF4qPHo5KX/zpPIkCHjZAY/QNZiNA1WtK2UIUPGAQx+oCW3iYckSsdgGTJknMzg7YFOTPMtYzAtIkOGjHGMO1w1JG+I8qKeDBkyzmF0wo4cUPsbvlpbVIYMGfMY6WhFbfAibQ/EP5wMGTIOYPCg5OW2dBvaQcqQIUMGuc0qGH+qYFJDhgwZhzF4UKYPyo+1CwJXhgwZGzI6oxX9g+iCg7EMGTJGM/jRMb2y051YtWGVIUPG5owPbfzbGSXyd00AAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/blog/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '主人正在角落画圈圈(*@ο@*)';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '欢迎回来';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
