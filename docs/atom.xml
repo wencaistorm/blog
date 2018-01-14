@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://wencaizhang.com/blog/"/>
-  <updated>2018-01-14T07:14:06.782Z</updated>
+  <updated>2018-01-14T07:16:51.942Z</updated>
   <id>http://wencaizhang.com/blog/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://wencaizhang.com/blog/2018/01/14/functions-about-array/"/>
     <id>http://wencaizhang.com/blog/2018/01/14/functions-about-array/</id>
     <published>2018-01-14T05:08:14.000Z</published>
-    <updated>2018-01-14T07:14:06.782Z</updated>
+    <updated>2018-01-14T07:16:51.942Z</updated>
     
     <content type="html"><![CDATA[<h2 id="Array-prototype-slice"><a href="#Array-prototype-slice" class="headerlink" title="Array.prototype.slice()"></a><code>Array.prototype.slice()</code></h2><p><em>// <code>slice</code> 词典翻译为：切片。这里大致可以理解为从数组上“切下来”一部分，或”提取“一部分</em></p><h3 id="描述："><a href="#描述：" class="headerlink" title="描述："></a>描述：</h3><blockquote><p><code>array.slice(start, end)</code></p></blockquote><ol><li>影响范围：<strong>不修改原数组，会返回一个新建的数组</strong></li><li>返回值：返回一个<strong>浅复制</strong>了原数组中的元素的一个新数组，即如果元素为引用类型（对象），此对象发生改变，则新数组和原数组中的这个元素也会发生改变</li><li>第一个参数（<code>start</code>）：<ul><li>从 <code>start</code> 指定的索引处开始“切片”</li><li>如果 <code>start</code> 为负数，表示从原数组倒数第几个元素开始</li><li>如果 <code>start</code> 省略，则从索引 0 开始</li></ul></li><li>第二个参数（<code>end</code>）：<ul><li>在 <code>end</code> 指定的索引处结束“切片”（但<strong>不包含该元素</strong>）</li><li>如果 <code>end</code> 为负数，表示从原数组倒数第几个元素结束</li><li>如果 <code>end</code> 被省略，则 <code>slice</code> 会一直提取到原数组末尾</li><li>如果 <code>end</code> 大于数组长度，<code>slice</code> 也会一直提取到原数组末尾</li></ul></li><li>通过 <code>slice</code> 将类数组转化为数组</li></ol><h3 id="使用示例："><a href="#使用示例：" class="headerlink" title="使用示例："></a>使用示例：</h3><h4 id="demo1："><a href="#demo1：" class="headerlink" title="demo1："></a>demo1：</h4><p>提取原数组中第二个元素开始直到（<strong>不包含</strong>）第四个元素的所有元素（索引为 1，2 的元素）<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [ <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span> ];</span><br><span class="line"><span class="keyword">var</span> sliced = arr.slice(<span class="number">1</span>, <span class="number">3</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(arr);     <span class="comment">// [ 1, 2, 3, 4 ]</span></span><br><span class="line"><span class="built_in">console</span>.log(sliced);  <span class="comment">// [ 2, 3 ]</span></span><br></pre></td></tr></table></figure></p><h4 id="demo2："><a href="#demo2：" class="headerlink" title="demo2："></a>demo2：</h4><p>省略第二个参数 <code>end</code> ，提取原数组中第二个参数开始到（包含）末尾的所有元素（索引为 1，2，3 的元素）<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [ <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span> ];</span><br><span class="line"><span class="keyword">var</span> sliced = arr.slice(<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(arr);     <span class="comment">// [ 1, 2, 3, 4 ]</span></span><br><span class="line"><span class="built_in">console</span>.log(sliced);  <span class="comment">// [ 2, 3, 4 ]</span></span><br></pre></td></tr></table></figure></p><h4 id="demo3："><a href="#demo3：" class="headerlink" title="demo3："></a>demo3：</h4><p>两个参数都省略，提取原数组所有元素<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [ <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span> ];</span><br><span class="line"><span class="keyword">var</span> sliced = arr.slice();</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(arr);     <span class="comment">// [ 1, 2, 3, 4 ]</span></span><br><span class="line"><span class="built_in">console</span>.log(sliced);  <span class="comment">// [ 1, 2, 3, 4 ]</span></span><br></pre></td></tr></table></figure></p><h4 id="demo4："><a href="#demo4：" class="headerlink" title="demo4："></a>demo4：</h4><p>转为类数组(<code>arguments</code>)为数组<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">list</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> args = [].slice.call(<span class="built_in">arguments</span>)</span><br><span class="line">  <span class="built_in">console</span>.log(args);  <span class="comment">// [ 1, 2, 3]</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> list1 = list(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>);</span><br></pre></td></tr></table></figure></p>]]></content>
     
@@ -34,8 +34,12 @@
     
     </summary>
     
+      <category term="javascript" scheme="http://wencaizhang.com/blog/categories/javascript/"/>
     
-      <category term="-javascript -array" scheme="http://wencaizhang.com/blog/tags/javascript-array/"/>
+    
+      <category term="javascript" scheme="http://wencaizhang.com/blog/tags/javascript/"/>
+    
+      <category term="array" scheme="http://wencaizhang.com/blog/tags/array/"/>
     
   </entry>
   
