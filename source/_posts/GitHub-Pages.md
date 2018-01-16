@@ -1,5 +1,5 @@
 ---
-title: GitHub Pages
+title: What is GitHub Pages
 tags:
   - 部署
 categories:
@@ -8,20 +8,16 @@ abbrlink: 56fd4e32
 date: 2018-01-09 18:30:53
 ---
 
-## What is GitHub Pages
-
->什么是 Github Pages？
->
 >Github Pages 是 Github 的静态页面托管服务。它设计的初衷是为了用户能够直接通过 Github 仓库来托管用户个人、组织或是项目的专属页面。参考：[What is GitHub Pages?](https://help.github.com/articles/what-is-github-pages/)
 
-> 友情提示：使用此功能需要对 git 及 GitHub 有一定了解
+*友情提示：使用此功能需要对 git 及 GitHub 有一定了解*
 
 使用步骤：
 1. 注册 GitHub 账户
 2. 创建一个仓库
 3. 打开此仓库的 `Settings` 页签
 ![](http://p2btijoky.bkt.clouddn.com/18-1-11/57116092.jpg)
-4. 找到 `GitHub Pag` 部分
+4. 找到 `GitHub Pages` 部分
 ![](http://p2btijoky.bkt.clouddn.com/18-1-11/59480694.jpg)
 
 因为 GitHub Pages 会展示指定位置（分支）的 `index.html` 或者 `README.md`，因此 `Source` 用于指定分支。

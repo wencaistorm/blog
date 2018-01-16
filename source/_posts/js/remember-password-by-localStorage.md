@@ -1,5 +1,5 @@
 ---
-title: 小tips - 利用 `localStorage` 记住用户名和密码
+title: 小tips - 利用 localStorage 记住用户名和密码
 tags:
   - javascript
   - localStorage
@@ -15,10 +15,10 @@ date: 2018-01-16 17:35:53
 1. `cookie`
     + 所有浏览器都支持，无兼容问题
     + 大小限制：4k 左右
-    + `cookie` 会被附加到每个 HTTP 请求中
-    
-      ![](http://p2btijoky.bkt.clouddn.com/18-1-16/99013211.jpg)
     + 可设置失效时间
+    + `cookie` 会被附加到每个 HTTP 请求中
+
+![](http://p2btijoky.bkt.clouddn.com/18-1-16/99013211.jpg)
 
 1. `localStorage`:
     + IE8+ （现在项目也基本都不要求兼容 IE6~7 了，因此可以放心使用）
@@ -72,7 +72,7 @@ window.localStorage.clear();
 ### 监听 `localStorage` 的变化
 1. 创建/更新/删除数据项时触发
 1. 重复设置相同的键值不会触发该事件
-1. Storage.clear() 方法至多触发一次该事件
+1. `localStorage.clear()` 方法至多触发一次该事件
 ```js
 window.addEventListener('storage', function(e) {
     // localStorage 发生改变时，事件对象包含了多个有用的属性信息
@@ -102,7 +102,7 @@ var userData = window.localStorage.getItem('userData');
 userData = JSON.parse(userData);
 ```
 
-需要注意的是：实际上 `localStorage` 存储的是字符串，因此我们需要 `JSON.stringfy()` 和 `JSON.parse()` 对数据进行处理
+需要注意的是：实际上 `localStorage` 存储的是字符串，因此存储时需要使用 `JSON.stringfy()` 将其转化成字符串，获取时使用 `JSON.parse()` 再将其转化为 `JSON` 格式。
 
 ## 最后
 `localStorage` 使用场景远不止于此，例如同源窗口通信，记录用户使用习惯等。
