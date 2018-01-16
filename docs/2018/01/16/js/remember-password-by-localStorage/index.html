@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>小tips - 利用 localStorage 记住用户名和密码 | 前端码农的自留地 | 一起学习弯道超车的技术！</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="javascript,localStorage">
+    <meta name="description" content="对于一个登录页面，通常都要支持的一个功能是记住密码，这样下次打开时就不需要重新输入，可以很好的提高用户体验。 在对比了 cookie 和 localStorage 之后，我选择了 localStorage 用于存储用户登录信息。  cookie 所有浏览器都支持，无兼容问题 大小限制：4k 左右 可设置失效时间 cookie 会被附加到每个 HTTP 请求中">
+<meta name="keywords" content="javascript,localStorage">
+<meta property="og:type" content="article">
+<meta property="og:title" content="小tips - 利用 localStorage 记住用户名和密码">
+<meta property="og:url" content="http://wencaizhang.com/blog/2018/01/16/js/remember-password-by-localStorage/index.html">
+<meta property="og:site_name" content="前端码农的自留地">
+<meta property="og:description" content="对于一个登录页面，通常都要支持的一个功能是记住密码，这样下次打开时就不需要重新输入，可以很好的提高用户体验。 在对比了 cookie 和 localStorage 之后，我选择了 localStorage 用于存储用户登录信息。  cookie 所有浏览器都支持，无兼容问题 大小限制：4k 左右 可设置失效时间 cookie 会被附加到每个 HTTP 请求中">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://p2btijoky.bkt.clouddn.com/18-1-16/99013211.jpg">
+<meta property="og:image" content="http://p2btijoky.bkt.clouddn.com/18-1-16/94959878.jpg">
+<meta property="og:image" content="http://p2btijoky.bkt.clouddn.com/18-1-16/11381239.jpg">
+<meta property="og:updated_time" content="2018-01-16T12:49:38.585Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="小tips - 利用 localStorage 记住用户名和密码">
+<meta name="twitter:description" content="对于一个登录页面，通常都要支持的一个功能是记住密码，这样下次打开时就不需要重新输入，可以很好的提高用户体验。 在对比了 cookie 和 localStorage 之后，我选择了 localStorage 用于存储用户登录信息。  cookie 所有浏览器都支持，无兼容问题 大小限制：4k 左右 可设置失效时间 cookie 会被附加到每个 HTTP 请求中">
+<meta name="twitter:image" content="http://p2btijoky.bkt.clouddn.com/18-1-16/99013211.jpg">
+    
+        <link rel="alternate" type="application/atom+xml" title="前端码农的自留地" href="/blog/atom.xml">
+    
+    <link rel="shortcut icon" href="/blog/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+    
+    <style>
+        .gutter { user-select: none; }
+    </style>
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/blog/img/brand.jpg)">
+      <div class="brand">
+        <a href="/blog/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/blog/img/logo.png">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">wencaizhang</h5>
+          <a href="mailto:1052642137@qq.com" title="1052642137@qq.com" class="mail">1052642137@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                存档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                目录
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/wencaistorm" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://wencaizhang.com/code-analysis/" target="_blank" >
+                <i class="icon icon-lg icon-code"></i>
+                Code
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/about" target="_blank" >
+                <i class="icon icon-lg icon-user-circle"></i>
+                About
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/soul" target="_blank" >
+                <i class="icon icon-lg icon-heart"></i>
+                心灵鸡汤
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">小tips - 利用 localStorage 记住用户名和密码</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+<div id="imag1s"><img id="imag1"></div>
+<div id="imag2s"><img id="imag2"></div>
+    <div class="container fade-scale">
+        <h1 class="title">小tips - 利用 localStorage 记住用户名和密码</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-01-16T09:35:53.000Z" itemprop="datePublished" class="page-time">
+  2018-01-16
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/JavaScript/">JavaScript</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#实例展示"><span class="post-toc-number">1.</span> <span class="post-toc-text">实例展示</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#localStorage-提供的方法"><span class="post-toc-number">2.</span> <span class="post-toc-text">localStorage 提供的方法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#设置值"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">设置值</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#获取值"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">获取值</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#删除值"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">删除值</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#清空域名对应的整个存储对象"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">清空域名对应的整个存储对象</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#监听-localStorage-的变化"><span class="post-toc-number">2.5.</span> <span class="post-toc-text">监听 localStorage 的变化</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#具体实现"><span class="post-toc-number">3.</span> <span class="post-toc-text">具体实现</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#最后"><span class="post-toc-number">4.</span> <span class="post-toc-text">最后</span></a></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-js/remember-password-by-localStorage"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">小tips - 利用 localStorage 记住用户名和密码</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-01-16 17:35:53" datetime="2018-01-16T09:35:53.000Z"  itemprop="datePublished">2018-01-16</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/JavaScript/">JavaScript</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>对于一个登录页面，通常都要支持的一个功能是记住密码，这样下次打开时就不需要重新输入，可以很好的提高用户体验。</p>
+<p>在对比了 <code>cookie</code> 和 <code>localStorage</code> 之后，我选择了 <code>localStorage</code> 用于存储用户登录信息。</p>
+<ol>
+<li><code>cookie</code><ul>
+<li>所有浏览器都支持，无兼容问题</li>
+<li>大小限制：4k 左右</li>
+<li>可设置失效时间</li>
+<li><code>cookie</code> 会被附加到每个 HTTP 请求中</li>
+</ul>
+</li>
+</ol>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://p2btijoky.bkt.clouddn.com/18-1-16/99013211.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<ol>
+<li><code>localStorage</code>:<ul>
+<li>IE8+ （现在项目也基本都不要求兼容 IE6~7 了，因此可以放心使用）</li>
+<li>大小限制：一般 5MB</li>
+<li>仅在客户端中保存，不参与和服务器的通信</li>
+<li>需手动清除，否则永远有效</li>
+</ul>
+</li>
+</ol>
+<p><em><code>sessionStorage</code> 和 <code>localStorage</code> 基本只有一点不同：<code>sessionStorage</code> 是基于会话的，页面关闭或浏览器关闭后失效</em></p>
+<h2 id="实例展示"><a href="#实例展示" class="headerlink" title="实例展示"></a>实例展示</h2><p>实际的登录页面可能还需要注册，所以就单独做了一个高保真的 demo 页面。</p>
+<p>您可以狠狠地点击这里：<a href="http://demo.wencaizhang.com/pages/remember-pwd-by-localStorage.html" target="_blank" rel="noopener">HTML5 localstorage本地存储应用demo</a></p>
+<p>进入 demo 页面，您可以看到两个输入框和一个登录按钮。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://p2btijoky.bkt.clouddn.com/18-1-16/94959878.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>您可以随心所欲的输入一个狂拽炫酷的用户名和密码，然后点击登录按钮，由于此 demo 仅用于展示记录密码功能，因此页面并无任何提示或跳转。</p>
+<p><em>在真实的场景中，点击按钮时应验证用户名密码，验证通过之后自动跳转到网站其他页面，与本文主题无关，故不做展示</em></p>
+<p>点击登录按钮之后，刷新页面，输入框已经自动填充刷新之前点击按钮时对应的值。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://p2btijoky.bkt.clouddn.com/18-1-16/11381239.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h2 id="localStorage-提供的方法"><a href="#localStorage-提供的方法" class="headerlink" title="localStorage 提供的方法"></a>localStorage 提供的方法</h2><p><em>此处只是简单介绍，详细使用请看<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API" target="_blank" rel="noopener">这里</a></em></p>
+<h3 id="设置值"><a href="#设置值" class="headerlink" title="设置值"></a>设置值</h3><ol>
+<li>用来创建新数据项和更新已存在的值</li>
+<li>接受两个参数——要创建/修改的数据项的键，和对应的值<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.localStorage.setItem(key, value);</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="获取值"><a href="#获取值" class="headerlink" title="获取值"></a>获取值</h3><ol>
+<li>获取一个数据项</li>
+<li>接受数据项的键作为参数，并返回数据值<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.localStorage.getItem(key);</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="删除值"><a href="#删除值" class="headerlink" title="删除值"></a>删除值</h3><ol>
+<li>接受一个参数——你想要移除的数据项的键，然后会将对应的数据项从域名对应的存储对象中移除<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.localStorage.removeItem(key);</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="清空域名对应的整个存储对象"><a href="#清空域名对应的整个存储对象" class="headerlink" title="清空域名对应的整个存储对象"></a>清空域名对应的整个存储对象</h3><ol>
+<li>不接受参数，只是简单地清空域名对应的整个存储对象<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.localStorage.clear();</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="监听-localStorage-的变化"><a href="#监听-localStorage-的变化" class="headerlink" title="监听 localStorage 的变化"></a>监听 <code>localStorage</code> 的变化</h3><ol>
+<li>创建/更新/删除数据项时触发</li>
+<li>重复设置相同的键值不会触发该事件</li>
+<li><code>localStorage.clear()</code> 方法至多触发一次该事件<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'storage'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// localStorage 发生改变时，事件对象包含了多个有用的属性信息</span></span><br><span class="line">    <span class="built_in">console</span>.log(e.key);          <span class="comment">// 改变的数据项的键</span></span><br><span class="line">    <span class="built_in">console</span>.log(e.oldValue);     <span class="comment">// 改变前的旧值</span></span><br><span class="line">    <span class="built_in">console</span>.log(e.newValue);     <span class="comment">// 改变后的新值</span></span><br><span class="line">    <span class="built_in">console</span>.log(e.url);          <span class="comment">// 改变的存储对象所在的文档的 URL</span></span><br><span class="line">    <span class="built_in">console</span>.log(e.storageArea);  <span class="comment">// 存储对象本身</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="具体实现"><a href="#具体实现" class="headerlink" title="具体实现"></a>具体实现</h2><ol>
+<li><p>数据存储<br>每次用户点击一次登录按钮，记录下当前使用的用户名和密码。例如，放到一个对象中，然后存储之，代码如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> userData = &#123;</span><br><span class="line">    username: <span class="string">'张君宝'</span>,</span><br><span class="line">    pwd: <span class="string">'123456'</span>,</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">window</span>.localStorage.setItem(<span class="string">'userData'</span>, <span class="built_in">JSON</span>.stringify(userData));</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>数据读取<br>每次页面加载的时候，将相对应的数据读出来。如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> userData = <span class="built_in">window</span>.localStorage.getItem(<span class="string">'userData'</span>);</span><br><span class="line">userData = <span class="built_in">JSON</span>.parse(userData);</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>需要注意的是：实际上 <code>localStorage</code> 存储的是字符串，因此存储时需要使用 <code>JSON.stringfy()</code> 将其转化成字符串，获取时使用 <code>JSON.parse()</code> 再将其转化为 <code>JSON</code> 格式。</p>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p><code>localStorage</code> 使用场景远不止于此，例如同源窗口通信，记录用户使用习惯等。</p>
+<p>更多阅读：</p>
+<ul>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API" target="_blank" rel="noopener">使用 Web Storage API</a></li>
+<li><a href="https://iammapping.com/the-other-ways-to-use-localstorage/" target="_blank" rel="noopener">localStorage 还能这么用</a></li>
+</ul>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2018-01-16T12:49:38.585Z" itemprop="dateUpdated">2018-01-16 20:49:38</time>
+</span><br>
+
+
+        
+        原始链接：<a href="/blog/2018/01/16/js/remember-password-by-localStorage/" target="_blank" rel="external">http://wencaizhang.com/blog/2018/01/16/js/remember-password-by-localStorage/</a>
+        
+    </div>
+    <footer>
+        <a href="http://wencaizhang.com/blog">
+            <img src="/blog/img/logo.png" alt="wencaizhang">
+            wencaizhang
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/localStorage/">localStorage</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://wencaizhang.com/blog/2018/01/16/js/remember-password-by-localStorage/&title=《小tips - 利用 localStorage 记住用户名和密码》 — 前端码农的自留地&pic=http://wencaizhang.com/blog/img/logo.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wencaizhang.com/blog/2018/01/16/js/remember-password-by-localStorage/&title=《小tips - 利用 localStorage 记住用户名和密码》 — 前端码农的自留地&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://wencaizhang.com/blog/2018/01/16/js/remember-password-by-localStorage/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《小tips - 利用 localStorage 记住用户名和密码》 — 前端码农的自留地&url=http://wencaizhang.com/blog/2018/01/16/js/remember-password-by-localStorage/&via=http://wencaizhang.com/blog" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://wencaizhang.com/blog/2018/01/16/js/remember-password-by-localStorage/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/blog/2018/01/14/functions-about-array/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">数组方法小盘点</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitment_thread"></div>
+    <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
+    <script>
+        var gitment = new Gitment({
+            owner: 'wencaistorm',
+            repo: 'blog',
+            oauth: {
+                client_id: '09a59bcc9b9f4c9c8d08',
+                client_secret: 'e9b6c841fda1b24e9bad7ac6af9b23af4419067f',
+            },
+        })
+        console.log(gitment)
+        gitment.render('comments')
+    </script>
+</section>
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        请我吃辣条~~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/blog/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/blog/img/wechat.jpg" data-alipay="/blog/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/blog/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>wencaizhang &copy; 2015 - 2018</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://wencaizhang.com/blog/2018/01/16/js/remember-password-by-localStorage/&title=《小tips - 利用 localStorage 记住用户名和密码》 — 前端码农的自留地&pic=http://wencaizhang.com/blog/img/logo.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wencaizhang.com/blog/2018/01/16/js/remember-password-by-localStorage/&title=《小tips - 利用 localStorage 记住用户名和密码》 — 前端码农的自留地&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://wencaizhang.com/blog/2018/01/16/js/remember-password-by-localStorage/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《小tips - 利用 localStorage 记住用户名和密码》 — 前端码农的自留地&url=http://wencaizhang.com/blog/2018/01/16/js/remember-password-by-localStorage/&via=http://wencaizhang.com/blog" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://wencaizhang.com/blog/2018/01/16/js/remember-password-by-localStorage/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACqUlEQVR42u3awXLcQAgFQP//T6+vPljSA4Zdu6p1Sm2kiNZhIMDXV3y9Lq6ff3v/bP7v9N4yuvDw8PAOhZ6/+P71SYj52/OY8fDw8LZ5vbCuXnYV1v2zSSLJY8bDw8P7O7zCoRzUutXPh4eHh/d/eUkQeUui2ozAw8PD+wu8agu118ztle9v6rXg4eHhnal7C0ninX9eme/h4eHhjafq+YGbD8PyZ/M0cBktHh4e3gIvD6VXZFefnZTslzHg4eHhLfDmQ/38l+T3s/fg4eHhbfDywzQpdieNjN7ywcOzeHh4eAu86kgpD6s3oFq5Hw8PD+/o/Tmjmk7un5oschVSCB4eHt4Cr5cYeiunkyJ7fbMMDw8Pr8jLD/1eyVtdApgnITw8PLxtXvWwPrYUNWgTl5MBHh4e3iHepIGbtx5OjdySSPDw8PD2eK/BdX+U9yr6XpvjMgY8PDy8Bd7GelPvQ0xSRf4sHh4e3pw3b7C+J/RmhHh4eHhrvLwwTdoKyYeo3tlLYHh4eHgbvN4IKh+VVQdsp4pyPDw8vPfw8tFXftBX00A1LZWXrvDw8PDGvHzUVH1BvjRwaqD1y7N4eHh4C7w8e+RlbrX9mgSd3xNlPzw8PLxDvFNthe0yuvlGPDw8vKO8U0d2niTK+arY8H3IaXh4eHhHeZPEkH+4JNB85FYYfeHh4eEt8HoHd744lRfck+uhpMbDw8Mb8F7Fa9Ji6DV/ywU0Hh4e3jKvetTmxXE+DOstEBxOJ3h4eHhF3qQFUB2MTUZi+WeNBmB4eHh4Y958T6mXAI6Vxfe9Fjw8PLyP8pLaNfl9o3B/2CbDw8PD+xCvmgDy5YBqUR4lDzw8PLw13nzolTQUqq2KJDmVl67w8PDwxrzqf+9zwHzpKnnXuS0tPDw8vMfrGyvZnHFA/QgFAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/blog/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '主人正在角落画圈圈(*@ο@*)';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '欢迎回来';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

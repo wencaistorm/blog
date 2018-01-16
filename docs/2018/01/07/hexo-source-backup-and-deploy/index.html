@@ -20,18 +20,18 @@
     
     
     <meta name="keywords" content="hexo">
-    <meta name="description" content="关于备份源文件我是这么做的  在搭建博客的时候，通常都会在 GitHub 上面创建一个 git 仓库，利用 GitHub 提供的 gh-pages 功能，将 hexo 生成的静态网页提交到 master 分支。那么顺着这个思路，利用 git 的分支功能将这个仓库变成集展示和备份于一体的 git 仓库。   例如，创建 source 分支用于管理配置文件和博客文章源文件，如果对博客主题进行了自定义，">
+    <meta name="description" content="搭建博客的思路 使用框架 Hexo 文档 将 markdown 文章解析成静态网页 借助 GitHub Pages 展示静态网页的功能，部署解析出来的静态网页（What is GitHub Pages）  备份源文件的思路  这里写如何备份 markdown 文章源文件，至于详细的搭建步骤请自行百之谷之，不再详述   GitHub Pages 功能可以展示三个位置的静态网页资源：  master">
 <meta name="keywords" content="hexo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hexo 备份">
-<meta property="og:url" content="http://wencaizhang.com/blog/2018/01/07/hexo-admin/index.html">
+<meta property="og:url" content="http://wencaizhang.com/blog/2018/01/07/hexo-source-backup-and-deploy/index.html">
 <meta property="og:site_name" content="前端码农的自留地">
-<meta property="og:description" content="关于备份源文件我是这么做的  在搭建博客的时候，通常都会在 GitHub 上面创建一个 git 仓库，利用 GitHub 提供的 gh-pages 功能，将 hexo 生成的静态网页提交到 master 分支。那么顺着这个思路，利用 git 的分支功能将这个仓库变成集展示和备份于一体的 git 仓库。   例如，创建 source 分支用于管理配置文件和博客文章源文件，如果对博客主题进行了自定义，">
+<meta property="og:description" content="搭建博客的思路 使用框架 Hexo 文档 将 markdown 文章解析成静态网页 借助 GitHub Pages 展示静态网页的功能，部署解析出来的静态网页（What is GitHub Pages）  备份源文件的思路  这里写如何备份 markdown 文章源文件，至于详细的搭建步骤请自行百之谷之，不再详述   GitHub Pages 功能可以展示三个位置的静态网页资源：  master">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-01-09T10:36:52.265Z">
+<meta property="og:updated_time" content="2018-01-16T13:43:53.465Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo 备份">
-<meta name="twitter:description" content="关于备份源文件我是这么做的  在搭建博客的时候，通常都会在 GitHub 上面创建一个 git 仓库，利用 GitHub 提供的 gh-pages 功能，将 hexo 生成的静态网页提交到 master 分支。那么顺着这个思路，利用 git 的分支功能将这个仓库变成集展示和备份于一体的 git 仓库。   例如，创建 source 分支用于管理配置文件和博客文章源文件，如果对博客主题进行了自定义，">
+<meta name="twitter:description" content="搭建博客的思路 使用框架 Hexo 文档 将 markdown 文章解析成静态网页 借助 GitHub Pages 展示静态网页的功能，部署解析出来的静态网页（What is GitHub Pages）  备份源文件的思路  这里写如何备份 markdown 文章源文件，至于详细的搭建步骤请自行百之谷之，不再详述   GitHub Pages 功能可以展示三个位置的静态网页资源：  master">
     
         <link rel="alternate" type="application/atom+xml" title="前端码农的自留地" href="/blog/atom.xml">
     
@@ -41,7 +41,10 @@
 
     <!-- custom head -->
     
-
+    
+    <style>
+        .gutter { user-select: none; }
+    </style>
 </head>
 
 <body>
@@ -181,11 +184,11 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#关于备份源文件我是这么做的"><span class="post-toc-number">1.</span> <span class="post-toc-text">关于备份源文件我是这么做的</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#一键部署"><span class="post-toc-number">2.</span> <span class="post-toc-text">一键部署</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#搭建博客的思路"><span class="post-toc-number">1.</span> <span class="post-toc-text">搭建博客的思路</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#备份源文件的思路"><span class="post-toc-number">2.</span> <span class="post-toc-text">备份源文件的思路</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#一键部署的思路"><span class="post-toc-number">3.</span> <span class="post-toc-text">一键部署的思路</span></a></li></ol>
         </nav>
     </aside>
     
-<article id="post-hexo-admin"
+<article id="post-hexo-source-backup-and-deploy"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
@@ -206,29 +209,42 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h2 id="关于备份源文件我是这么做的"><a href="#关于备份源文件我是这么做的" class="headerlink" title="关于备份源文件我是这么做的"></a>关于备份源文件我是这么做的</h2><p>  在搭建博客的时候，通常都会在 GitHub 上面创建一个 git 仓库，利用 GitHub 提供的 gh-pages 功能，将 hexo 生成的静态网页提交到 master 分支。那么顺着这个思路，利用 git 的分支功能将这个仓库变成集展示和备份于一体的 git 仓库。</p>
-<p>  例如，创建 source 分支用于管理配置文件和博客文章源文件，如果对博客主题进行了自定义，还可以再创建一个 theme 分支用于管理主题。</p>
-<p>  这样做的好处，一方面是备份，另一个方面是方便在不同的电脑上快速搭建环境，只需要 <code>git clone</code> 和 <code>npm install</code> 两个命令就可以搞定！</p>
-<h2 id="一键部署"><a href="#一键部署" class="headerlink" title="一键部署"></a>一键部署</h2><p>如果按照上面的方法做，每次写完文章最后都会用这么几个步骤：</p>
-<ol>
-<li><code>hexo</code> 的部署命令 <code>hexo d</code></li>
-<li>提交 <code>source</code> 分支源文件</li>
-<li>如果修改了主题，还要切换目录并提交 <code>theme</code> 分支</li>
+            <h2 id="搭建博客的思路"><a href="#搭建博客的思路" class="headerlink" title="搭建博客的思路"></a>搭建博客的思路</h2><ol>
+<li>使用框架 <code>Hexo</code> <a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">文档</a> 将 markdown 文章解析成静态网页</li>
+<li>借助 <code>GitHub Pages</code> 展示静态网页的功能，部署解析出来的静态网页（<a href="/blog/2018/01/09/GitHub-Pages/">What is GitHub Pages</a>）</li>
 </ol>
-<p>利用 npm scripts 可以一条命令全部搞定！</p>
-<p>做前端开发的同学可能会对此比较熟悉，在网站根目录下有一个 <code>package.json</code> 文件，里面有个 <code>scripts</code> 字段，这里面可以自定义命令。</p>
-<p>如果对 <code>npm scripts</code> 不太了解的，推荐：<a href="http://www.ruanyifeng.com/blog/2016/10/npm_scripts.html" target="_blank" rel="noopener">npm scripts 使用指南</a></p>
+<h2 id="备份源文件的思路"><a href="#备份源文件的思路" class="headerlink" title="备份源文件的思路"></a>备份源文件的思路</h2><p>  <em>这里写如何备份 markdown 文章源文件，至于详细的搭建步骤请自行百之谷之，不再详述</em></p>
+<p>  <code>GitHub Pages</code> 功能可以展示三个位置的静态网页资源：</p>
+<ol>
+<li><code>master</code> 分支</li>
+<li><code>master</code> 分支的 <code>docs</code> 目录</li>
+<li><p><code>gh-pages</code> 分支</p>
+<p>那么，不妨利用分支功能另外创建一个 <code>source</code> 分支用于管理备份配置文件和博客文章源文件，如果对博客主题进行了自定义，甚至可以再创建一个 <code>theme</code> 分支用于管理主题。</p>
+<p>如此一来，将所有的文件都纳入版本控制系统，无论在哪里都可以快速创建一个相同的博客写作环境</p>
+</li>
+</ol>
+<h2 id="一键部署的思路"><a href="#一键部署的思路" class="headerlink" title="一键部署的思路"></a>一键部署的思路</h2><p>如果按照上面的方法做，每次预览或部署静态网页显得略微有点麻烦：</p>
+<ol>
+<li>预览：删除旧的解析出来的网页（<code>hexo clean</code>），重新解析（<code>hexo g</code>），最后启动本地服务器（<code>hexo s</code>）</li>
+<li>部署静态网页：删除旧的解析出来的网页（<code>hexo clean</code>），重新解析（<code>hexo g</code>），最后部署到 GitHub 上（<code>hexo d</code>）</li>
+<li>提交源文件至 <code>source</code> 分支</li>
+<li>如果修改了主题，还要切换目录并提交主题至 <code>theme</code> 分支</li>
+</ol>
+<p>有木有很麻烦啊！</p>
+<p>但是现在，利用 npm scripts 可以一条命令全部搞定！</p>
+<p>做前端开发的同学可能会对此比较熟悉，在网站根目录下有一个 <code>package.json</code> 文件，里面有个 <code>scripts</code> 字段可用于自定义命令。</p>
+<p>如果对 <code>npm scripts</code> 不太了解的，推荐：<a href="http://www.ruanyifeng.com/blog/2016/10/npm_scripts.html" target="_blank" rel="noopener">npm scripts 使用指南 · 阮一峰</a></p>
 <p>简单介绍下这段 <code>npm scripts</code> ：</p>
 <ol>
 <li><code>scripts</code> 字段是一个对象。它的每一个属性，对应一段脚本。例如 <code>dev</code> 字段对应的脚本是 <code>hexo clean &amp;&amp; hexo g &amp;&amp; hexo s</code>，命令行中使用 <code>npm run dev</code> 就可以执行这段脚本</li>
 <li><code>&amp;&amp;</code>: 表示前一个任务执行成功，后一个任务才执行，<code>&amp;</code> 则是两个任务同时执行</li>
 <li><code>npm run dev</code>: 主要用于本地预览博客，按照顺序执行 <code>hexo clean</code>、<code>hexo g</code>、<code>hexo s</code>，只有前一个任务执行成功，后一个才执行</li>
-<li><code>npm run push</code>: 部署博客</li>
-<li><code>npm run prepush</code>: 提交 <code>source</code> 分支</li>
-<li><code>npm run postpush</code>: 提交 <code>theme</code> 分支</li>
+<li><code>npm run push</code>: push 资源文件和静态页面资源</li>
+<li><code>npm run prepush</code>: 使用 <code>hexo</code> 将文章解析成静态页面于 <code>public</code> 目录下，然后将 <code>public</code> 目录重命名为 <code>docs</code></li>
+<li><code>npm run postpush</code>: push <code>theme</code> 分支</li>
 <li>钩子: <code>npm scripts</code> 有 <code>pre</code> 和 <code>post</code> 两个钩子。例如 <code>push</code> 脚本的钩子是 <code>prepush</code> 和 <code>postpush</code>，<code>prepush</code> 在 <code>push</code> 脚本之前执行，<code>postpush</code> 在 <code>push</code> 脚本之后执行。也就是说，执行 <code>npm run push</code> 的时候，会自动按照顺序先后执行 <code>npm run prepush &amp;&amp; npm run push &amp;&amp; npm run postpush</code> 。</li>
 </ol>
-<p>因此，在部署时，只需执行命令 <code>npm run push</code>，会自动部署博客网站，提交 <code>source</code> 和 <code>theme</code> 分支。<br>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line">  <span class="string">"dev"</span>: <span class="string">"hexo clean &amp;&amp; hexo g &amp;&amp; hexo s"</span>,</span><br><span class="line">  <span class="string">"prepush"</span>: <span class="string">"git add -A &amp;&amp; git commit -m update &amp;&amp; git push origin source"</span>,</span><br><span class="line">  <span class="string">"push"</span>: <span class="string">"hexo clean &amp;&amp; hexo g &amp;&amp; hexo d"</span>,</span><br><span class="line">  <span class="string">"postpush"</span>: <span class="string">"cd themes/indigo &amp;&amp; git add -A &amp;&amp; git commit -m update &amp;&amp; git push origin theme"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>因此，在部署时，只需执行命令 <code>npm run push</code>，会自动部署博客网站，提交 <code>source</code> 和 <code>theme</code> 分支。<br>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line">  <span class="string">"dev"</span>: <span class="string">"hexo clean &amp;&amp; hexo g &amp;&amp; hexo s"</span>,</span><br><span class="line">  <span class="string">"prepush"</span>: <span class="string">"rm -rf docs &amp;&amp; hexo clean &amp;&amp; hexo g &amp;&amp; mv public docs"</span>,</span><br><span class="line">  <span class="string">"push"</span>: <span class="string">"git add -A &amp;&amp; git commit -m publish &amp;&amp; git push origin master"</span>,</span><br><span class="line">  <span class="string">"postpush"</span>: <span class="string">"cd themes/indigo &amp;&amp; git add -A &amp;&amp; git commit -m update &amp;&amp; git push origin theme"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
         </div>
 
@@ -236,12 +252,12 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2018-01-09T10:36:52.265Z" itemprop="dateUpdated">2018-01-09 18:36:52</time>
+    最后更新时间：<time datetime="2018-01-16T13:43:53.465Z" itemprop="dateUpdated">2018-01-16 21:43:53</time>
 </span><br>
 
 
         
-        原始链接：<a href="/blog/2018/01/07/hexo-admin/" target="_blank" rel="external">http://wencaizhang.com/blog/2018/01/07/hexo-admin/</a>
+        原始链接：<a href="/blog/2018/01/07/hexo-source-backup-and-deploy/" target="_blank" rel="external">http://wencaizhang.com/blog/2018/01/07/hexo-source-backup-and-deploy/</a>
         
     </div>
     <footer>
@@ -271,7 +287,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://wencaizhang.com/blog/2018/01/07/hexo-admin/&title=《hexo 备份》 — 前端码农的自留地&pic=http://wencaizhang.com/blog/img/logo.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://wencaizhang.com/blog/2018/01/07/hexo-source-backup-and-deploy/&title=《hexo 备份》 — 前端码农的自留地&pic=http://wencaizhang.com/blog/img/logo.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -281,22 +297,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wencaizhang.com/blog/2018/01/07/hexo-admin/&title=《hexo 备份》 — 前端码农的自留地&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wencaizhang.com/blog/2018/01/07/hexo-source-backup-and-deploy/&title=《hexo 备份》 — 前端码农的自留地&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://wencaizhang.com/blog/2018/01/07/hexo-admin/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://wencaizhang.com/blog/2018/01/07/hexo-source-backup-and-deploy/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《hexo 备份》 — 前端码农的自留地&url=http://wencaizhang.com/blog/2018/01/07/hexo-admin/&via=http://wencaizhang.com/blog" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《hexo 备份》 — 前端码农的自留地&url=http://wencaizhang.com/blog/2018/01/07/hexo-source-backup-and-deploy/&via=http://wencaizhang.com/blog" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://wencaizhang.com/blog/2018/01/07/hexo-admin/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://wencaizhang.com/blog/2018/01/07/hexo-source-backup-and-deploy/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -321,7 +337,7 @@
     <div class="waves-block waves-effect prev">
       <a href="/blog/2018/01/09/GitHub-Pages/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">GitHub Pages</h4>
+        <h4 class="title">What is GitHub Pages</h4>
       </a>
     </div>
   
@@ -442,7 +458,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://wencaizhang.com/blog/2018/01/07/hexo-admin/&title=《hexo 备份》 — 前端码农的自留地&pic=http://wencaizhang.com/blog/img/logo.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://wencaizhang.com/blog/2018/01/07/hexo-source-backup-and-deploy/&title=《hexo 备份》 — 前端码农的自留地&pic=http://wencaizhang.com/blog/img/logo.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -452,22 +468,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wencaizhang.com/blog/2018/01/07/hexo-admin/&title=《hexo 备份》 — 前端码农的自留地&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wencaizhang.com/blog/2018/01/07/hexo-source-backup-and-deploy/&title=《hexo 备份》 — 前端码农的自留地&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://wencaizhang.com/blog/2018/01/07/hexo-admin/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://wencaizhang.com/blog/2018/01/07/hexo-source-backup-and-deploy/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《hexo 备份》 — 前端码农的自留地&url=http://wencaizhang.com/blog/2018/01/07/hexo-admin/&via=http://wencaizhang.com/blog" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《hexo 备份》 — 前端码农的自留地&url=http://wencaizhang.com/blog/2018/01/07/hexo-source-backup-and-deploy/&via=http://wencaizhang.com/blog" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://wencaizhang.com/blog/2018/01/07/hexo-admin/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://wencaizhang.com/blog/2018/01/07/hexo-source-backup-and-deploy/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -478,7 +494,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACKElEQVR42u3aS3YDIQwEwNz/0s4BHONukVkMU6z8/GEoFrIE+vmJx+ttvH/6/rqd7dP8/zYwMDBuy3gtR77QT7z1spJNWa8NAwPjOYz1A9YLakPkFVuGgYGBsX5YC0gCKwYGBsaMsSYNH79MJTEwMDDaInZ/oUmJe3ktjoGBcUPGfkp33etL7jcwMDBuxXhtjxycf6deAwYGxtGMNggmyVye9uWMKD3FwMA4lDE7pk8K2rzlK7nC3Aq1GBgYN2e06Vp7oJ+8n7dcRIUuBgbGcYx2uiT5a3+VL/fL/wYGBsahjGRBs2Rxdrg2Y2NgYDyTkRSN+aVjssR2I6KAi4GBcSijnahNJevFxX8JGBgYZzPaRLBtHWsvO9uyFgMD42zGdUVpmyBuXTlgYGA8gLGTMrbpY7tlxZUABgbG0Yy89SrPNJO2sLbxYthsgYGBcQRjp7zcaRHbYf9RxGJgYBzN2A+vs/DdtnpEtTgGBsahjP1A2eLzy8toEzEwMI5m7ByrJctap5uzK8+tnhEMDIwbMtrDr9l1YxtY6+IZAwPjaEYdm4PiMymJZ0/fuo/FwMC4LeNVjv0Oh9k3v2wTBgbG0Yyd8No2T8yO8OoEEQMD41DGrDErL1/bBHEYjjEwMB7AmF0cJtT1PG2qV9fiGBgYD2O07+TXD+2BHQYGBkYeKPN5rkZiYGA8gTErYvPjsHxZs8M4DAyMsxl56TgsLzeaLfKDPAwMjEMZv61xRrxxiCCrAAAAAElFTkSuQmCC" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACtklEQVR42u3aQW7jMAwF0Nz/0um2A9T2p0gGGeBpNXBtRU8DmDLJ1yse71/j95WrO6+u3M/wvhj3vzgw8PDw8BpLv586+YH7ec5gV1uTPIWHh4e3x7t/xVenfvjJYNH5eh4seHh4eF/DS57NYXmYwcPDw/t/eUla4f7+5PrZtuLh4eF9hteZeurZsytjuRY8PDy8mJdXkb7n3yv1PTw8PLx2Vf2sGNYpnlUDz8Nq8fDw8BZ4Z+nUamNWshGdex7WiYeHh/cRXjUkVJeYpy3O0hx4eHh427wkFTv7pV9NNHQaFPDw8PBmeZ2P/Dx4JBuXb0rh2I2Hh4f3EV410VANKmdl/qvtKMc6PDw8vCFefiUJAJ1XeR5gonnw8PDwlnmzxa1qsqPajhAlLPDw8PAWeNVgcLY1s6WyJDDg4eHh7fFmkxFJI8Js6evhvwcPDw9vjXf28X+2uCQI5WHgvpyGh4eHt82rFqIepi4+e1YMK38r4OHh4Q3xpspO/daEZIMKLQt4eHh4a7x+6rYaJBL8QKjAw8PDW+advdbzxG4eWvL2goc58fDw8NZ4eWL0LDBUtyDZyqgpAQ8PD2+NV20XyJOw7/bIj9d/3I+Hh4e3wIvKSHHJPy//94tbUdMVHh4e3hovP153WqA681cLYHh4eHjbvDNM9TB9VkLL27kun8XDw8Nb43VKUH1GNXhEsQ4PDw9vmZenSpNEwD1jqugV3YOHh4c3yjsrR1VTt0niNU/OJtvxT30PDw8Pb5SXj/7RtnpETo7mr6mBh4eHV+T1S1PVV3/+1/wIvlLZw8PDw7vl5Qfc/ODbb8PqBzA8PDy8b+AlQSVP+1ZDVL6teHh4eN/Dy1MGs2nfQrsAHh4e3kd4U61OZ80BnTaCh2fx8PDwFnj5R/5ZA1b+xq4mdofre3h4eHjP4wcyBCIWIJ86aQAAAABJRU5ErkJggg==" alt="微信分享二维码">
 </div>
 
 
