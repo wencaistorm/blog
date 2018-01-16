@@ -1,5 +1,5 @@
 ---
-title: 小tips: 利用 `localStorage` 记住用户名和密码
+title: 小tips - 利用 `localStorage` 记住用户名和密码
 tags:
   - javascript
   - localStorage
@@ -105,6 +105,8 @@ userData = JSON.parse(userData);
 需要注意的是：实际上 `localStorage` 存储的是字符串，因此我们需要 `JSON.stringfy()` 和 `JSON.parse()` 对数据进行处理
 
 ## 最后
+`localStorage` 使用场景远不止于此，例如同源窗口通信，记录用户使用习惯等。
+
 更多阅读：
 + [使用 Web Storage API](https://developer.mozilla.org/zh-CN/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API)
 + [localStorage 还能这么用](https://iammapping.com/the-other-ways-to-use-localstorage/)
