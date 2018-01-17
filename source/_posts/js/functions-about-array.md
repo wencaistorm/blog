@@ -1,11 +1,11 @@
 ---
-title: '数组方法小盘点'
+title: 数组方法小盘点
 date: 2018-01-14 13:08:14
 tags: 
   - javascript 
   - array
 categories:
-  - javascript 
+  - Javascript 
 ---
 
 

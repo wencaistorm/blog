@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>调教你的Xshell | 前端码农的自留地 | 一起学习弯道超车的技术！</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="tool,xshell,linux">
+    <meta name="description" content="打开选项窗口如图所示：工具 -&amp;gt; 选项即可打开选项窗口                                                                                                           将选中的文本自动复制到剪贴板（左键选中自动复制）如图所示，在“键盘和鼠标”选项卡中勾选对应选项即可：">
+<meta name="keywords" content="tool,xshell,linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="调教你的Xshell">
+<meta property="og:url" content="http://wencaizhang.com/blog/2018/01/17/tool/config-your-xshell/index.html">
+<meta property="og:site_name" content="前端码农的自留地">
+<meta property="og:description" content="打开选项窗口如图所示：工具 -&amp;gt; 选项即可打开选项窗口                                                                                                           将选中的文本自动复制到剪贴板（左键选中自动复制）如图所示，在“键盘和鼠标”选项卡中勾选对应选项即可：">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://p2btijoky.bkt.clouddn.com/18-1-17/39941105.jpg">
+<meta property="og:image" content="http://p2btijoky.bkt.clouddn.com/18-1-17/65171353.jpg">
+<meta property="og:image" content="http://p2btijoky.bkt.clouddn.com/18-1-17/7123508.jpg">
+<meta property="og:image" content="http://p2btijoky.bkt.clouddn.com/18-1-17/13626882.jpg">
+<meta property="og:image" content="http://p2btijoky.bkt.clouddn.com/18-1-17/94066364.jpg">
+<meta property="og:image" content="http://p2btijoky.bkt.clouddn.com/18-1-17/89009725.jpg">
+<meta property="og:image" content="http://p2btijoky.bkt.clouddn.com/18-1-17/45371351.jpg">
+<meta property="og:updated_time" content="2018-01-17T15:52:40.170Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="调教你的Xshell">
+<meta name="twitter:description" content="打开选项窗口如图所示：工具 -&amp;gt; 选项即可打开选项窗口                                                                                                           将选中的文本自动复制到剪贴板（左键选中自动复制）如图所示，在“键盘和鼠标”选项卡中勾选对应选项即可：">
+<meta name="twitter:image" content="http://p2btijoky.bkt.clouddn.com/18-1-17/39941105.jpg">
+    
+        <link rel="alternate" type="application/atom+xml" title="前端码农的自留地" href="/blog/atom.xml">
+    
+    <link rel="shortcut icon" href="/blog/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+    
+    <style>
+        .gutter { user-select: none; }
+    </style>
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/blog/img/brand.jpg)">
+      <div class="brand">
+        <a href="/blog/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/blog/img/logo.png">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">wencaizhang</h5>
+          <a href="mailto:1052642137@qq.com" title="1052642137@qq.com" class="mail">1052642137@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                存档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                目录
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/wencaistorm" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://wencaizhang.com/code-analysis/" target="_blank" >
+                <i class="icon icon-lg icon-code"></i>
+                Code
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/about" target="_blank" >
+                <i class="icon icon-lg icon-user-circle"></i>
+                About
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/soul" target="_blank" >
+                <i class="icon icon-lg icon-heart"></i>
+                心灵鸡汤
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">调教你的Xshell</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+<div id="imag1s"><img id="imag1"></div>
+<div id="imag2s"><img id="imag2"></div>
+    <div class="container fade-scale">
+        <h1 class="title">调教你的Xshell</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-01-17T15:05:00.000Z" itemprop="datePublished" class="page-time">
+  2018-01-17
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/tool/">tool</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#打开选项窗口"><span class="post-toc-number">1.</span> <span class="post-toc-text">打开选项窗口</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#将选中的文本自动复制到剪贴板（左键选中自动复制）"><span class="post-toc-number">2.</span> <span class="post-toc-text">将选中的文本自动复制到剪贴板（左键选中自动复制）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#右键设置"><span class="post-toc-number">3.</span> <span class="post-toc-text">右键设置</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Ctrl-C-复制"><span class="post-toc-number">4.</span> <span class="post-toc-text">Ctrl + C 复制</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Ctrl-V-粘贴"><span class="post-toc-number">5.</span> <span class="post-toc-text">Ctrl + V 粘贴</span></a></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-tool/config-your-xshell"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">调教你的Xshell</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-01-17 23:05:00" datetime="2018-01-17T15:05:00.000Z"  itemprop="datePublished">2018-01-17</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/tool/">tool</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h3 id="打开选项窗口"><a href="#打开选项窗口" class="headerlink" title="打开选项窗口"></a>打开选项窗口</h3><p>如图所示：工具 -&gt; 选项即可打开选项窗口<br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://p2btijoky.bkt.clouddn.com/18-1-17/39941105.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure></p>
+<h3 id="将选中的文本自动复制到剪贴板（左键选中自动复制）"><a href="#将选中的文本自动复制到剪贴板（左键选中自动复制）" class="headerlink" title="将选中的文本自动复制到剪贴板（左键选中自动复制）"></a>将选中的文本自动复制到剪贴板（左键选中自动复制）</h3><p>如图所示，在“键盘和鼠标”选项卡中勾选对应选项即可：<br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://p2btijoky.bkt.clouddn.com/18-1-17/65171353.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure></p>
+<h3 id="右键设置"><a href="#右键设置" class="headerlink" title="右键设置"></a>右键设置</h3><p>如图所示，设置右键和中键的功能，其中下拉选项的含义如下：</p>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th style="text-align:center">蹩脚翻译</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Do nothing</td>
+<td style="text-align:center">什么都不做</td>
+</tr>
+<tr>
+<td>Open the popup menu</td>
+<td style="text-align:center">打开弹出式菜单</td>
+</tr>
+<tr>
+<td>Paste the clipboard contents</td>
+<td style="text-align:center">粘贴剪切板的内容</td>
+</tr>
+<tr>
+<td>Open Properties dialog</td>
+<td style="text-align:center">打开属性窗口</td>
+</tr>
+<tr>
+<td>Send carriage return</td>
+<td style="text-align:center">发送回车</td>
+</tr>
+<tr>
+<td>Paste the selected text</td>
+<td style="text-align:center">粘贴被选中的文本</td>
+</tr>
+</tbody>
+</table>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://p2btijoky.bkt.clouddn.com/18-1-17/7123508.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>我的选择是，中键打开弹出式菜单，右键粘贴剪切板的内容</p>
+<h3 id="Ctrl-C-复制"><a href="#Ctrl-C-复制" class="headerlink" title="Ctrl + C 复制"></a><code>Ctrl + C</code> 复制</h3><p><code>Ctrl + C</code> 常用于结束正在进行中的命令，另外<br>在设置了左键选中自动复制之后，也就不需要再额外设置复制的快捷键了。</p>
+<h3 id="Ctrl-V-粘贴"><a href="#Ctrl-V-粘贴" class="headerlink" title="Ctrl + V 粘贴"></a><code>Ctrl + V</code> 粘贴</h3><p>键盘和鼠标选项卡 -&gt; 编辑按钮 -&gt; 新建按钮 -&gt; 同时按下 <code>Ctrl</code> 和 <code>V</code> 会自动进入编辑面板 -&gt; 类型选择菜单选项 -&gt;<br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://p2btijoky.bkt.clouddn.com/18-1-17/13626882.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure><br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://p2btijoky.bkt.clouddn.com/18-1-17/94066364.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://p2btijoky.bkt.clouddn.com/18-1-17/89009725.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://p2btijoky.bkt.clouddn.com/18-1-17/45371351.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2018-01-17T15:52:40.170Z" itemprop="dateUpdated">2018-01-17 23:52:40</time>
+</span><br>
+
+
+        
+        原始链接：<a href="/blog/2018/01/17/tool/config-your-xshell/" target="_blank" rel="external">http://wencaizhang.com/blog/2018/01/17/tool/config-your-xshell/</a>
+        
+    </div>
+    <footer>
+        <a href="http://wencaizhang.com/blog">
+            <img src="/blog/img/logo.png" alt="wencaizhang">
+            wencaizhang
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/tool/">tool</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/xshell/">xshell</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://wencaizhang.com/blog/2018/01/17/tool/config-your-xshell/&title=《调教你的Xshell》 — 前端码农的自留地&pic=http://wencaizhang.com/blog/img/logo.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wencaizhang.com/blog/2018/01/17/tool/config-your-xshell/&title=《调教你的Xshell》 — 前端码农的自留地&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://wencaizhang.com/blog/2018/01/17/tool/config-your-xshell/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《调教你的Xshell》 — 前端码农的自留地&url=http://wencaizhang.com/blog/2018/01/17/tool/config-your-xshell/&via=http://wencaizhang.com/blog" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://wencaizhang.com/blog/2018/01/17/tool/config-your-xshell/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/blog/2018/01/17/js/parse-querystring/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">小tips-使用正则获取查询字符串参数</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitment_thread"></div>
+    <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
+    <script>
+        var gitment = new Gitment({
+            owner: 'wencaistorm',
+            repo: 'blog',
+            oauth: {
+                client_id: '09a59bcc9b9f4c9c8d08',
+                client_secret: 'e9b6c841fda1b24e9bad7ac6af9b23af4419067f',
+            },
+        })
+        console.log(gitment)
+        gitment.render('comments')
+    </script>
+</section>
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        请我吃辣条~~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/blog/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/blog/img/wechat.jpg" data-alipay="/blog/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/blog/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>wencaizhang &copy; 2015 - 2018</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://wencaizhang.com/blog/2018/01/17/tool/config-your-xshell/&title=《调教你的Xshell》 — 前端码农的自留地&pic=http://wencaizhang.com/blog/img/logo.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wencaizhang.com/blog/2018/01/17/tool/config-your-xshell/&title=《调教你的Xshell》 — 前端码农的自留地&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://wencaizhang.com/blog/2018/01/17/tool/config-your-xshell/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《调教你的Xshell》 — 前端码农的自留地&url=http://wencaizhang.com/blog/2018/01/17/tool/config-your-xshell/&via=http://wencaizhang.com/blog" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://wencaizhang.com/blog/2018/01/17/tool/config-your-xshell/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACs0lEQVR42u3a0U7kMAwFUP7/p1lp31ZA5147AVY6fRpNM2lOkBpj++0tvt7/Xs93P175+P3I1YWHh4c3WvrzEmfffxzz/M1szhdbgIeHh3eN93wY5GOeX+L5Kz7hRQcYHh4e3o/yiknjBT3PnxwSeHh4eP8Lrz0ANmE0Hh4e3u/kJcmI54mGyYJgfMI+kGvBw8PD6+YvCmC/4fPF+h4eHh7eoqo+e023Sdv8dV+vDQ8PD+8Cry1izUbmZa0cmc+Gh4eHd5aXM9rUbT5Du0HJE/Hw8PDu8TYP2N+dBeh1sxceHh7eBd7sx3nZqf1VW4or/oZ4eHh4F3inAtnNgmbtC8PAGg8PD6/k5YnRNsDdHA95iI+Hh4f3s7y8sDRbaH7kbEJnPDw8vNu8tsw/W3SSYmgPgHw78PDw8M7yZq1R+d1N20GyHS9G4uHh4X0LL0mq5kWvzaasctLPJwweHh7emtcWvZLAd9ZclZfEok3Hw8PD+0berCS2STok7QL5Ov8JqfHw8PAu8PJXfzuyLZhtUhuffMbDw8O7wJsVq9pJTxW02pAdDw8P7wavLXG17QL59rWtXXWWGg8PD+8Qr/0nf5bkbVMbm2Lbi+MBDw8P7xBvE33PDolNGaxousLDw8O7wJu9dk8Fx219v42W8fDw8G7wWsxzGJ0/pm3GymF4eHh4t3n5Y9qDYd86MCuGDXcRDw8PbxFtzhIKbVIjCcFn63mRa8HDw8Nb897L61Rjwaaolic+8PDw8G7wTh0D+9RGnvBd5Vrw8PDwDvFmh0G7Z3lrwqzY9uUa8PDw8K7xZunXTSq2bRQY5lrw8PDwfhlvn9TIS3HJsXH4YMDDw8Nb8/KkQLvoNr1bpEXw8PDwrvHOFr32SYd9ywIeHh7ePd6sALYva+XhdV4eO1bfw8PDw/v8mz9ktWnOHh6XWgAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/blog/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '主人正在角落画圈圈(*@ο@*)';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '欢迎回来';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
