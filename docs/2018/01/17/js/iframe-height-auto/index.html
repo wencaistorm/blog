@@ -20,18 +20,18 @@
     
     
     <meta name="keywords" content="javascript,iframe">
-    <meta name="description" content="背景iframe 有两大烦人的东西，一是 iframe 高度问题，二是带遮罩的弹框提示。这两个问题都没什么处理经验，于是花点时间研究，基本实现了效果，于是记录下来以便备忘。 本文为高度自适应问题的解决方案。 实现为行文方便，假设 iframe 元素的 id 为 iframe， iframe 元素指定的页面成为“子窗口或子页面”， iframe 元素所在的页面为“父窗口” jQuery 版123fu">
+    <meta name="description" content="背景iframe 有两大烦人的东西，一是 iframe 高度问题，二是带遮罩的弹框提示。这两个问题都没什么处理经验，于是花点时间研究，基本实现了效果，于是记录下来以便备忘。 本文为高度自适应问题的解决方案。 实现此方法前提条件：为方便获取 iframe 元素，需要知道该 iframe 的 id（当页面只有一个 iframe 元素时，使用类名或标签名也可以）。 此处假设 iframe 元素的 id">
 <meta name="keywords" content="javascript,iframe">
 <meta property="og:type" content="article">
 <meta property="og:title" content="小tips - iframe 高度自适应">
-<meta property="og:url" content="http://wencaizhang.com/blog/2018/01/17/js/self-adaption-of-iframe-height/index.html">
+<meta property="og:url" content="http://wencaizhang.com/blog/2018/01/17/js/iframe-height-auto/index.html">
 <meta property="og:site_name" content="前端码农的自留地">
-<meta property="og:description" content="背景iframe 有两大烦人的东西，一是 iframe 高度问题，二是带遮罩的弹框提示。这两个问题都没什么处理经验，于是花点时间研究，基本实现了效果，于是记录下来以便备忘。 本文为高度自适应问题的解决方案。 实现为行文方便，假设 iframe 元素的 id 为 iframe， iframe 元素指定的页面成为“子窗口或子页面”， iframe 元素所在的页面为“父窗口” jQuery 版123fu">
+<meta property="og:description" content="背景iframe 有两大烦人的东西，一是 iframe 高度问题，二是带遮罩的弹框提示。这两个问题都没什么处理经验，于是花点时间研究，基本实现了效果，于是记录下来以便备忘。 本文为高度自适应问题的解决方案。 实现此方法前提条件：为方便获取 iframe 元素，需要知道该 iframe 的 id（当页面只有一个 iframe 元素时，使用类名或标签名也可以）。 此处假设 iframe 元素的 id">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-01-17T14:16:33.991Z">
+<meta property="og:updated_time" content="2018-01-18T12:38:44.601Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="小tips - iframe 高度自适应">
-<meta name="twitter:description" content="背景iframe 有两大烦人的东西，一是 iframe 高度问题，二是带遮罩的弹框提示。这两个问题都没什么处理经验，于是花点时间研究，基本实现了效果，于是记录下来以便备忘。 本文为高度自适应问题的解决方案。 实现为行文方便，假设 iframe 元素的 id 为 iframe， iframe 元素指定的页面成为“子窗口或子页面”， iframe 元素所在的页面为“父窗口” jQuery 版123fu">
+<meta name="twitter:description" content="背景iframe 有两大烦人的东西，一是 iframe 高度问题，二是带遮罩的弹框提示。这两个问题都没什么处理经验，于是花点时间研究，基本实现了效果，于是记录下来以便备忘。 本文为高度自适应问题的解决方案。 实现此方法前提条件：为方便获取 iframe 元素，需要知道该 iframe 的 id（当页面只有一个 iframe 元素时，使用类名或标签名也可以）。 此处假设 iframe 元素的 id">
     
         <link rel="alternate" type="application/atom+xml" title="前端码农的自留地" href="/blog/atom.xml">
     
@@ -94,20 +94,6 @@
               <a href="/blog/categories"  >
                 <i class="icon icon-lg icon-th-list"></i>
                 目录
-              </a>
-            </li>
-        
-            <li class="waves-block waves-effect">
-              <a href="https://github.com/wencaistorm" target="_blank" >
-                <i class="icon icon-lg icon-github"></i>
-                Github
-              </a>
-            </li>
-        
-            <li class="waves-block waves-effect">
-              <a href="http://wencaizhang.com/code-analysis/" target="_blank" >
-                <i class="icon icon-lg icon-code"></i>
-                Code
               </a>
             </li>
         
@@ -188,7 +174,7 @@
         </nav>
     </aside>
     
-<article id="post-js/self-adaption-of-iframe-height"
+<article id="post-js/iframe-height-auto"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
@@ -211,16 +197,19 @@
         <div class="post-content" id="post-content" itemprop="postContent">
             <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p><code>iframe</code> 有两大烦人的东西，一是 <code>iframe</code> 高度问题，二是带遮罩的弹框提示。这两个问题都没什么处理经验，于是花点时间研究，基本实现了效<br>果，于是记录下来以便备忘。</p>
 <p>本文为高度自适应问题的解决方案。</p>
-<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><p>为行文方便，假设 <code>iframe</code> 元素的 id 为 <code>iframe</code>， <code>iframe</code> 元素指定的页面成为“子窗口或子页面”， <code>iframe</code> 元素所在的页面为“父窗口”</p>
+<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><p>此方法前提条件：为方便获取 <code>iframe</code> 元素，需要知道该 <code>iframe</code> 的 <code>id</code>（当页面只有一个 <code>iframe</code> 元素时，使用类名或标签名也可以）。</p>
+<p>此处假设 <code>iframe</code> 元素的 id 为 <code>iframe</code>。</p>
+<p>为行文方便，后面将 <code>iframe</code> 元素指定的页面称为“子窗口或子页面”， <code>iframe</code> 元素所在的页面称为“父窗口”</p>
 <h3 id="jQuery-版"><a href="#jQuery-版" class="headerlink" title="jQuery 版"></a>jQuery 版</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">resizeIframeParentHeight</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  $(<span class="string">"#iframe"</span>, <span class="built_in">window</span>.parent.document).css(<span class="string">'height'</span>, $(<span class="string">'body'</span>).outerHeight());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ol>
-<li>此方法在子窗口中执行</li>
+<li>此方法在子窗口中，在初次加载完成或者页面高度发生变化时执行</li>
 <li><code>$(&quot;#iframe&quot;, window.parent.document)</code> 获取父窗口中的 <code>iframe</code> 元素</li>
 <li><code>$(&#39;body&#39;).outerHeight()</code> 获取 <code>iframe</code> 元素指定页面的高度</li>
 </ol>
-<h3 id="js-版"><a href="#js-版" class="headerlink" title="js 版"></a>js 版</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">resizeIframeParentHeight</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> iframeHeight = <span class="built_in">document</span>.body.scrollHeight;</span><br><span class="line">  <span class="keyword">var</span> iframe = <span class="built_in">window</span>.parent.document.getElementById(<span class="string">'iframe'</span>);</span><br><span class="line">  iframe.style.height = iframeHeight;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="js-版"><a href="#js-版" class="headerlink" title="js 版"></a>js 版</h3><p>您可以狠狠点击这里：<a href="http://demo.wencaizhang.com/pages/iframe-parent.html" target="_blank" rel="noopener">js版iframe高度自适应demo</a></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">resizeIframeParentHeight</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> iframeHeight = <span class="built_in">document</span>.body.scrollHeight;</span><br><span class="line">  <span class="keyword">var</span> iframe = <span class="built_in">window</span>.parent.document.getElementById(<span class="string">'iframe'</span>);</span><br><span class="line">  iframe.style.height = iframeHeight + <span class="string">'px'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ol>
-<li>此方法在子窗口中执行</li>
+<li>此方法在子窗口中，在初次加载完成或者页面高度发生变化时执行</li>
 <li><code>window.parent</code> 获取父窗口中 <code>document</code> ，则 <code>window.parent.document.getElementById(&#39;iframe&#39;)</code> 获取 <code>iframe</code> 元素</li>
 <li><code>document.body.scrollHeight</code> 获取 <code>iframe</code> 元素指定页面的高度</li>
 </ol>
@@ -231,12 +220,12 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2018-01-17T14:16:33.991Z" itemprop="dateUpdated">2018-01-17 22:16:33</time>
+    最后更新时间：<time datetime="2018-01-18T12:38:44.601Z" itemprop="dateUpdated">2018-01-18 20:38:44</time>
 </span><br>
 
 
         
-        原始链接：<a href="/blog/2018/01/17/js/self-adaption-of-iframe-height/" target="_blank" rel="external">http://wencaizhang.com/blog/2018/01/17/js/self-adaption-of-iframe-height/</a>
+        原始链接：<a href="/blog/2018/01/17/js/iframe-height-auto/" target="_blank" rel="external">http://wencaizhang.com/blog/2018/01/17/js/iframe-height-auto/</a>
         
     </div>
     <footer>
@@ -266,7 +255,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://wencaizhang.com/blog/2018/01/17/js/self-adaption-of-iframe-height/&title=《小tips - iframe 高度自适应》 — 前端码农的自留地&pic=http://wencaizhang.com/blog/img/logo.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://wencaizhang.com/blog/2018/01/17/js/iframe-height-auto/&title=《小tips - iframe 高度自适应》 — 前端码农的自留地&pic=http://wencaizhang.com/blog/img/logo.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -276,22 +265,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wencaizhang.com/blog/2018/01/17/js/self-adaption-of-iframe-height/&title=《小tips - iframe 高度自适应》 — 前端码农的自留地&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wencaizhang.com/blog/2018/01/17/js/iframe-height-auto/&title=《小tips - iframe 高度自适应》 — 前端码农的自留地&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://wencaizhang.com/blog/2018/01/17/js/self-adaption-of-iframe-height/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://wencaizhang.com/blog/2018/01/17/js/iframe-height-auto/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《小tips - iframe 高度自适应》 — 前端码农的自留地&url=http://wencaizhang.com/blog/2018/01/17/js/self-adaption-of-iframe-height/&via=http://wencaizhang.com/blog" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《小tips - iframe 高度自适应》 — 前端码农的自留地&url=http://wencaizhang.com/blog/2018/01/17/js/iframe-height-auto/&via=http://wencaizhang.com/blog" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://wencaizhang.com/blog/2018/01/17/js/self-adaption-of-iframe-height/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://wencaizhang.com/blog/2018/01/17/js/iframe-height-auto/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -437,7 +426,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://wencaizhang.com/blog/2018/01/17/js/self-adaption-of-iframe-height/&title=《小tips - iframe 高度自适应》 — 前端码农的自留地&pic=http://wencaizhang.com/blog/img/logo.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://wencaizhang.com/blog/2018/01/17/js/iframe-height-auto/&title=《小tips - iframe 高度自适应》 — 前端码农的自留地&pic=http://wencaizhang.com/blog/img/logo.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -447,22 +436,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wencaizhang.com/blog/2018/01/17/js/self-adaption-of-iframe-height/&title=《小tips - iframe 高度自适应》 — 前端码农的自留地&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wencaizhang.com/blog/2018/01/17/js/iframe-height-auto/&title=《小tips - iframe 高度自适应》 — 前端码农的自留地&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://wencaizhang.com/blog/2018/01/17/js/self-adaption-of-iframe-height/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://wencaizhang.com/blog/2018/01/17/js/iframe-height-auto/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《小tips - iframe 高度自适应》 — 前端码农的自留地&url=http://wencaizhang.com/blog/2018/01/17/js/self-adaption-of-iframe-height/&via=http://wencaizhang.com/blog" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《小tips - iframe 高度自适应》 — 前端码农的自留地&url=http://wencaizhang.com/blog/2018/01/17/js/iframe-height-auto/&via=http://wencaizhang.com/blog" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://wencaizhang.com/blog/2018/01/17/js/self-adaption-of-iframe-height/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://wencaizhang.com/blog/2018/01/17/js/iframe-height-auto/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -473,7 +462,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACq0lEQVR42u3awU4jQQwEUP7/p3elvS5MqtxtgtCbE0qUMK+Rxsblj4/4+vPvSl756vr/U1+9m3zP5QsPDw9vdOuz23pGnhzQ8+8qjgAPDw9vjfdcDBJ28qm8SCTspIDh4eHhvZeXMJJvTt7Fw8PD+x28c/BzK58PRPDw8PB+Ai9pf5PGN3msJw33M2ll1oKHh4e3kCL9nJ8X8z08PDy8g1Q9H78mZaANus4vPDw8vA1eHuq3kdhs1SBv2fPBLh4eHt5dXrsINQu0TkrOUfCGh4eHt8DLH/ctoP3mWdsdlRY8PDy8NV5eEk4a31vRVzEKwcPDw1vg5S1yizxp0Ium+TzTw8PDw4t550F+O6LNAed/DDw8PLw9XjuozVvknJQ3x/ln8fDw8PZ4eQDWdrDtt52vHRytDuDh4eGV//vPhqrtGkEbd+UB24vjw8PDw1vj5UOH9tHfvvJcZuoRBh4eHt5V3qzxzUcDd2+3LVF4eHh4d3mzgWwbj7WhVz4IfnHEeHh4eMu8tgfP2+4ZadZef7KHi4eHh7fAy8cN7ZJBPqJNCkM96sXDw8Nb480a4tnDvR065EtgeHh4eN/Ja8eysxvND6Jd2/ryHvDw8PAWeG281MZde+Uhb9Dx8PDw7vKSX5w3tbN2vAUUFx4eHt6beG0TfLIo0K4jvDhEPDw8vAVeHcYftN1HA9nR0x4PDw9vg3eLUcT5l1r5pCDh4eHhfQ8vX71qBwong+B8NIyHh4e3zdsY+N6KxPIhxYULDw8Pb7SJlBeD9uRmsGvrCHh4eHhrvLwYnLxyK+LKAzY8PDy89/JmjfhsyaBdU7hQGPDw8PDWeOeP/ii+OhgQf7J0hYeHh7fAS4YR0Q5XXFTyY5qVFjw8PLw93iwAS0aoScHIY7OVZA8PDw+v4/0F9fWccVzJu4AAAAAASUVORK5CYII=" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACL0lEQVR42u3aQZKDMAwFUe5/aWY7G0x/yTNVyO1VKgHsx0KxJF8XHvev8fTr0/VPd6WzbBgyZMj4LONejvUE6ynXT0jnfXk1MmTIOIBBFkHC63p6EmTXcz1+L0OGDBlg88cXtA7fMmTIkLE34N5g8JRVhgwZMtaMfugkYXR9b/qaZMiQcQ6DV93///Of9DdkyJDxKcYdjlrbMg3l8apkyJAxmsEDXKfQv6sZ8DKLDBkyRjN4YzJtMfIFpWtAj5MhQ8Y4Bgl2QZm+0QrlyfPjvDJkyBjKICnoeim16zsvCO1hZciQMYLROR6RYkjRrQiTIUPGUAbZbHWOX6RJMlnDlb4/GTJkfJzRKevXyv21xmcalGXIkDGJUZsmbQbw463F1FqGDBmjGelhiM7RMf46djVHZciQMY/Bk8waO72r1kiQIUPGbEb6oDTp5RvETlFPhgwZpzFqTUcepsmmsLVBlCFDxghGbUqSrNaS5LR4F+9hZciQ8UFGWrjvb+92/UvIkCHjZEZ6bKJW7ieFOV6wkyFDxjkMUtIin0lIJcuKGwYyZMg4gJHelrY840NdnUqhDBkyBjHucOwqupGwHiTDMmTIGM3YFrPxvWnjYW/IliFDxncZnaMV/Ff+CmprkCFDxgmMWvELlezb7QQUvmXIkCEDX5NuAdOU9SUjlyFDhgzQAOhv9fhGc9v/hgwZMj7CIOGPNwk4uNaKkCFDxmkMnjqmV+4K2bVGqQwZMkYwfgAGlHRycNd7MwAAAABJRU5ErkJggg==" alt="微信分享二维码">
 </div>
 
 
