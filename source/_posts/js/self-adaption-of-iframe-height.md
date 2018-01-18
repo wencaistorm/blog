@@ -33,7 +33,7 @@ function resizeIframeParentHeight() {
 function resizeIframeParentHeight() {
   var iframeHeight = document.body.scrollHeight;
   var iframe = window.parent.document.getElementById('iframe');
-  iframe.style.height = iframeHeight;
+  iframe.style.height = iframeHeight + 'px';
 }
 ```
 1. 此方法在子窗口中执行
